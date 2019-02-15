@@ -71,5 +71,3 @@ Here we specify what a "Reptile" is. It has an Age property, and a Type property
 After all is said and done, we can then use the console to see our reptile variable's properties were properly set.
 
 This is a very basic example, but I always find it fun to look into how things were done before new improvements in development came around.
-
-{% include advertisements.html %}
