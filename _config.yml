@@ -3,11 +3,11 @@
 # Site wide configuration
 ####################################
 #
-title: Leonids
-email:
-description: A simple and awesome blog theme powered by jekyll.
-url: # the base hostname & protocol for your site
-keywords: ["blog", "jekyll"]
+title: Jaken Herman
+email: JakenHerman7@Gmail.com
+description: Software Engineer, Brewer of Beer, Husband
+url: www.jakenherman.com
+keywords: ["blog", "jaken", "herman", "software", "engineer"]
 
 #
 ###################################
