@@ -1,9 +1,12 @@
 ---
 layout: post
 title:  "Creating Objects in JavaScript using Prototyping"
+excerpt: "Before JavaScript classes were introduced, object methods and constructors were handled a bit differently."
+comments : true
 date:   2019-02-13 18:39:39 -0600
-categories: jekyll update
+categories: [JavaScript]
 ---
+
 JavaScript classes were introduced in ECMAScript 2015, and are primarily syntactical sugar over JavaScript's existing prototype-based inheritance. Let's take a look at what that prototype-based inheritance looks like behind the scenes. 
 
 Let's create a "Reptile" object, that has two properties: type, and age. On that object we'll have setter functions for both properties, and while we're at it, let's say the type will be some custom enumeration as defined below.

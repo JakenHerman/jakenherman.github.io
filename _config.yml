@@ -32,14 +32,16 @@ kramdown:
 # Site Owner configuration
 ####################################
 #
-author:
+owner:
   name: jaken herman
-  avatar: leonids-logo.png
+  avatar: avatar.jpg
   job: "Software Engineer"
-  bio: "My blog"
+  bio: "I'm a full-stack software engineer specializing in the ASP.NET framework in both Visual Basic and C#. 
+        I also work on Mobile Application development using both the Xamarin.Forms framework and Apache Cordova framework depending on the project.
+        I'm well-versed in JavaScript and many of it's popular libraries and frameworks."
   email: jakenherman7@gmail.com
   disqus-shortname:
-  twitter: #username
+  twitter: 0x6a6368h
   facebook: #username
   google:
     plus: #username
@@ -48,48 +50,9 @@ author:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
+  github: JakenHerman
   gitlab: #username
-  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: jakenherman
-  skype: #username
-  xing: #username
-  instagram: #username
-  lastfm: #username
-  tumblr: #username
-  pinterest: #username
-  foursquare: #username
-  steam: #username
-  dribbble: #username
-  youtube: #username
-  soundcloud: #username
-  weibo: #username
-  flickr: #username
-  500px: #username
-  codepen: #username
-  reddit: #username
-  telegram: #username
-
-
-author:
-  name: jaken herman
-  avatar: leonids-logo.png
-  job: "Software Engineer"
-  bio: "My blog"
-  email: jakenherman7@gmail.com
-  disqus-shortname:
-  twitter: #username
-  facebook: #username
-  google:
-    plus: #username
-    analytics:
-    verify:
-    ad-client:
-    ad-slot:
-  bing-verify:
-  github: #username
-  gitlab: #username
-  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  stackoverflow: 2752265/jaken-herman
   linkedin: jakenherman
   skype: #username
   xing: #username
