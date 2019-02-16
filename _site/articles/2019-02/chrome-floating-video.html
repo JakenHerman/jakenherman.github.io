@@ -8,35 +8,35 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Software Engineer, Brewer of Beer, Husband">
+  <meta name="description" content="This one line of JavaScript allows you to have a floating Google Chrome window to watch YouTube, Twtich, and other media sources while you're working.">
   <meta name="keywords" content="blog, jaken, herman, software, and engineer">
-  <meta name="author" content="Archive | Jaken Herman">
+  <meta name="author" content="Enable Floating Video in Google Chrome | Jaken Herman">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f5f5f5">
 
   <!-- Twitter Tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Archive | Jaken Herman">
-  <meta name="twitter:description" content="Software Engineer, Brewer of Beer, Husband">
+  <meta name="twitter:title" content="Enable Floating Video in Google Chrome | Jaken Herman">
+  <meta name="twitter:description" content="This one line of JavaScript allows you to have a floating Google Chrome window to watch YouTube, Twtich, and other media sources while you&#39;re working.">
   
     <meta property="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
   
 
   <!-- Open Graph Tags -->
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="http://localhost:4000/archive/">
-  <meta property="og:title" content="Archive | Jaken Herman">
-  <meta property="og:description" content="Software Engineer, Brewer of Beer, Husband">
+  <meta property="og:url" content="http://localhost:4000/articles/2019-02/chrome-floating-video">
+  <meta property="og:title" content="Enable Floating Video in Google Chrome | Jaken Herman">
+  <meta property="og:description" content="This one line of JavaScript allows you to have a floating Google Chrome window to watch YouTube, Twtich, and other media sources while you&#39;re working.">
   
     <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
   
-  <title>Archive | Jaken Herman</title>
+  <title>Enable Floating Video in Google Chrome | Jaken Herman</title>
 
   <!-- CSS files -->
   <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://localhost:4000/css/main.css">
 
-  <link rel="canonical" href="http://localhost:4000/archive/">
+  <link rel="canonical" href="http://localhost:4000/articles/2019-02/chrome-floating-video">
   <link rel="alternate" type="application/rss+xml" title="Jaken Herman" href="http://localhost:4000/feed.xml" />
 
   <!-- Icons -->
@@ -134,99 +134,86 @@
     </div>
     <div class="col s12 m9">
       <div class="post-listing">
-          <div id="page">
-    <header class="page-header">
-      <h2>Archive</h2>
-    </header>
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
 
-    <article class="page-content">
-      <div class="archive">
-  <div class="timeline" id="timeline">
-    
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
 
-      <ul>
-      
-      </ul>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<div id="post">
+  <header class="post-header">
+    <h1 title="Enable Floating Video in Google Chrome">Enable Floating Video in Google Chrome</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        7 FEB 2019
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
 
-      <ul>
-      
-      </ul>
+    </span>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+  </header>
 
-      <ul>
-      
-      </ul>
+  <article class="post-content">
+    <p>If there is one thing the Opera browser has done correctly, it is that it made creating a floating video pop-out very easy and accessible to it’s users. If there is anything else it has done correctly — I don’t know about it. I’d just much rather use Chrome.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p>If you’re like me, when you’re doing simple work or playing a casual video game, you like to watch YouTube or Twitch while you’re at it. The problem? Having a window with YouTube or Twitch gets put in the background the minute you re-enter your work pane or game window. The old solution was to just have your work be snapped to one side of your screen and your video on the other side. That’s not good enough for me.</p>
 
-      <ul>
-      
-      </ul>
+<p>The correct solution? A bookmark with one line of JavaScript in it.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p>To get started, right-click your bookmarks bar and select “Add page…”. For the Name type “Float Video”, and for the URL, paste the JavaScript line below:</p>
 
-      <ul>
-      
-      </ul>
+<p><code class="highlighter-rouge">javascript:document.getElementsByTagName('video')[0].requestPictureInPicture();</code></p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p>Once you’ve got your bookmark created, you can navigate to a YouTube video or Twitch stream, maybe even Netflix (haven’t tested this), and press your new “Float Video” bookmark.</p>
 
-      <ul>
-      
-      </ul>
+<p>Your video will pop out in a floating video Picture-in-Picture style and when you return to your work or video game, you will have your re-sizable, movable video hovering over your main window.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-  </div>
-
+  </article>
 </div>
 
-    </article>
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2019-02/chrome-floating-video" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2019-02/chrome-floating-video" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2019-02/chrome-floating-video" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2019-02/chrome-floating-video" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2019-02/chrome-floating-video" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
 
 
-  </div><!-- end page content -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jakenherman-com';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
-  
 
         <footer>
   &copy; 2019 jaken herman. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>

@@ -6,7 +6,7 @@
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>2019-02-16</pubDate>
-    <lastBuildDate>Sat, 16 Feb 2019 22:40:29 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 Feb 2019 23:03:52 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -301,6 +301,98 @@ And that’s it! It’s very simple and to the point, but it seems like almost n
         <category>Tips and Tricks</category>
         
         <category>Professionalism</category>
+        
+      </item>
+    
+      <item>
+        <title>Enable Floating Video in Google Chrome</title>
+        <description>&lt;p&gt;If there is one thing the Opera browser has done correctly, it is that it made creating a floating video pop-out very easy and accessible to it’s users. If there is anything else it has done correctly — I don’t know about it. I’d just much rather use Chrome.&lt;/p&gt;
+
+&lt;p&gt;If you’re like me, when you’re doing simple work or playing a casual video game, you like to watch YouTube or Twitch while you’re at it. The problem? Having a window with YouTube or Twitch gets put in the background the minute you re-enter your work pane or game window. The old solution was to just have your work be snapped to one side of your screen and your video on the other side. That’s not good enough for me.&lt;/p&gt;
+
+&lt;p&gt;The correct solution? A bookmark with one line of JavaScript in it.&lt;/p&gt;
+
+&lt;p&gt;To get started, right-click your bookmarks bar and select “Add page…”. For the Name type “Float Video”, and for the URL, paste the JavaScript line below:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript:document.getElementsByTagName('video')[0].requestPictureInPicture();&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you’ve got your bookmark created, you can navigate to a YouTube video or Twitch stream, maybe even Netflix (haven’t tested this), and press your new “Float Video” bookmark.&lt;/p&gt;
+
+&lt;p&gt;Your video will pop out in a floating video Picture-in-Picture style and when you return to your work or video game, you will have your re-sizable, movable video hovering over your main window.&lt;/p&gt;
+</description>
+        <pubDate>2019-02-16</pubDate>
+        <link>http://localhost:4000/articles/2019-02/chrome-floating-video</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/chrome-floating-video</guid>
+        
+        
+        <category>Chrome</category>
+        
+        <category>Tips and Tricks</category>
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+      <item>
+        <title>Perfectly Balanced Strings</title>
+        <description>&lt;p&gt;This is rightfully classified as an easy challenge, so it should take no time to complete. When I first saw it, I immediately thought “Great,I’ll just use C# and a single LINQ statement and call it done”, but then I figured it would be more fun if I also tried to replicate my solution in Java.&lt;/p&gt;
+
+&lt;p&gt;First, the text:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Given a string containing only the characters x and y, find whether there are the same number of xs and ys.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;xxxyyy&quot;) =&amp;gt; true&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;yyyxxx&quot;) =&amp;gt; true&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;xxxyyyy&quot;) =&amp;gt; false&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;yyxyxxyxxyyyyxxxyxyx&quot;) =&amp;gt; true&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;xyxxxxyyyxyxxyxxyy&quot;) =&amp;gt; false&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;&quot;) =&amp;gt; true&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;x&quot;) =&amp;gt; false&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;See? Easy. So let’s start with the obvious — the C# LINQ statement solution.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ToCharArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Where&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Where&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;So this takes our string &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt;, converts it to a character array and then sets up a conditional return &lt;code class=&quot;highlighter-rouge&quot;&gt;x==y&lt;/code&gt; where &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; = the number of characters in our new character array input that are “x”, and the &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; = the number of characters in our new character array input that are “y”. This will obviously work even if there are letters or numbers in the input that are not x or y, they will simply be ignored.&lt;/p&gt;
+
+&lt;p&gt;Next, the admittedly more clunky Java version:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;balanced&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;ch:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toCharArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'x'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'y'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This does something similar, however, we set up &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; as integer parameters and then loop through each character in the input string. If the character &lt;code class=&quot;highlighter-rouge&quot;&gt;ch&lt;/code&gt; is “x”, then our &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; variable gets incremented by 1. If it is not “x”, it does not get incremented. Likewise, our &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; variable gets incremented by 1 if the character &lt;code class=&quot;highlighter-rouge&quot;&gt;ch&lt;/code&gt; is “y”, otherwise, it remains the same.&lt;/p&gt;
+
+&lt;p&gt;If you’re a Java-guru, I’m sure this looks like a mess to you — but it is a quick and dirty solution. Comment your best Java solution below if you’d like to join in on the challenge.&lt;/p&gt;
+</description>
+        <pubDate>2019-02-16</pubDate>
+        <link>http://localhost:4000/articles/2019-02/perfectly-balanced-strings</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/perfectly-balanced-strings</guid>
+        
+        
+        <category>C#</category>
+        
+        <category>Java</category>
+        
+        <category>Programming Challenge</category>
         
       </item>
     
