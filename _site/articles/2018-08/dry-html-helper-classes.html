@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="There have been far too many times I’ve looked at HTML that I’ve written (and that others have written) where I’ve thought to myself “this is terrible.” Up t...">
+  <meta name="keywords" content="blog, jaken, herman, software, and engineer">
+  <meta name="author" content="Writing D.R.Y. HTML with .Net Helper Classes | Jaken Herman">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Writing D.R.Y. HTML with .Net Helper Classes | Jaken Herman">
+  <meta name="twitter:description" content="There have been far too many times I’ve looked at HTML that I’ve written (and that others have written) where I’ve thought to myself “this is terrible.” Up t...">
+  
+    <meta property="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+  
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000/articles/2018-08/dry-html-helper-classes">
+  <meta property="og:title" content="Writing D.R.Y. HTML with .Net Helper Classes | Jaken Herman">
+  <meta property="og:description" content="There have been far too many times I’ve looked at HTML that I’ve written (and that others have written) where I’ve thought to myself “this is terrible.” Up t...">
+  
+    <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  
+  <title>Writing D.R.Y. HTML with .Net Helper Classes | Jaken Herman</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2018-08/dry-html-helper-classes">
+  <link rel="alternate" type="application/rss+xml" title="Jaken Herman" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <a href="http://localhost:4000/">
+    <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  </a>
+  
+  <a href="http://localhost:4000/" class="author_name">jaken herman</a>
+  <span class="author_job">🚀 Software Engineer at NASA 🛰️</span>
+  <span class="author_bio mbm">I'm a full-stack software engineer specializing in the ASP.NET framework in both Visual Basic and C# ‎‍💻. I also work on Mobile Application development using both the Xamarin.Forms framework and Apache Cordova framework depending on the project 📱. I'm well-versed in JavaScript and many of it's popular libraries and frameworks. In my free time, I like to play golf ⛳ and brew beer 🍺. I am married to an amazing woman who also works at NASA in Mission Control as a flight controller. We have 2 dogs 🐶, 4 cats 🐱, and lots of great friends.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+      </li>
+         
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('jakenherman7@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    <li><a href="http://twitter.com/0x6a6368h" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    
+    
+    <li><a href="http://linkedin.com/in/jakenherman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    <li><a href="skype:jaken2711" class="social-link-item" target="_blank"><i class="fa fa-fw fa-skype"></i></a></li>
+    
+    <li><a href="http://instagram.com/jaken.herman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+    
+    <li><a href="http://github.com/JakenHerman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    <li><a href="http://stackoverflow.com/users/2752265/jaken-herman?tab=profile" class="social-link-item" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a></li>
+    
+    
+    
+    
+    
+    <li><a href="https://youtube.com/user/jakencherman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-youtube"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Writing D.R.Y. HTML with .Net Helper Classes">Writing D.R.Y. HTML with .Net Helper Classes</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        27 AUG 2018
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    4 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>There have been far too many times I’ve looked at HTML that I’ve written (and that others have written) where I’ve thought to myself “this is terrible.” Up to 100 lines of code all doing the exact same thing over and over again. If you had to make a change in the code, you’d need to do it on every single occurrence of the code block.</p>
+
+<p>Luckily, this can be avoided with HTML .NET Helper classes. In my examples, I’ll be showing you C#, but they can very easily be done in VB.NET in a similar way.</p>
+
+<p>What kind of HTML gets repeated? Any type of HTML that is used to generate reports or documents frequently repeats a header for the page, and a footer for the page. So, let’s look at that type of example. Let’s look at the old way of handling this:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"> <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header-content"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Company Name<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Company Slogan<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Name of Document<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+   
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+      CONTENT ON PAGE 1
+   <span class="nt">&lt;/div&gt;</span>
+   
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-content"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Name of Company<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contact"</span><span class="nt">&gt;</span>Company Contact Information<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;p&gt;</span> Page Number 1 <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header-content"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Company Name<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Company Slogan<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Name of Document<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+   
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+     CONTENT ON PAGE 2
+   <span class="nt">&lt;/div&gt;</span>
+   
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-content"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Name of Company<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contact"</span><span class="nt">&gt;</span>Company Contact Information<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;p&gt;</span> Page Number 2<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<p>In the example above, the headers and footers are the exact same on both pages of the document. If the document is 20 pages long, you’ll end up repeating the same exact HTML 20 times each. That’s not good.</p>
+
+<p><strong>Why is that not good?</strong> That’s not good because if you need to make a change to, referring to our example, the Company Contact Information, you’d need to do it in 20 different places in your code. It’s likely that you’ll end up with a typo on one of those pages or that you’ll even forget to change one of them. We need to ensure that we can make this change in one spot and have all 20 of the occurrences change with it.</p>
+
+<p><strong>So how do we do this?</strong> First, we need to write a helper function. Note : My first example will be parameter-less. This will be used for the header, where nothing is going to change across pages:</p>
+
+<figure class="highlight"><pre><code class="language-cshtml" data-lang="cshtml"> @helper HeaderInformation()
+{
+   &lt;div class="header-content"&gt;
+    &lt;h1&gt;Company Name&lt;/h1&gt;
+    &lt;h2&gt;Company Slogan&lt;/h2&gt;
+    &lt;p&gt;Name of Document&lt;/p&gt;
+  &lt;/div&gt; 
+}
+
+&lt;div class="page"&gt;
+  @HeaderInformation();
+   
+   &lt;div class="content"&gt;
+      CONTENT ON PAGE 1
+   &lt;/div&gt;
+   
+  &lt;div class="footer-content"&gt;
+    &lt;p&gt;Name of Company&lt;/p&gt;
+    &lt;div class="contact"&gt;Company Contact Information&lt;/div&gt;
+    &lt;p&gt; Page Number 1 &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="page"&gt;
+  @HeaderInformation();
+   
+   &lt;div class="content"&gt;
+     CONTENT ON PAGE 2
+   &lt;/div&gt;
+   
+  &lt;div class="footer-content"&gt;
+    &lt;p&gt;Name of Company&lt;/p&gt;
+    &lt;div class="contact"&gt;Company Contact Information&lt;/div&gt;
+    &lt;p&gt; Page Number 2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></figure>
+
+<p>As you can see, we’ve created a helper called <code class="highlighter-rouge">HeaderInformation()</code>. Any time we need to display the header in the HTML, we simply call this function. Now, we need a function for the footer. But we need to change the page number each time. What we’ll do in this case is add a parameter to our helper called pageNumber, and use it within the function, like so:</p>
+
+<figure class="highlight"><pre><code class="language-cshtml" data-lang="cshtml">@helper HeaderInformation()
+{
+   &lt;div class="header-content"&gt;
+    &lt;h1&gt;Company Name&lt;/h1&gt;
+    &lt;h2&gt;Company Slogan&lt;/h2&gt;
+    &lt;p&gt;Name of Document&lt;/p&gt;
+  &lt;/div&gt; 
+}
+
+@helper FooterInformation(int pageNumber)
+{
+   &lt;div class="footer-content"&gt;
+    &lt;p&gt;Name of Company&lt;/p&gt;
+    &lt;div class="contact"&gt;Company Contact Information&lt;/div&gt;
+    &lt;p&gt; Page Number @pageNumber&lt;/p&gt;
+  &lt;/div&gt;
+}
+
+&lt;div class="page"&gt;
+  @HeaderInformation();
+   &lt;div class="content"&gt;
+      CONTENT ON PAGE 1
+   &lt;/div&gt;
+  @FooterInformation(1);
+&lt;/div&gt;
+
+&lt;div class="page"&gt;
+  @HeaderInformation();
+   &lt;div class="content"&gt;
+     CONTENT ON PAGE 2
+   &lt;/div&gt;
+  @FooterInformation(2);
+&lt;/div&gt;</code></pre></figure>
+
+<p>Here when we call our <code class="highlighter-rouge">FooterInformation()</code>, we pass in the page number and it gets updated in the HTML. This is obviously a better way of handling repeated HTML because now if we need to change the company contact information, it will get updated on every single page where we call <code class="highlighter-rouge">FooterInformation()</code>.</p>
+
+<p>There are even more ways you can DRY up this HTML example, but I’ll leave that up to you. The best way to learn is to learn by doing.</p>
+
+<p>Hope you enjoyed. DRY up your code.</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2018-08/dry-html-helper-classes" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2018-08/dry-html-helper-classes" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2018-08/dry-html-helper-classes" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2018-08/dry-html-helper-classes" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2018-08/dry-html-helper-classes" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jakenherman-com';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        <footer>
+  &copy; 2019 jaken herman. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-134666359-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

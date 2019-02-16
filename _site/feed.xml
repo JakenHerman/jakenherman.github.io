@@ -6,7 +6,7 @@
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>2019-02-16</pubDate>
-    <lastBuildDate>Sat, 16 Feb 2019 23:03:52 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 Feb 2019 23:35:47 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -393,6 +393,62 @@ And that’s it! It’s very simple and to the point, but it seems like almost n
         <category>Java</category>
         
         <category>Programming Challenge</category>
+        
+      </item>
+    
+      <item>
+        <title>The Difference Between Bereit and Fertig</title>
+        <description>&lt;p&gt;I’ve been learning the German language for quite some time now, and the distinction between when I should use Bereit versus when I should use Fertig never really clicked for me.&lt;/p&gt;
+
+&lt;p&gt;Google Translate is really no help on the issue. “bist du bereit?” translates to “Are you ready?”, and “bist du fertig?” translates to “you ready?”.&lt;/p&gt;
+
+&lt;p&gt;Correct me if I’m wrong, but using “fertig” makes sense when you’re describing the end of an event, whereas “bereit” works when you’re describing the beginning of, or the anticipation of an event.&lt;/p&gt;
+
+&lt;p&gt;In context, bereit being at the beginning of an event, or in anticipation of an event :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ich bin bereit für essen der Kuchen&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Probably not extremely grammatically correct, but close enough to “I am ready to eat the cake”.&lt;/p&gt;
+
+&lt;p&gt;In context, fertig being at the end of an event:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Der Kuchen ist fertig zum essen&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Again, probably not totally correct grammatically, but close enough to “The cake is ready to eat”.&lt;/p&gt;
+
+&lt;p&gt;So basically “I am ready” would be “Ich bin bereit”, because it implies an anticipation of an event, and “It is ready”, as in “It is finished” would be “Es ist fertig”.&lt;/p&gt;
+</description>
+        <pubDate>2019-02-16</pubDate>
+        <link>http://localhost:4000/articles/2018-10/bereit-fertig-differentiation</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2018-10/bereit-fertig-differentiation</guid>
+        
+        
+        <category>German Language</category>
+        
+        <category>Blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Cooking with Friends</title>
+        <description>&lt;p&gt;Most of the time when we hang out with friends we ask “You want to go grab a bite to eat?” Well, that’s all fine and dandy, but one of the best ways to really spend time with friends is by making a dish you’ve never made before &lt;em&gt;with&lt;/em&gt; your friends. Use ingredients you’ve never used, make something homemade you’ve never had before. It’s quite fun.&lt;/p&gt;
+
+&lt;p&gt;Here is a video of my friends and I making pork Chateaubriand with red wine sauce, french onion soup, and homemade cinnamon rolls for dessert.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/8-OfT2_ba1k&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>2019-02-16</pubDate>
+        <link>http://localhost:4000/articles/2018-10/cooking-w-friends</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2018-10/cooking-w-friends</guid>
+        
+        
+        <category>Cooking</category>
+        
+        <category>Blog</category>
         
       </item>
     
