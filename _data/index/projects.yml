@@ -1,4 +1,25 @@
-- name: 
-  descr: 
+- name: Astrophys.js
+  descr: Astrophys.js is a forever-in-progress Astrophysics library for JavaScript
   image: pong.png
-  github: 
+  github: https://github.com/JakenHerman/astrophysjs
+
+- name: kcats
+  descr: kcats is a stack implementation in node that allows multiple stacks to be created in one object. 
+  image: pong.png
+  github: https://github.com/JakenHerman/kcats
+
+- name: Cattle
+  descr: Cattle is a simple command-line interface for Google Calendar
+  image: pong.png
+  github: https://github.com/JakenHerman/cattle
+
+- name: Tweety
+  descr: Tweety is another command-line interface app of mine that allows you to use twitter via your computer's terminal
+  image: pong.png
+  github: https://github.com/JakenHerman/tweety
+
+- name: BubbaSim
+  descr: A Processor Scheduling Simulator that follows a preemptive priority algorithm with a GUI written in Java.
+  image: pong.png
+  github: https://github.com/JakenHerman/BubbaSim
+

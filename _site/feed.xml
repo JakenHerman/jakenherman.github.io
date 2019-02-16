@@ -5,8 +5,8 @@
     <description>Software Engineer, Brewer of Beer, Husband</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2019-02-15</pubDate>
-    <lastBuildDate>Fri, 15 Feb 2019 21:43:44 +0000</lastBuildDate>
+    <pubDate>2019-02-16</pubDate>
+    <lastBuildDate>Sat, 16 Feb 2019 22:40:29 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -74,7 +74,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;This is a very basic example, but I always find it fun to look into how things were done before new improvements in development came around.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-15</pubDate>
+        <pubDate>2019-02-16</pubDate>
         <link>http://localhost:4000/articles/2019-02/objects-javascript-prototyping</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/objects-javascript-prototyping</guid>
         
@@ -120,12 +120,187 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;In this case, &lt;code class=&quot;highlighter-rouge&quot;&gt;self.colorVar&lt;/code&gt; will be automatically set to whichever radio button is selected.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-15</pubDate>
+        <pubDate>2019-02-16</pubDate>
         <link>http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</guid>
         
         
         <category>Python</category>
+        
+      </item>
+    
+      <item>
+        <title>Implementing Apache Cordova Push Notifications in Android using Firebase</title>
+        <description>&lt;p&gt;Firebase Cloud Messaging (or FCM) is a great cross platform messaging solution that is completely 100% free. Today, I’ll walk you through the process of creating push notifications in your Android Apache Cordova application using Firebase.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Prerequisites :&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;Have a Firebase account (it’s free, just go sign up!)&lt;/li&gt;
+    &lt;li&gt;Have npm/cordova installed on your machine.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The first thing we’re going to do is set up a cordova project. If you already have your project set up, skip this step. I’m including it for completeness. We’re going to create this project in our desktop directory, so first you should open up your terminal or command line and type “cd desktop”. Next, type &lt;code class=&quot;highlighter-rouge&quot;&gt;cordova create notificationtest com.notificationtest.app&lt;/code&gt;. Be sure you get the &lt;code class=&quot;highlighter-rouge&quot;&gt;com.notificationtest.app&lt;/code&gt; part as that is our package name that Firebase will use. Type &lt;code class=&quot;highlighter-rouge&quot;&gt;cd notificationtest&lt;/code&gt; to change to your new project directory.&lt;/p&gt;
+
+&lt;p&gt;The next thing we’ll do is add the Android platform to our newly created Cordova project. Type &lt;code class=&quot;highlighter-rouge&quot;&gt;cordova platform add android&lt;/code&gt;, and this will set your project up to be able to run on the Android platform. The next thing we’ll need to do is install a plugin for Firebase to interface with our project. GitHub user arnesson has created a great plugin for this, and we can install it by running the command &lt;code class=&quot;highlighter-rouge&quot;&gt;cordova plugin add cordova-plugin-firebase --save&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now we can go into Firebase and select “Add project”. Type “Notification Test” (or your project’s name) into the Project Name area, and select Create Project. Now that your project has been created, go to the Project Overview page for your Firebase project and select Add app, and select the Android logo.&lt;/p&gt;
+
+&lt;p&gt;Now you’ll be able to register your app. In the Android package name section, type com.notificationtest.app, and press Register app. This will generate a JSON file called &lt;code class=&quot;highlighter-rouge&quot;&gt;google-services.json&lt;/code&gt;. Download this file, and continue through the App registration page, just selecting the things that are selected by default.&lt;/p&gt;
+
+&lt;p&gt;Navigate to the directory where the &lt;code class=&quot;highlighter-rouge&quot;&gt;google-services.json&lt;/code&gt; file was downloaded, and move the file into your &lt;code class=&quot;highlighter-rouge&quot;&gt;desktop/notificationtest&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;Open your terminal back up and type &lt;code class=&quot;highlighter-rouge&quot;&gt;cd desktop/notificaitontest&lt;/code&gt;. Then type &lt;code class=&quot;highlighter-rouge&quot;&gt;cordova run android&lt;/code&gt;. This will start up the Android emulator running your application. The next thing we need to do is set up a cloud message in Firebase. On your Firebase project page, scroll down to the “Grow” section, and select “Cloud Messaging”. If you’ve never created a notification before, the button text will be Create your first message, and if you have created a notification before, the button text will be New notification. Press the button, and under Notification text, type “Hello World!”, and press “Next”. In the Target section, select NotificationTest for your app, and press Review. A modal will appear of the notification you’re preparing to send. Select the blue Publish button to fire your notification away!&lt;/p&gt;
+
+&lt;p&gt;And that’s it. You’ve just sent your first push notification. Congratulations. If any of this was difficult to follow, feel free to watch the YouTube video I made of it below. Thanks for reading.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/tx09AElYnzE&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>2019-02-16</pubDate>
+        <link>http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</guid>
+        
+        
+        <category>JavaScript</category>
+        
+        <category>Mobile Development</category>
+        
+        <category>Firebase</category>
+        
+      </item>
+    
+      <item>
+        <title>Introduction to the Singleton pattern in C#</title>
+        <description>&lt;p&gt;One of the most known, popular patterns in software engineering is the singleton pattern. What is a singleton? A singleton is a class that is written in such a way that it only allows a single instance of itself to be created, and usually has an access method to obtain the instance. You may choose to use a singleton, for example, if your program has some kind of shared resource like an in-memory cache.&lt;/p&gt;
+
+&lt;p&gt;So, again, let’s quickly go over the intent of a singleton before we attempt to implement it. We need to insure that only one instance of the class is instantiated, and we need to provide a global point of access to the object.&lt;/p&gt;
+
+&lt;p&gt;Ready? Let’s go. I’ll put the implementation below, and describe why it works and what it is doing after that.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Singleton&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;readonly&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//do constructor stuff here.
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;So as you can tell, our Singleton class has a class property instance of type… Singleton. That’s right, the singleton class definition includes a property of itself. This variable is the only place in your entire program that will have the text “new Singleton();” unless, of course, it’s in a comment. (Can’t get me on a technicality now, folks.😎).&lt;/p&gt;
+
+&lt;p&gt;The Singleton class will also contain a private constructor. Not many class definitions contain a private constructor, however, because we only want to ensure that one instance of our Singleton class is instantiated, we hide our constructor to outside classes.&lt;/p&gt;
+
+&lt;p&gt;The final element to the Singleton class is the “getInstance()” method. This method simply returns the instance variable on the Singleton class that instantiated it.&lt;/p&gt;
+
+&lt;p&gt;That’s all there is to it, folks. A thread-safe implementation of the singleton pattern in C#. Thanks for reading.&lt;/p&gt;
+</description>
+        <pubDate>2019-02-16</pubDate>
+        <link>http://localhost:4000/articles/2019-02/singletons-in-c-sharp</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/singletons-in-c-sharp</guid>
+        
+        
+        <category>C#</category>
+        
+        <category>Computer Science</category>
+        
+        <category>Software Engineering</category>
+        
+        <category>Design Patterns</category>
+        
+      </item>
+    
+      <item>
+        <title>Subfactorials — Another twist on Factorials</title>
+        <description>&lt;p&gt;Original problem submitted by &lt;a href=&quot;https://www.reddit.com/r/u/jnazario&quot;&gt;/u/jnazario&lt;/a&gt; to &lt;a href=&quot;https://www.reddit.com/r/dailyprogrammer&quot;&gt;/r/dailyprogrammer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Almost every programmer is familiar with the factorial (n!) of a number, which is, of course, the product of the series from n to 1. An interesting aspect of the factorial operations is that it is also the number of permutations of a set of n objects.&lt;/p&gt;
+
+&lt;p&gt;Let’s look at the subfactorial, which is defined as the derangement of a set of n objects, or a permutation of the elements of a set such that no element will appear in its original position. We’re going to denote it as !n, but note that there is no standard notation agreed upon for the subfactorial function.&lt;/p&gt;
+
+&lt;p&gt;Some basic definitions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;!1 -&amp;gt; 0 because you always have {1}, meaning 1 is always in it’s position.&lt;/li&gt;
+  &lt;li&gt;!2 -&amp;gt; 1 because you have {2,1}.&lt;/li&gt;
+  &lt;li&gt;!3 -&amp;gt; 2 because you have {2,3,1} and {3,1,2}.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And so forth.&lt;/p&gt;
+
+&lt;p&gt;One equation for solving for subfactorials is&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;!n = n! / e&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The challenge? Write a subfactorial program. Given an input &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt;, we need to calculate the correct value for &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt;. Assuming we’re given inputs as one integer per line as the original problem states, the solution is below:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;subfactorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;factorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;factorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;factorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This is a very simple solution. It uses recursion in the factorial function, and uses the factorial function within the subfactorial function to fit our definition stated above.&lt;/p&gt;
+
+&lt;p&gt;The factorial function will return an &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt; based on whether or not the &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt; received is 0. If the &lt;code class=&quot;highlighter-rouge&quot;&gt;int n&lt;/code&gt; received is 0, it will return 1, otherwise, it will call itself via recursion to multiply the n passed in by the factorial of (n-1). This makes sense, after all, n! = 1&lt;em&gt;2&lt;/em&gt;3* … * (n-2)*(n-1) * (n).&lt;/p&gt;
+
+&lt;p&gt;Once our factorial function finds the factorial of a number &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt;,our subfactorial function will take that number, divide it by e, and return the result, leaving us with the subfactorial.&lt;/p&gt;
+</description>
+        <pubDate>2019-02-16</pubDate>
+        <link>http://localhost:4000/articles/2019-02/subfactorial-challenge</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/subfactorial-challenge</guid>
+        
+        
+        <category>C#</category>
+        
+        <category>Programming Challenge</category>
+        
+        <category>Mathematics</category>
+        
+      </item>
+    
+      <item>
+        <title>Stop the interruptions. Turn on Windows Presentation Settings</title>
+        <description>&lt;p&gt;There’s nothing quite like presenting your screen to an audience of important people or to a group of your coworkers during a meeting and having an email come through from Mint with the subtitle&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“You’ve spent $300 this month on Pubs &amp;amp; Bars”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let’s fix that. Assuming you’re on Windows, there is a great built in feature that is surprisingly underutilized that we can enable when presenting or demoing our app for a client called “Presentation Mode”. Now, this is nothing new — presentation mode has been around since Vista, it just seems to me like nobody every enables it, likely because they don’t know how.&lt;/p&gt;
+
+&lt;h1 id=&quot;why-activate-windows-presentation-mode&quot;&gt;Why activate Windows Presentation Mode?&lt;/h1&gt;
+&lt;p&gt;When Windows Presentation Mode is active, your machine won’t automatically go to sleep and all of system notifications will be temporarily turned off until you disable presentation mode. You can also set a specific Presentation Mode wallpaper and adjust the speaker volume specifically for presentations. Those settings will be automagically applied when you activate Presentation Mode.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-activate-windows-presentation-mode&quot;&gt;How to activate Windows Presentation Mode&lt;/h1&gt;
+&lt;p&gt;Okay, step one.
+1. Press the Windows Key + X to bring up the Power User Menu .
+2. Either press “b” or select the “Mobility Center” option on the list. At the time of writing this article, the option is second on the list.
+3. In the “Presentation Settings” tile, press the “Turn On” button. This will activate Presentation Mode and trigger any custom Presentation Settings you have.&lt;/p&gt;
+
+&lt;p&gt;Note — settings can be changed by running presentationsettings.exe. Just type that in the Start Search bar if you’re not sure where it is.
+And that’s it! It’s very simple and to the point, but it seems like almost nobody uses it.&lt;/p&gt;
+
+</description>
+        <pubDate>2019-02-16</pubDate>
+        <link>http://localhost:4000/articles/2019-02/windows-presentation-mode</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/windows-presentation-mode</guid>
+        
+        
+        <category>Windows</category>
+        
+        <category>Tips and Tricks</category>
+        
+        <category>Professionalism</category>
         
       </item>
     

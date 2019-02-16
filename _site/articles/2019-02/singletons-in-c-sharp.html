@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content=" One of the most known, popular patterns in software engineering is the singleton pattern. What is a singleton? A singleton is a class that is written in suc...">
+  <meta name="keywords" content="blog, jaken, herman, software, and engineer">
+  <meta name="author" content="Introduction to the Singleton pattern in C# | Jaken Herman">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Introduction to the Singleton pattern in C# | Jaken Herman">
+  <meta name="twitter:description" content=" One of the most known, popular patterns in software engineering is the singleton pattern. What is a singleton? A singleton is a class that is written in suc...">
+  
+    <meta property="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+  
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000/articles/2019-02/singletons-in-c-sharp">
+  <meta property="og:title" content="Introduction to the Singleton pattern in C# | Jaken Herman">
+  <meta property="og:description" content=" One of the most known, popular patterns in software engineering is the singleton pattern. What is a singleton? A singleton is a class that is written in suc...">
+  
+    <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  
+  <title>Introduction to the Singleton pattern in C# | Jaken Herman</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2019-02/singletons-in-c-sharp">
+  <link rel="alternate" type="application/rss+xml" title="Jaken Herman" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <a href="http://localhost:4000/">
+    <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  </a>
+  
+  <a href="http://localhost:4000/" class="author_name">jaken herman</a>
+  <span class="author_job">🚀 Software Engineer at NASA 🛰️</span>
+  <span class="author_bio mbm">I'm a full-stack software engineer specializing in the ASP.NET framework in both Visual Basic and C# ‎‍💻. I also work on Mobile Application development using both the Xamarin.Forms framework and Apache Cordova framework depending on the project 📱. I'm well-versed in JavaScript and many of it's popular libraries and frameworks. In my free time, I like to play golf ⛳ and brew beer 🍺. I am married to an amazing woman who also works at NASA in Mission Control as a flight controller. We have 2 dogs 🐶, 4 cats 🐱, and lots of great friends.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+      </li>
+         
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('jakenherman7@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    <li><a href="http://twitter.com/0x6a6368h" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    
+    
+    <li><a href="http://linkedin.com/in/jakenherman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    <li><a href="skype:jaken2711" class="social-link-item" target="_blank"><i class="fa fa-fw fa-skype"></i></a></li>
+    
+    <li><a href="http://instagram.com/jaken.herman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+    
+    <li><a href="http://github.com/JakenHerman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    <li><a href="http://stackoverflow.com/users/2752265/jaken-herman?tab=profile" class="social-link-item" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a></li>
+    
+    
+    
+    
+    
+    <li><a href="https://youtube.com/user/jakencherman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-youtube"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Introduction to the Singleton pattern in C#">Introduction to the Singleton pattern in C#</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        10 FEB 2019
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>One of the most known, popular patterns in software engineering is the singleton pattern. What is a singleton? A singleton is a class that is written in such a way that it only allows a single instance of itself to be created, and usually has an access method to obtain the instance. You may choose to use a singleton, for example, if your program has some kind of shared resource like an in-memory cache.</p>
+
+<p>So, again, let’s quickly go over the intent of a singleton before we attempt to implement it. We need to insure that only one instance of the class is instantiated, and we need to provide a global point of access to the object.</p>
+
+<p>Ready? Let’s go. I’ll put the implementation below, and describe why it works and what it is doing after that.</p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">public</span> <span class="k">class</span> <span class="nc">Singleton</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Singleton</span> <span class="n">instance</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Singleton</span><span class="p">();</span>
+    <span class="k">private</span> <span class="nf">Singleton</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//do constructor stuff here.
+</span>    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="n">instance</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>So as you can tell, our Singleton class has a class property instance of type… Singleton. That’s right, the singleton class definition includes a property of itself. This variable is the only place in your entire program that will have the text “new Singleton();” unless, of course, it’s in a comment. (Can’t get me on a technicality now, folks.😎).</p>
+
+<p>The Singleton class will also contain a private constructor. Not many class definitions contain a private constructor, however, because we only want to ensure that one instance of our Singleton class is instantiated, we hide our constructor to outside classes.</p>
+
+<p>The final element to the Singleton class is the “getInstance()” method. This method simply returns the instance variable on the Singleton class that instantiated it.</p>
+
+<p>That’s all there is to it, folks. A thread-safe implementation of the singleton pattern in C#. Thanks for reading.</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2019-02/singletons-in-c-sharp" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2019-02/singletons-in-c-sharp" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2019-02/singletons-in-c-sharp" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2019-02/singletons-in-c-sharp" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2019-02/singletons-in-c-sharp" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jakenherman-com';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        <footer>
+  &copy; 2019 jaken herman. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>
