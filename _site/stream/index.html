@@ -148,8 +148,7 @@
   <body>
     
     <h2>Follow my stream! 🎥</h2>
-    <p id="not-streaming">Occasionaly I will stream programming or even casual video games. If I'm live, you'll see the stream below. Don't forget to leave me a follow!</p>
-    <p id="streaming">Sit back, relax, and enjoy the show.</p>
+    <p>I mostly stream myself programming, but occasionaly I stream video games.</p>
     <!-- Add a placeholder for the Twitch embed -->
     <div id="twitch-embed"></div>
 
@@ -161,17 +160,10 @@
       var embed = new Twitch.Embed("twitch-embed", {
         width: 1000,
         height: 480,
-        channel: "jakenherman"
+        channel: "jakenherman",
+        layout: "video",
+        autoplay: true
       });
-
-      embed.addEventListener(!Twitch.Embed.VIDEO_READY, function() {
-          console.log("VIDEO NOT LOADED");
-      });
-
-      embed.addEventListener(Twitch.Embed.VIDEO_READY, function() {
-        console.log('The video is ready');
-      });
-    
     </script>
   </body>
 </html>
