@@ -10,13 +10,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Software Engineer, Brewer of Beer, Husband">
   <meta name="keywords" content="blog, jaken, herman, software, and engineer">
-  <meta name="author" content="Archive | Jaken Herman">
+  <meta name="author" content="Stream | Jaken Herman">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f5f5f5">
 
   <!-- Twitter Tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Archive | Jaken Herman">
+  <meta name="twitter:title" content="Stream | Jaken Herman">
   <meta name="twitter:description" content="Software Engineer, Brewer of Beer, Husband">
   
     <meta property="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
@@ -24,19 +24,19 @@
 
   <!-- Open Graph Tags -->
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="http://localhost:4000/archive/">
-  <meta property="og:title" content="Archive | Jaken Herman">
+  <meta property="og:url" content="http://localhost:4000/stream/">
+  <meta property="og:title" content="Stream | Jaken Herman">
   <meta property="og:description" content="Software Engineer, Brewer of Beer, Husband">
   
     <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
   
-  <title>Archive | Jaken Herman</title>
+  <title>Stream | Jaken Herman</title>
 
   <!-- CSS files -->
   <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://localhost:4000/css/main.css">
 
-  <link rel="canonical" href="http://localhost:4000/archive/">
+  <link rel="canonical" href="http://localhost:4000/stream/">
   <link rel="alternate" type="application/rss+xml" title="Jaken Herman" href="http://localhost:4000/feed.xml" />
 
   <!-- Icons -->
@@ -140,171 +140,41 @@
       <div class="post-listing">
           <div id="page">
     <header class="page-header">
-      <h2>Archive</h2>
+      <h2>Stream</h2>
     </header>
 
     <article class="page-content">
-      <div class="archive">
-  <div class="timeline" id="timeline">
+      <html>
+  <body>
     
+    <h2>Follow my stream! 🎥</h2>
+    <p id="not-streaming">Occasionaly I will stream programming or even casual video games. If I'm live, you'll see the stream below. Don't forget to leave me a follow!</p>
+    <p id="streaming">Sit back, relax, and enjoy the show.</p>
+    <!-- Add a placeholder for the Twitch embed -->
+    <div id="twitch-embed"></div>
+
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      var embed = new Twitch.Embed("twitch-embed", {
+        width: 1000,
+        height: 480,
+        channel: "jakenherman"
+      });
+
+      embed.addEventListener(!Twitch.Embed.VIDEO_READY, function() {
+          console.log("VIDEO NOT LOADED");
+      });
+
+      embed.addEventListener(Twitch.Embed.VIDEO_READY, function() {
+        console.log('The video is ready');
+      });
     
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-  </div>
-
-</div>
-
+    </script>
+  </body>
+</html>
     </article>
 
 
