@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Before JavaScript classes were introduced, object methods and constructors were handled a bit differently.">
+  <meta name="keywords" content="blog, jaken, herman, software, and engineer">
+  <meta name="author" content="Creating Firebase Cloud Functions in TypeScript | Jaken Herman">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Creating Firebase Cloud Functions in TypeScript | Jaken Herman">
+  <meta name="twitter:description" content="Before JavaScript classes were introduced, object methods and constructors were handled a bit differently.">
+  
+    <meta property="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+  
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript">
+  <meta property="og:title" content="Creating Firebase Cloud Functions in TypeScript | Jaken Herman">
+  <meta property="og:description" content="Before JavaScript classes were introduced, object methods and constructors were handled a bit differently.">
+  
+    <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  
+  <title>Creating Firebase Cloud Functions in TypeScript | Jaken Herman</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript">
+  <link rel="alternate" type="application/rss+xml" title="Jaken Herman" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <a href="http://localhost:4000/">
+    <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  </a>
+  
+  <a href="http://localhost:4000/" class="author_name">jaken herman</a>
+  <span class="author_job">🚀 Software Engineer at NASA 🛰️</span>
+  <span class="author_bio mbm">I'm a full-stack software engineer specializing in the ASP.NET framework in both Visual Basic and C# ‎‍💻. I also work on Mobile Application development using both the Xamarin.Forms framework and Apache Cordova framework depending on the project 📱. I'm well-versed in JavaScript and many of it's popular libraries and frameworks. In my free time, I like to play golf ⛳ and brew beer 🍺. I am married to an amazing woman who also works at NASA in Mission Control as a flight controller. We have 2 dogs 🐶, 4 cats 🐱, and lots of great friends.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/stream/">Stream</a>
+      </li>
+         
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('jakenherman7@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    <li><a href="http://twitter.com/0x6a6368h" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    
+    
+    <li><a href="http://linkedin.com/in/jakenherman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    <li><a href="skype:jaken2711" class="social-link-item" target="_blank"><i class="fa fa-fw fa-skype"></i></a></li>
+    
+    <li><a href="http://instagram.com/jaken.herman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+    
+    <li><a href="http://github.com/JakenHerman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    <li><a href="http://stackoverflow.com/users/2752265/jaken-herman?tab=profile" class="social-link-item" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a></li>
+    
+    
+    
+    
+    
+    <li><a href="https://youtube.com/user/jakencherman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-youtube"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Creating Firebase Cloud Functions in TypeScript">Creating Firebase Cloud Functions in TypeScript</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        25 FEB 2019
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    5 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>Firebase is awesome. Let’s just start with that. Super cheap, super easy to set up and use, and loads of functionality offered. That being said, let’s look at how to create cloud functions for Firebase in TypeScript.</p>
+
+<h2 id="what-are-cloud-functions">What are Cloud Functions?</h2>
+<p>Cloud Functions are single-purpose JavaScript functions that are executed in a secure, managed Node.js environment. Basically, they allow you to create a mobile backend without having to deal with the hassle of managing servers. <em>But wait, this says single-purpose <strong>JavaScript</strong> functions, not TypeScript</em>. Yeah, that’s no big deal - TypeScript is just a JavaScript superset that transcompiles to JavaScript, so we can use it! The cool thing about cloud functions is that they take one command to push to the Firebase servers. After that, Cloud Functions automatically scales up computing resources to match the usage patterns of your app. You never worry about SSH credentials, server configuration, provisioning new servers, or decommissioning old ones.</p>
+
+<h2 id="lets-get-started">Let’s Get Started</h2>
+<p>Assuming you already have a Firebase account created with an App on it (if you don’t already, it’s super easy to create one, so I won’t go through it for the purposes of this post), open up a new terminal, navigate to whatever directory you want your firebase cloud functions to live in (or create a new one [<code class="highlighter-rouge">mkdir cloud-functions</code>]) and type <code class="highlighter-rouge">firebase login</code>. If you get an error that firebase isn’t a recognized cmdlet or something of that nature, just run <code class="highlighter-rouge">npm install -g firebase</code>. If you had to run the install command, either restart your terminal, or if you are using Powershell or MS Command Line just run <code class="highlighter-rouge">refreshenv</code> and run the <code class="highlighter-rouge">firebase login</code> again. You’ll be directed to your web browser to log in to your Firebase console. Login, come back to your terminal and run <code class="highlighter-rouge">firebase init</code>. You’ll get a prompt saying “You’re about to initialize a Firebase project in this directory: <Your_Directory_Name> Are you ready to proceed?" Type `Y` to proceed, and you'll be greeted with 5 options : Database, Firestore, Functions, Hosting, and Storage. We can look at some of the other selections in another blog post if anyone is interested (leave a comment), but for now we just want functions. Press the down button on your keyboard until you get to `Functions`, then press "Space" on your keyboard to make the selection, and hit "Enter". Now you'll be prompted to select the project you want to create cloud functions for. If you don't already have one, you can create a new project from this window, or select one of the projects you already have. The next question will be whether you want to use JavaScript or TypeScript, which we're obviously going to take TypeScript, so select that. The next option is totally up to you - it asks if you want to use TSLint to catch probable bugs and style enforcement. My view on TSLint is that it can only help, it certainly can't hurt, and I would use it 9 times out of 10. Once you select your TSLint option, a few `.json` files and your `index.ts` file will be created, giving you the following project structure:</Your_Directory_Name></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myproject</span>
+ <span class="o">+-</span> <span class="nx">functions</span><span class="o">/</span>  
+      <span class="o">|</span>
+      <span class="o">+-</span> <span class="kr">package</span><span class="p">.</span><span class="nx">json</span>  <span class="err">#</span> <span class="nx">npm</span> <span class="nx">pkg</span> <span class="nx">file</span>
+      <span class="o">|</span>
+      <span class="o">+-</span> <span class="nx">tsconfig</span><span class="p">.</span><span class="nx">json</span>
+      <span class="o">|</span>
+      <span class="o">+-</span> <span class="nx">tslint</span><span class="p">.</span><span class="nx">json</span> <span class="err">#</span> <span class="nx">Optional</span> <span class="o">-</span> <span class="k">if</span> <span class="nx">you</span> <span class="nx">opted</span> <span class="nx">out</span> <span class="nx">of</span> <span class="nx">tslint</span><span class="p">,</span> <span class="k">this</span> <span class="nx">wont</span> <span class="nx">be</span> <span class="nx">here</span>
+      <span class="o">|</span>
+      <span class="o">+-</span> <span class="nx">src</span><span class="o">/</span>     <span class="err">#</span> <span class="nx">Directory</span> <span class="nx">containing</span> <span class="nx">TypeScript</span> <span class="nx">source</span>
+      <span class="o">|</span>   <span class="o">|</span>
+      <span class="o">|</span>   <span class="o">+-</span> <span class="nx">index</span><span class="p">.</span><span class="nx">ts</span>  <span class="err">#</span> <span class="nx">main</span> <span class="nx">source</span> <span class="nx">file</span> <span class="k">for</span> <span class="nx">your</span> <span class="nx">Cloud</span> <span class="nx">Functions</span> <span class="nx">code</span>
+      <span class="o">|</span>
+      <span class="o">+-</span> <span class="nx">lib</span><span class="o">/</span>
+          <span class="o">|</span>
+          <span class="o">+-</span> <span class="nx">index</span><span class="p">.</span><span class="nx">js</span>  <span class="err">#</span> <span class="nx">Built</span><span class="o">/</span><span class="nx">transpiled</span> <span class="nx">JavaScript</span> <span class="nx">code</span>
+          <span class="o">|</span>
+          <span class="o">+-</span> <span class="nx">index</span><span class="p">.</span><span class="nx">js</span><span class="p">.</span><span class="nx">map</span> <span class="err">#</span> <span class="nx">Source</span> <span class="nx">map</span> <span class="k">for</span> <span class="nx">debugging</span></code></pre></figure>
+
+<p>You’ll be prompted with 1 final question - Do you want to install dependencies with npm now? Type <code class="highlighter-rouge">Y</code>, as we’ll need to install those dependencies eventually, so it might as well be now!</p>
+
+<h2 id="write--deploy">Write &amp; Deploy</h2>
+<p>Once your firebase project has been initialized, open it up in your code editor of choice and look at the default TypeScript code. It’s commented out, but it shows you a good example of a helloWorld cloud function, shown below:</p>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">functions</span> <span class="k">from</span> <span class="s1">'firebase-functions'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">helloWorld</span> <span class="o">=</span> <span class="nx">functions</span><span class="p">.</span><span class="nx">https</span><span class="p">.</span><span class="nx">onRequest</span><span class="p">((</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ <span class="nx">response</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">"Hello from Firebase!"</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Uncomment that out, and let’s send it up to our project. Note that this is how you create functions. If you want a function that will add two numbers, you can do that like so:</p>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"><span class="k">export</span> <span class="kd">const</span> <span class="nx">addNumbers</span> <span class="o">=</span> <span class="nx">functions</span><span class="p">.</span><span class="nx">https</span><span class="p">.</span><span class="nx">onRequest</span><span class="p">((</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">response</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">a</span><span class="p">)</span> <span class="o">+</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">b</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Now, let’s send these up to the firebase app. Open up your terminal and type <code class="highlighter-rouge">firebase deploy</code>. Once they’re deployed, you can see them in the “Cloud Functions” section of your Firebase console. Then you can call them from your browswer or ping them however you prefer. Cloud functions are super flexible and I would highly recommend trying them out.</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jakenherman-com';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        <footer>
+  &copy; 2019 jaken herman. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-134666359-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

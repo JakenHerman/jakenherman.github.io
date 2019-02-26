@@ -5,9 +5,81 @@
     <description>Software Engineer, Brewer of Beer, Husband</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2019-02-17</pubDate>
-    <lastBuildDate>Sun, 17 Feb 2019 00:42:10 +0000</lastBuildDate>
+    <pubDate>2019-02-26</pubDate>
+    <lastBuildDate>Tue, 26 Feb 2019 13:36:21 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Creating Firebase Cloud Functions in TypeScript</title>
+        <description>&lt;p&gt;Firebase is awesome. Let’s just start with that. Super cheap, super easy to set up and use, and loads of functionality offered. That being said, let’s look at how to create cloud functions for Firebase in TypeScript.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-cloud-functions&quot;&gt;What are Cloud Functions?&lt;/h2&gt;
+&lt;p&gt;Cloud Functions are single-purpose JavaScript functions that are executed in a secure, managed Node.js environment. Basically, they allow you to create a mobile backend without having to deal with the hassle of managing servers. &lt;em&gt;But wait, this says single-purpose &lt;strong&gt;JavaScript&lt;/strong&gt; functions, not TypeScript&lt;/em&gt;. Yeah, that’s no big deal - TypeScript is just a JavaScript superset that transcompiles to JavaScript, so we can use it! The cool thing about cloud functions is that they take one command to push to the Firebase servers. After that, Cloud Functions automatically scales up computing resources to match the usage patterns of your app. You never worry about SSH credentials, server configuration, provisioning new servers, or decommissioning old ones.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-get-started&quot;&gt;Let’s Get Started&lt;/h2&gt;
+&lt;p&gt;Assuming you already have a Firebase account created with an App on it (if you don’t already, it’s super easy to create one, so I won’t go through it for the purposes of this post), open up a new terminal, navigate to whatever directory you want your firebase cloud functions to live in (or create a new one [&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir cloud-functions&lt;/code&gt;]) and type &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase login&lt;/code&gt;. If you get an error that firebase isn’t a recognized cmdlet or something of that nature, just run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g firebase&lt;/code&gt;. If you had to run the install command, either restart your terminal, or if you are using Powershell or MS Command Line just run &lt;code class=&quot;highlighter-rouge&quot;&gt;refreshenv&lt;/code&gt; and run the &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase login&lt;/code&gt; again. You’ll be directed to your web browser to log in to your Firebase console. Login, come back to your terminal and run &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase init&lt;/code&gt;. You’ll get a prompt saying “You’re about to initialize a Firebase project in this directory: &lt;Your_Directory_Name&gt; Are you ready to proceed?&quot; Type `Y` to proceed, and you'll be greeted with 5 options : Database, Firestore, Functions, Hosting, and Storage. We can look at some of the other selections in another blog post if anyone is interested (leave a comment), but for now we just want functions. Press the down button on your keyboard until you get to `Functions`, then press &quot;Space&quot; on your keyboard to make the selection, and hit &quot;Enter&quot;. Now you'll be prompted to select the project you want to create cloud functions for. If you don't already have one, you can create a new project from this window, or select one of the projects you already have. The next question will be whether you want to use JavaScript or TypeScript, which we're obviously going to take TypeScript, so select that. The next option is totally up to you - it asks if you want to use TSLint to catch probable bugs and style enforcement. My view on TSLint is that it can only help, it certainly can't hurt, and I would use it 9 times out of 10. Once you select your TSLint option, a few `.json` files and your `index.ts` file will be created, giving you the following project structure:&lt;/Your_Directory_Name&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myproject&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;+-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;functions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;  
+      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+-&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pkg&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tsconfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tslint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Optional&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;you&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;opted&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tslint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wont&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;here&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;     &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Directory&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;containing&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;+-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ts&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Cloud&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Functions&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;code&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;+-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Built&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transpiled&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;code&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;+-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Source&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;debugging&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You’ll be prompted with 1 final question - Do you want to install dependencies with npm now? Type &lt;code class=&quot;highlighter-rouge&quot;&gt;Y&lt;/code&gt;, as we’ll need to install those dependencies eventually, so it might as well be now!&lt;/p&gt;
+
+&lt;h2 id=&quot;write--deploy&quot;&gt;Write &amp;amp; Deploy&lt;/h2&gt;
+&lt;p&gt;Once your firebase project has been initialized, open it up in your code editor of choice and look at the default TypeScript code. It’s commented out, but it shows you a good example of a helloWorld cloud function, shown below:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;functions&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'firebase-functions'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloWorld&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;functions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello from Firebase!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Uncomment that out, and let’s send it up to our project. Note that this is how you create functions. If you want a function that will add two numbers, you can do that like so:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addNumbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;functions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now, let’s send these up to the firebase app. Open up your terminal and type &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase deploy&lt;/code&gt;. Once they’re deployed, you can see them in the “Cloud Functions” section of your Firebase console. Then you can call them from your browswer or ping them however you prefer. Cloud functions are super flexible and I would highly recommend trying them out.&lt;/p&gt;
+</description>
+        <pubDate>2019-02-26</pubDate>
+        <link>http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</guid>
+        
+        
+        <category>TypeScript</category>
+        
+      </item>
+    
+      <item>
+        <title>Golf, Shaving, and Huey Lewis</title>
+        <description>&lt;p&gt;Well, it’s official. I no longer have a beard 🧔. I do, however, still have a mustache 👨. This was a pretty fun weekend. Got to play some golf, went out to eat at Perry’s, paid off 3 credit cards (in full!!), and had a good day in the yard with my pups.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6a2dL06OsLw&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>2019-02-26</pubDate>
+        <link>http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</guid>
+        
+        
+        <category>Blog</category>
+        
+      </item>
     
       <item>
         <title>Creating Objects in JavaScript using Prototyping</title>
@@ -74,7 +146,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;This is a very basic example, but I always find it fun to look into how things were done before new improvements in development came around.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-17</pubDate>
+        <pubDate>2019-02-26</pubDate>
         <link>http://localhost:4000/articles/2019-02/objects-javascript-prototyping</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/objects-javascript-prototyping</guid>
         
@@ -120,7 +192,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;In this case, &lt;code class=&quot;highlighter-rouge&quot;&gt;self.colorVar&lt;/code&gt; will be automatically set to whichever radio button is selected.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-17</pubDate>
+        <pubDate>2019-02-26</pubDate>
         <link>http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</guid>
         
@@ -158,7 +230,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/tx09AElYnzE&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>2019-02-17</pubDate>
+        <pubDate>2019-02-26</pubDate>
         <link>http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</guid>
         
@@ -200,7 +272,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;That’s all there is to it, folks. A thread-safe implementation of the singleton pattern in C#. Thanks for reading.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-17</pubDate>
+        <pubDate>2019-02-26</pubDate>
         <link>http://localhost:4000/articles/2019-02/singletons-in-c-sharp</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/singletons-in-c-sharp</guid>
         
@@ -255,7 +327,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;Once our factorial function finds the factorial of a number &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt;,our subfactorial function will take that number, divide it by e, and return the result, leaving us with the subfactorial.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-17</pubDate>
+        <pubDate>2019-02-26</pubDate>
         <link>http://localhost:4000/articles/2019-02/subfactorial-challenge</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/subfactorial-challenge</guid>
         
@@ -291,7 +363,7 @@ After all is said and done, we can then use the console to see our reptile varia
 And that’s it! It’s very simple and to the point, but it seems like almost nobody uses it.&lt;/p&gt;
 
 </description>
-        <pubDate>2019-02-17</pubDate>
+        <pubDate>2019-02-26</pubDate>
         <link>http://localhost:4000/articles/2019-02/windows-presentation-mode</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/windows-presentation-mode</guid>
         
@@ -320,7 +392,7 @@ And that’s it! It’s very simple and to the point, but it seems like almost n
 
 &lt;p&gt;Your video will pop out in a floating video Picture-in-Picture style and when you return to your work or video game, you will have your re-sizable, movable video hovering over your main window.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-17</pubDate>
+        <pubDate>2019-02-26</pubDate>
         <link>http://localhost:4000/articles/2019-02/chrome-floating-video</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/chrome-floating-video</guid>
         
@@ -383,7 +455,7 @@ And that’s it! It’s very simple and to the point, but it seems like almost n
 
 &lt;p&gt;If you’re a Java-guru, I’m sure this looks like a mess to you — but it is a quick and dirty solution. Comment your best Java solution below if you’d like to join in on the challenge.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-17</pubDate>
+        <pubDate>2019-02-26</pubDate>
         <link>http://localhost:4000/articles/2019-02/perfectly-balanced-strings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/perfectly-balanced-strings</guid>
         
@@ -393,62 +465,6 @@ And that’s it! It’s very simple and to the point, but it seems like almost n
         <category>Java</category>
         
         <category>Programming Challenge</category>
-        
-      </item>
-    
-      <item>
-        <title>The Difference Between Bereit and Fertig</title>
-        <description>&lt;p&gt;I’ve been learning the German language for quite some time now, and the distinction between when I should use Bereit versus when I should use Fertig never really clicked for me.&lt;/p&gt;
-
-&lt;p&gt;Google Translate is really no help on the issue. “bist du bereit?” translates to “Are you ready?”, and “bist du fertig?” translates to “you ready?”.&lt;/p&gt;
-
-&lt;p&gt;Correct me if I’m wrong, but using “fertig” makes sense when you’re describing the end of an event, whereas “bereit” works when you’re describing the beginning of, or the anticipation of an event.&lt;/p&gt;
-
-&lt;p&gt;In context, bereit being at the beginning of an event, or in anticipation of an event :&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Ich bin bereit für essen der Kuchen&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Probably not extremely grammatically correct, but close enough to “I am ready to eat the cake”.&lt;/p&gt;
-
-&lt;p&gt;In context, fertig being at the end of an event:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Der Kuchen ist fertig zum essen&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Again, probably not totally correct grammatically, but close enough to “The cake is ready to eat”.&lt;/p&gt;
-
-&lt;p&gt;So basically “I am ready” would be “Ich bin bereit”, because it implies an anticipation of an event, and “It is ready”, as in “It is finished” would be “Es ist fertig”.&lt;/p&gt;
-</description>
-        <pubDate>2019-02-17</pubDate>
-        <link>http://localhost:4000/articles/2018-10/bereit-fertig-differentiation</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2018-10/bereit-fertig-differentiation</guid>
-        
-        
-        <category>German Language</category>
-        
-        <category>Blog</category>
-        
-      </item>
-    
-      <item>
-        <title>Cooking with Friends</title>
-        <description>&lt;p&gt;Most of the time when we hang out with friends we ask “You want to go grab a bite to eat?” Well, that’s all fine and dandy, but one of the best ways to really spend time with friends is by making a dish you’ve never made before &lt;em&gt;with&lt;/em&gt; your friends. Use ingredients you’ve never used, make something homemade you’ve never had before. It’s quite fun.&lt;/p&gt;
-
-&lt;p&gt;Here is a video of my friends and I making pork Chateaubriand with red wine sauce, french onion soup, and homemade cinnamon rolls for dessert.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/8-OfT2_ba1k&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>2019-02-17</pubDate>
-        <link>http://localhost:4000/articles/2018-10/cooking-w-friends</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2018-10/cooking-w-friends</guid>
-        
-        
-        <category>Cooking</category>
-        
-        <category>Blog</category>
         
       </item>
     
