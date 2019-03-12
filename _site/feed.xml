@@ -5,8 +5,8 @@
     <description>Software Engineer, Brewer of Beer, Husband</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2019-02-26</pubDate>
-    <lastBuildDate>Tue, 26 Feb 2019 13:36:21 +0000</lastBuildDate>
+    <pubDate>2019-03-12</pubDate>
+    <lastBuildDate>Tue, 12 Mar 2019 03:48:20 +0100</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -57,7 +57,7 @@
 
 &lt;p&gt;Now, let’s send these up to the firebase app. Open up your terminal and type &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase deploy&lt;/code&gt;. Once they’re deployed, you can see them in the “Cloud Functions” section of your Firebase console. Then you can call them from your browswer or ping them however you prefer. Cloud functions are super flexible and I would highly recommend trying them out.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-26</pubDate>
+        <pubDate>2019-03-12</pubDate>
         <link>http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</guid>
         
@@ -72,7 +72,7 @@
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6a2dL06OsLw&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>2019-02-26</pubDate>
+        <pubDate>2019-03-12</pubDate>
         <link>http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</guid>
         
@@ -146,7 +146,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;This is a very basic example, but I always find it fun to look into how things were done before new improvements in development came around.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-26</pubDate>
+        <pubDate>2019-03-12</pubDate>
         <link>http://localhost:4000/articles/2019-02/objects-javascript-prototyping</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/objects-javascript-prototyping</guid>
         
@@ -192,7 +192,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;In this case, &lt;code class=&quot;highlighter-rouge&quot;&gt;self.colorVar&lt;/code&gt; will be automatically set to whichever radio button is selected.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-26</pubDate>
+        <pubDate>2019-03-12</pubDate>
         <link>http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</guid>
         
@@ -230,7 +230,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/tx09AElYnzE&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>2019-02-26</pubDate>
+        <pubDate>2019-03-12</pubDate>
         <link>http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</guid>
         
@@ -272,7 +272,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;That’s all there is to it, folks. A thread-safe implementation of the singleton pattern in C#. Thanks for reading.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-26</pubDate>
+        <pubDate>2019-03-12</pubDate>
         <link>http://localhost:4000/articles/2019-02/singletons-in-c-sharp</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/singletons-in-c-sharp</guid>
         
@@ -327,7 +327,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;Once our factorial function finds the factorial of a number &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt;,our subfactorial function will take that number, divide it by e, and return the result, leaving us with the subfactorial.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-26</pubDate>
+        <pubDate>2019-03-12</pubDate>
         <link>http://localhost:4000/articles/2019-02/subfactorial-challenge</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/subfactorial-challenge</guid>
         
@@ -363,7 +363,7 @@ After all is said and done, we can then use the console to see our reptile varia
 And that’s it! It’s very simple and to the point, but it seems like almost nobody uses it.&lt;/p&gt;
 
 </description>
-        <pubDate>2019-02-26</pubDate>
+        <pubDate>2019-03-12</pubDate>
         <link>http://localhost:4000/articles/2019-02/windows-presentation-mode</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/windows-presentation-mode</guid>
         
@@ -392,7 +392,7 @@ And that’s it! It’s very simple and to the point, but it seems like almost n
 
 &lt;p&gt;Your video will pop out in a floating video Picture-in-Picture style and when you return to your work or video game, you will have your re-sizable, movable video hovering over your main window.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-26</pubDate>
+        <pubDate>2019-03-12</pubDate>
         <link>http://localhost:4000/articles/2019-02/chrome-floating-video</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/chrome-floating-video</guid>
         
@@ -455,7 +455,7 @@ And that’s it! It’s very simple and to the point, but it seems like almost n
 
 &lt;p&gt;If you’re a Java-guru, I’m sure this looks like a mess to you — but it is a quick and dirty solution. Comment your best Java solution below if you’d like to join in on the challenge.&lt;/p&gt;
 </description>
-        <pubDate>2019-02-26</pubDate>
+        <pubDate>2019-03-12</pubDate>
         <link>http://localhost:4000/articles/2019-02/perfectly-balanced-strings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/perfectly-balanced-strings</guid>
         
