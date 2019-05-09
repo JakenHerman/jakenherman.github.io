@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to learn a new programming language"
+title:  "How to Learn a New Programming Language"
 excerpt: "The best way to learn any language is to simply just use it."
 comments : true
 date:   2019-05-09 08:00:00 -0600
