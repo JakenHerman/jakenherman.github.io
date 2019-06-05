@@ -10,19 +10,17 @@ categories: [Fishkeeping, Blog]
 
 Well, I think it's just best to admit this outright - my aquarium sucks, and my fish are unhappy. My filter broke so my poor aquarium went a while without filtration. As of last night, I officially have replaced the filter, I put on an Aqueon QuietFlow 30 which should work, as my tank is only 36 gallons.
 
-![June 4 2019 Water Test Results]({{ site.url }}/img/WaterTests/060419Results.jpg)
+<img src="../img/WaterTests/060419Results.jpg" alt="June 4 2019 Water Test Results" width="200"/>
 
 My pH level was expectedly very high. Ammonia seems to be creeping upwards at 0.25ppm, but my nitrite and nitrate levels are ok at 0ppm. My low-range pH value was reading in at about 7.6+ and my high-range pH value was reading in at around 8.2-. My heater seems to be working ok, temperature was reading around 74F.
 
-![Temperature Gauge June 4 2019]({{ site.url }}/img/WaterTests/060419Temp.jpg)
-
+<img src="../img/WaterTests/060419Temp.jpg" alt="Temperature Gauge June 4 2019" width="200"/>
 
 For the past month or two, we have been battling extreme algae presence. Our pleco and snails are not much help as of right now. This could all be due to the busted filter, though. So last night I added 4mL of API AlgaeFix and 20 mL of Seachem Pristine to clear some of the sludge (hopefully). I also added 35mL of Tetra Easy Balance Plus to try to level out the pH in the tank.
 
 We put a new automatic feeder on the back of the tank, which will hopefully help us out as far as not over- or under-feeding the fish. The current state of the tank looks terrible, but I'm hopeful that we can get it cleaned up nicely.
 
-![Auto Feeder]({{ site.url }}/img/Automatic-Feeder.jpg)
-
+<img src="../img/Automatic-Feeder.jpg" alt="Auto Feeder" width="200"/>
 
 I've started working on an aquarium and fishkeeping logging application in Python/Django called AquaMate. It's open sourced, link to GitHub [here](https://github.com/JakenHerman/AquaMate). As of right now, I only have very simple models created, and I know these will change drastically but this is a start:
 
