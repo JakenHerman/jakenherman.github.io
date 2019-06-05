@@ -6,8 +6,7 @@ comments : true
 date:   2019-06-05 08:00:00 -0600
 categories: [Fishkeeping, Blog]
 ---
-
-![June 4 2019 Aquarium View]({{ site.url }}/img/WaterTests/060419State.jpg)
+<img src="{{ site.url }}/img/WaterTests/060419State.jpg" alt="June 4 2019 Aquarium View" width="200"/>
 
 Well, I think it's just best to admit this outright - my aquarium sucks, and my fish are unhappy. My filter broke so my poor aquarium went a while without filtration. As of last night, I officially have replaced the filter, I put on an Aqueon QuietFlow 30 which should work, as my tank is only 36 gallons.
 
