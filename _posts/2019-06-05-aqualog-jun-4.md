@@ -7,15 +7,15 @@ date:   2019-06-05 08:00:00 -0600
 categories: [Fishkeeping, Blog]
 ---
 
-![June 4 2019 Aquarium View]({{ site.url }}/img/WaterTests/060419State.png)
+![June 4 2019 Aquarium View]({{ site.url }}/img/WaterTests/060419State.jpg)
 
 Well, I think it's just best to admit this outright - my aquarium sucks, and my fish are unhappy. My filter broke so my poor aquarium went a while without filtration. As of last night, I officially have replaced the filter, I put on an Aqueon QuietFlow 30 which should work, as my tank is only 36 gallons.
 
-![June 4 2019 Water Test Results]({{ site.url }}/img/WaterTests/060419Results.png)
+![June 4 2019 Water Test Results]({{ site.url }}/img/WaterTests/060419Results.jpg)
 
 My pH level was expectedly very high. Ammonia seems to be creeping upwards at 0.25ppm, but my nitrite and nitrate levels are ok at 0ppm. My low-range pH value was reading in at about 7.6+ and my high-range pH value was reading in at around 8.2-. My heater seems to be working ok, temperature was reading around 74F.
 
-![Temperature Gauge June 4 2019]({{ site.url }}/img/WaterTests/060419Temp.png)
+![Temperature Gauge June 4 2019]({{ site.url }}/img/WaterTests/060419Temp.jpg)
 
 
 For the past month or two, we have been battling extreme algae presence. Our pleco and snails are not much help as of right now. This could all be due to the busted filter, though. So last night I added 4mL of API AlgaeFix and 20 mL of Seachem Pristine to clear some of the sludge (hopefully). I also added 35mL of Tetra Easy Balance Plus to try to level out the pH in the tank.
