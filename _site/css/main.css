@@ -358,9 +358,9 @@ footer .heart-icon { color: #f83e4b; text-shadow: 0 0 5px #fff, 0 0 10px #f83e4b
 
 .info-bg-color { background-color: #09ABF6; }
 
-.warning-text-color { color: #ff7300; }
+.warning-text-color { color: #626837; }
 
-.warning-bg-color { background-color: #ff7300; }
+.warning-bg-color { background-color: #626837; }
 
 /** Grid */
 .container { margin: 0 auto; max-width: 1280px; width: 90%; }
