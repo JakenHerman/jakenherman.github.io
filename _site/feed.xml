@@ -5,9 +5,185 @@
     <description>Software Engineer, Brewer of Beer, Husband</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2019-03-12</pubDate>
-    <lastBuildDate>Tue, 12 Mar 2019 11:58:17 +0100</lastBuildDate>
+    <pubDate>2019-06-28</pubDate>
+    <lastBuildDate>Fri, 28 Jun 2019 03:48:58 +0100</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Aquarium Log - June 4th, 2019</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://www.jakenherman.com/img/WaterTests/060419State.jpg&quot; alt=&quot;June 4 2019 Aquarium View&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Well, I think it’s just best to admit this outright - my aquarium sucks, and my fish are unhappy. My filter broke so my poor aquarium went a while without filtration. As of last night, I officially have replaced the filter, I put on an Aqueon QuietFlow 30 which should work, as my tank is only 36 gallons.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.jakenherman.com/img/WaterTests/060419Results.jpg&quot; alt=&quot;June 4 2019 Water Test Results&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My pH level was expectedly very high. Ammonia seems to be creeping upwards at 0.25ppm, but my nitrite and nitrate levels are ok at 0ppm. My low-range pH value was reading in at about 7.6+ and my high-range pH value was reading in at around 8.2-. My heater seems to be working ok, temperature was reading around 74F.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.jakenherman.com/img/WaterTests/060419Temp.jpg&quot; alt=&quot;Temperature Gauge June 4 2019&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For the past month or two, we have been battling extreme algae presence. Our pleco and snails are not much help as of right now. This could all be due to the busted filter, though. So last night I added 4mL of API AlgaeFix and 20 mL of Seachem Pristine to clear some of the sludge (hopefully). I also added 35mL of Tetra Easy Balance Plus to try to level out the pH in the tank.&lt;/p&gt;
+
+&lt;p&gt;We put a new automatic feeder on the back of the tank, which will hopefully help us out as far as not over- or under-feeding the fish. The current state of the tank looks terrible, but I’m hopeful that we can get it cleaned up nicely.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.jakenherman.com/img/Automatic-Feeder.jpg&quot; alt=&quot;Auto Feeder&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve started working on an aquarium and fishkeeping logging application in Python/Django called AquaMate. It’s open sourced, link to GitHub &lt;a href=&quot;https://github.com/JakenHerman/AquaMate&quot;&gt;here&lt;/a&gt;. As of right now, I only have very simple models created, and I know these will change drastically but this is a start:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.db&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Aquarium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;created_date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DateTimeField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'date published'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;aquarium&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ForeignKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Aquarium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on_delete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CASCADE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;created_date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DateTimeField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'date published'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;high_range_ph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ammonia&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;nitrite&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;nitrate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;notes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ph: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'high_range_ph: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;high_range_ph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ammonia: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ammonia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'nitrite: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nitrite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'nitrate: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nitrate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Fish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;aquarium&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ForeignKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Aquarium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on_delete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CASCADE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;species&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;quantity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IntegerField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'species: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;species&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'; name: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>2019-06-28</pubDate>
+        <link>http://localhost:4000/articles/2019-06/aqualog-jun-4</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-06/aqualog-jun-4</guid>
+        
+        
+        <category>Fishkeeping</category>
+        
+        <category>Blog</category>
+        
+      </item>
+    
+      <item>
+        <title>How to put your Android device in Developer Mode</title>
+        <description>&lt;p&gt;If you are a mobile developer like me, you need to have your device in developer mode in order to run your builds on something other than the extremely slow Android emulators provided by Android Studio. The problem is, the way to enable developer mode on your Android device is a bit cryptic.&lt;/p&gt;
+
+&lt;p&gt;First, open your device’s settings app. Before developer options becomes an available setting, we first must find the phone’s build number, and this is typically in a group called something like &lt;strong&gt;Software Info&lt;/strong&gt; or &lt;strong&gt;About Phone&lt;/strong&gt;. On most Android devices, you will be able to search for “Build Number”, and you will get exactly what you are looking for.&lt;/p&gt;
+
+&lt;p&gt;Now that you have found the build number screen, you will need to tap on the &lt;em&gt;Build Number&lt;/em&gt; field &lt;strong&gt;seven&lt;/strong&gt; times. Once you start tapping the build number, a small alert will prompt you saying &lt;em&gt;You are now # steps away from being a developer&lt;/em&gt;. The number will count down every time you tap the field, until you have reached &lt;strong&gt;seven&lt;/strong&gt; taps, at which point the prompt will display &lt;em&gt;You are now a developer!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that you are a developer, the “Developer options” will be available to you as an option in Settings. Now you’ll be able to enable things like USB debugging, WebView implementation, Bluetooth HCI snoop logging, and more. To get to developer options, search in your settings for “Developer options”.&lt;/p&gt;
+
+&lt;p&gt;To turn developer options back off, just flip the switch at the top of the developer options screen to “off”. Once you navigate away from this screen, it will be gone from your phone until you repeat the above steps to enable developer mode.&lt;/p&gt;
+</description>
+        <pubDate>2019-06-28</pubDate>
+        <link>http://localhost:4000/articles/2019-05/android-device-developer-mode</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-05/android-device-developer-mode</guid>
+        
+        
+        <category>Android</category>
+        
+        <category>Learning</category>
+        
+        <category>Tips and Tricks</category>
+        
+      </item>
+    
+      <item>
+        <title>How to Learn a New Programming Language</title>
+        <description>&lt;p&gt;The best way to learn &lt;strong&gt;any&lt;/strong&gt; language is to simply &lt;em&gt;just use it&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;With that being said, I often find that new developers just want to learn the newest, flashiest, most “cool” language like Python or some new JavaScript library. This endeavor may be fruitless if you are not first familiar with the underlying concepts and techniques associated with programming in general.&lt;/p&gt;
+
+&lt;p&gt;The best advice that I can offer would be to learn algorithms, design patterns, and programming fundamentals. Once you have learned these things, you can write virtually any program in virtually any language.&lt;/p&gt;
+
+&lt;p&gt;For example - I do not know how to use the language Ruby. However, I am about to walk you through the popular FizzBuzz program in Ruby by using my knowledge of programming fundamentals (loops, conditionals, operators, io, etc.):&lt;/p&gt;
+
+&lt;p&gt;The first thing I need to do is define the problem. This is the first step to writing &lt;strong&gt;any&lt;/strong&gt; program. If you don’t first know what the problem is, you cannot find a solution to it. The problem is as such: For each number from 1 to 100 I would like to print “Fizz” if the number is divisible by 3, “Buzz” if the number is divisible by 5, or “FizzBuzz” if the number is divisible by both.&lt;/p&gt;
+
+&lt;p&gt;The next thing I need to do is check the Ruby documentation for using a “&lt;a href=&quot;https://docs.ruby-lang.org/en/2.4.0/syntax/control_expressions_rdoc.html#label-until+Loop&quot;&gt;loop&lt;/a&gt;”:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a = 0
+
+until a &amp;gt; 100 do
+  a += 1
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now that I have an &lt;code class=&quot;highlighter-rouge&quot;&gt;until&lt;/code&gt; loop, I need to check how to do modular arithmetic in Ruby by once again, checking the &lt;a href=&quot;http://ruby-doc.org/core-1.9.3/Numeric.html#method-i-modulo&quot;&gt;documentation&lt;/a&gt;, as well as checking &lt;a href=&quot;https://ruby-doc.org/core-2.3.0/doc/syntax/control_expressions_rdoc.html&quot;&gt;how to call &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; statements&lt;/a&gt;, then applying what I’ve found, modifying my code as such:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a = 0
+
+until a &amp;gt; 100 do
+
+  if a % 3 == 0
+    print fizz
+  end
+
+  if a % 5 == 0
+    print buzz
+  end
+
+  a += 1
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Lastly, you’ll notice I just wrote “print fizz” and “print buzz” in my if statements. Now I need to check &lt;a href=&quot;https://docs.ruby-lang.org/en/2.6.0/IRB/OutputMethod.html&quot;&gt;how to write my results&lt;/a&gt; via the documentation, and modify my code as such:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a = 1
+
+until a &amp;gt; 100 do
+
+  if a % 3 == 0
+    print &quot;fizz&quot;
+  end
+
+  if a % 5 == 0
+    print &quot;buzz&quot;
+  end
+
+  a += 1
+  puts &quot;&quot;
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There we go - my first ruby program has been written. You saw my thought process as well as my methods on finding out &lt;em&gt;how&lt;/em&gt; to get the program done. Now I can think of a more difficult or complex program, and use the same methods to write it in ruby. In time, just by &lt;strong&gt;using&lt;/strong&gt; ruby, I will have learned it.&lt;/p&gt;
+
+&lt;p&gt;Also keep in mind that this program is likely not the best way of handling things - there are improvements to be made. That is okay. Nobody will expect you to write perfect code while learning.&lt;/p&gt;
+
+&lt;p&gt;So how do you learn Python or JavaScript or C++ or literally &lt;strong&gt;any other language&lt;/strong&gt;? Replace every instance of the word “Ruby” in this answer, and replace it with whichever programming language you want to learn. By the end, you’ll have a FizzBuzz program. Then, all you have to do is think of another more complex problem and &lt;strong&gt;just do it.&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>2019-06-28</pubDate>
+        <link>http://localhost:4000/articles/2019-05/learning-a-new-programming-language</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-05/learning-a-new-programming-language</guid>
+        
+        
+        <category>Programming</category>
+        
+        <category>Learning</category>
+        
+        <category>Tips and Tricks</category>
+        
+      </item>
     
       <item>
         <title>Creating Firebase Cloud Functions in TypeScript</title>
@@ -57,7 +233,7 @@
 
 &lt;p&gt;Now, let’s send these up to the firebase app. Open up your terminal and type &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase deploy&lt;/code&gt;. Once they’re deployed, you can see them in the “Cloud Functions” section of your Firebase console. Then you can call them from your browswer or ping them however you prefer. Cloud functions are super flexible and I would highly recommend trying them out.&lt;/p&gt;
 </description>
-        <pubDate>2019-03-12</pubDate>
+        <pubDate>2019-06-28</pubDate>
         <link>http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</guid>
         
@@ -72,7 +248,7 @@
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6a2dL06OsLw&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>2019-03-12</pubDate>
+        <pubDate>2019-06-28</pubDate>
         <link>http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</guid>
         
@@ -146,7 +322,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;This is a very basic example, but I always find it fun to look into how things were done before new improvements in development came around.&lt;/p&gt;
 </description>
-        <pubDate>2019-03-12</pubDate>
+        <pubDate>2019-06-28</pubDate>
         <link>http://localhost:4000/articles/2019-02/objects-javascript-prototyping</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/objects-javascript-prototyping</guid>
         
@@ -192,7 +368,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;In this case, &lt;code class=&quot;highlighter-rouge&quot;&gt;self.colorVar&lt;/code&gt; will be automatically set to whichever radio button is selected.&lt;/p&gt;
 </description>
-        <pubDate>2019-03-12</pubDate>
+        <pubDate>2019-06-28</pubDate>
         <link>http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</guid>
         
@@ -230,7 +406,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/tx09AElYnzE&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>2019-03-12</pubDate>
+        <pubDate>2019-06-28</pubDate>
         <link>http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</guid>
         
@@ -272,7 +448,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;That’s all there is to it, folks. A thread-safe implementation of the singleton pattern in C#. Thanks for reading.&lt;/p&gt;
 </description>
-        <pubDate>2019-03-12</pubDate>
+        <pubDate>2019-06-28</pubDate>
         <link>http://localhost:4000/articles/2019-02/singletons-in-c-sharp</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/singletons-in-c-sharp</guid>
         
@@ -327,7 +503,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;Once our factorial function finds the factorial of a number &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt;,our subfactorial function will take that number, divide it by e, and return the result, leaving us with the subfactorial.&lt;/p&gt;
 </description>
-        <pubDate>2019-03-12</pubDate>
+        <pubDate>2019-06-28</pubDate>
         <link>http://localhost:4000/articles/2019-02/subfactorial-challenge</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/subfactorial-challenge</guid>
         
@@ -337,134 +513,6 @@ After all is said and done, we can then use the console to see our reptile varia
         <category>Programming Challenge</category>
         
         <category>Mathematics</category>
-        
-      </item>
-    
-      <item>
-        <title>Stop the interruptions. Turn on Windows Presentation Settings</title>
-        <description>&lt;p&gt;There’s nothing quite like presenting your screen to an audience of important people or to a group of your coworkers during a meeting and having an email come through from Mint with the subtitle&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“You’ve spent $300 this month on Pubs &amp;amp; Bars”.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Let’s fix that. Assuming you’re on Windows, there is a great built in feature that is surprisingly underutilized that we can enable when presenting or demoing our app for a client called “Presentation Mode”. Now, this is nothing new — presentation mode has been around since Vista, it just seems to me like nobody every enables it, likely because they don’t know how.&lt;/p&gt;
-
-&lt;h1 id=&quot;why-activate-windows-presentation-mode&quot;&gt;Why activate Windows Presentation Mode?&lt;/h1&gt;
-&lt;p&gt;When Windows Presentation Mode is active, your machine won’t automatically go to sleep and all of system notifications will be temporarily turned off until you disable presentation mode. You can also set a specific Presentation Mode wallpaper and adjust the speaker volume specifically for presentations. Those settings will be automagically applied when you activate Presentation Mode.&lt;/p&gt;
-
-&lt;h1 id=&quot;how-to-activate-windows-presentation-mode&quot;&gt;How to activate Windows Presentation Mode&lt;/h1&gt;
-&lt;p&gt;Okay, step one.
-1. Press the Windows Key + X to bring up the Power User Menu .
-2. Either press “b” or select the “Mobility Center” option on the list. At the time of writing this article, the option is second on the list.
-3. In the “Presentation Settings” tile, press the “Turn On” button. This will activate Presentation Mode and trigger any custom Presentation Settings you have.&lt;/p&gt;
-
-&lt;p&gt;Note — settings can be changed by running presentationsettings.exe. Just type that in the Start Search bar if you’re not sure where it is.
-And that’s it! It’s very simple and to the point, but it seems like almost nobody uses it.&lt;/p&gt;
-
-</description>
-        <pubDate>2019-03-12</pubDate>
-        <link>http://localhost:4000/articles/2019-02/windows-presentation-mode</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/windows-presentation-mode</guid>
-        
-        
-        <category>Windows</category>
-        
-        <category>Tips and Tricks</category>
-        
-        <category>Professionalism</category>
-        
-      </item>
-    
-      <item>
-        <title>Enable Floating Video in Google Chrome</title>
-        <description>&lt;p&gt;If there is one thing the Opera browser has done correctly, it is that it made creating a floating video pop-out very easy and accessible to it’s users. If there is anything else it has done correctly — I don’t know about it. I’d just much rather use Chrome.&lt;/p&gt;
-
-&lt;p&gt;If you’re like me, when you’re doing simple work or playing a casual video game, you like to watch YouTube or Twitch while you’re at it. The problem? Having a window with YouTube or Twitch gets put in the background the minute you re-enter your work pane or game window. The old solution was to just have your work be snapped to one side of your screen and your video on the other side. That’s not good enough for me.&lt;/p&gt;
-
-&lt;p&gt;The correct solution? A bookmark with one line of JavaScript in it.&lt;/p&gt;
-
-&lt;p&gt;To get started, right-click your bookmarks bar and select “Add page…”. For the Name type “Float Video”, and for the URL, paste the JavaScript line below:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript:document.getElementsByTagName('video')[0].requestPictureInPicture();&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you’ve got your bookmark created, you can navigate to a YouTube video or Twitch stream, maybe even Netflix (haven’t tested this), and press your new “Float Video” bookmark.&lt;/p&gt;
-
-&lt;p&gt;Your video will pop out in a floating video Picture-in-Picture style and when you return to your work or video game, you will have your re-sizable, movable video hovering over your main window.&lt;/p&gt;
-</description>
-        <pubDate>2019-03-12</pubDate>
-        <link>http://localhost:4000/articles/2019-02/chrome-floating-video</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/chrome-floating-video</guid>
-        
-        
-        <category>Chrome</category>
-        
-        <category>Tips and Tricks</category>
-        
-        <category>JavaScript</category>
-        
-      </item>
-    
-      <item>
-        <title>Perfectly Balanced Strings</title>
-        <description>&lt;p&gt;This is rightfully classified as an easy challenge, so it should take no time to complete. When I first saw it, I immediately thought “Great,I’ll just use C# and a single LINQ statement and call it done”, but then I figured it would be more fun if I also tried to replicate my solution in Java.&lt;/p&gt;
-
-&lt;p&gt;First, the text:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Given a string containing only the characters x and y, find whether there are the same number of xs and ys.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;xxxyyy&quot;) =&amp;gt; true&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;yyyxxx&quot;) =&amp;gt; true&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;xxxyyyy&quot;) =&amp;gt; false&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;yyxyxxyxxyyyyxxxyxyx&quot;) =&amp;gt; true&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;xyxxxxyyyxyxxyxxyy&quot;) =&amp;gt; false&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;&quot;) =&amp;gt; true&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;balanced(&quot;x&quot;) =&amp;gt; false&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;See? Easy. So let’s start with the obvious — the C# LINQ statement solution.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ToCharArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Where&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Where&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;So this takes our string &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt;, converts it to a character array and then sets up a conditional return &lt;code class=&quot;highlighter-rouge&quot;&gt;x==y&lt;/code&gt; where &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; = the number of characters in our new character array input that are “x”, and the &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; = the number of characters in our new character array input that are “y”. This will obviously work even if there are letters or numbers in the input that are not x or y, they will simply be ignored.&lt;/p&gt;
-
-&lt;p&gt;Next, the admittedly more clunky Java version:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;balanced&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;ch:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toCharArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'x'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'y'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This does something similar, however, we set up &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; as integer parameters and then loop through each character in the input string. If the character &lt;code class=&quot;highlighter-rouge&quot;&gt;ch&lt;/code&gt; is “x”, then our &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; variable gets incremented by 1. If it is not “x”, it does not get incremented. Likewise, our &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; variable gets incremented by 1 if the character &lt;code class=&quot;highlighter-rouge&quot;&gt;ch&lt;/code&gt; is “y”, otherwise, it remains the same.&lt;/p&gt;
-
-&lt;p&gt;If you’re a Java-guru, I’m sure this looks like a mess to you — but it is a quick and dirty solution. Comment your best Java solution below if you’d like to join in on the challenge.&lt;/p&gt;
-</description>
-        <pubDate>2019-03-12</pubDate>
-        <link>http://localhost:4000/articles/2019-02/perfectly-balanced-strings</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/perfectly-balanced-strings</guid>
-        
-        
-        <category>C#</category>
-        
-        <category>Java</category>
-        
-        <category>Programming Challenge</category>
         
       </item>
     

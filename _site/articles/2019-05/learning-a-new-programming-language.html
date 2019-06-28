@@ -8,35 +8,35 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="A little over a year ago, I married my wife. For our anniversary, we sat down and edited our honeymoon video together. It took about three days to get it don...">
+  <meta name="description" content="The best way to learn any language is to simply just use it.">
   <meta name="keywords" content="blog, jaken, herman, software, and engineer">
-  <meta name="author" content="The Herman Honeymoon in Ireland | Jaken Herman">
+  <meta name="author" content="How to Learn a New Programming Language | Jaken Herman">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f5f5f5">
 
   <!-- Twitter Tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="The Herman Honeymoon in Ireland | Jaken Herman">
-  <meta name="twitter:description" content="A little over a year ago, I married my wife. For our anniversary, we sat down and edited our honeymoon video together. It took about three days to get it don...">
+  <meta name="twitter:title" content="How to Learn a New Programming Language | Jaken Herman">
+  <meta name="twitter:description" content="The best way to learn any language is to simply just use it.">
   
     <meta property="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
   
 
   <!-- Open Graph Tags -->
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="http://localhost:4000/articles/2018-09/honeymoon-video">
-  <meta property="og:title" content="The Herman Honeymoon in Ireland | Jaken Herman">
-  <meta property="og:description" content="A little over a year ago, I married my wife. For our anniversary, we sat down and edited our honeymoon video together. It took about three days to get it don...">
+  <meta property="og:url" content="http://localhost:4000/articles/2019-05/learning-a-new-programming-language">
+  <meta property="og:title" content="How to Learn a New Programming Language | Jaken Herman">
+  <meta property="og:description" content="The best way to learn any language is to simply just use it.">
   
     <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
   
-  <title>The Herman Honeymoon in Ireland | Jaken Herman</title>
+  <title>How to Learn a New Programming Language | Jaken Herman</title>
 
   <!-- CSS files -->
   <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://localhost:4000/css/main.css">
 
-  <link rel="canonical" href="http://localhost:4000/articles/2018-09/honeymoon-video">
+  <link rel="canonical" href="http://localhost:4000/articles/2019-05/learning-a-new-programming-language">
   <link rel="alternate" type="application/rss+xml" title="Jaken Herman" href="http://localhost:4000/feed.xml" />
 
   <!-- Icons -->
@@ -153,16 +153,16 @@
 
 <div id="post">
   <header class="post-header">
-    <h1 title="The Herman Honeymoon in Ireland">The Herman Honeymoon in Ireland</h1>
+    <h1 title="How to Learn a New Programming Language">How to Learn a New Programming Language</h1>
     <span class="post-meta">
       <span class="post-date">
-        27 SEP 2018
+        9 MAY 2019
       </span>
       •
       <span class="read-time" title="Estimated read time">
   
   
-    1 min read
+    3 mins read
   
 </span>
 
@@ -171,13 +171,71 @@
   </header>
 
   <article class="post-content">
-    <p>A little over a year ago, I married my wife. For our anniversary, we sat down and edited our honeymoon video together. It took about three days to get it done, but it was an experience for us, and we got to relive our honeymoon experiences through the process.</p>
+    <p>The best way to learn <strong>any</strong> language is to simply <em>just use it</em>.</p>
 
-<p>The video is long. 1 hour and 52 minutes. It could have been cut down to parts that were particularly interesting rather than just every bit of video we took in Ireland, but then there would have been some of the simple memories lost.</p>
+<p>With that being said, I often find that new developers just want to learn the newest, flashiest, most “cool” language like Python or some new JavaScript library. This endeavor may be fruitless if you are not first familiar with the underlying concepts and techniques associated with programming in general.</p>
 
-<p>We hope you enjoy the video if you decide to watch. Grab the popcorn! 🍿</p>
+<p>The best advice that I can offer would be to learn algorithms, design patterns, and programming fundamentals. Once you have learned these things, you can write virtually any program in virtually any language.</p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rblR5ONdbfA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>For example - I do not know how to use the language Ruby. However, I am about to walk you through the popular FizzBuzz program in Ruby by using my knowledge of programming fundamentals (loops, conditionals, operators, io, etc.):</p>
+
+<p>The first thing I need to do is define the problem. This is the first step to writing <strong>any</strong> program. If you don’t first know what the problem is, you cannot find a solution to it. The problem is as such: For each number from 1 to 100 I would like to print “Fizz” if the number is divisible by 3, “Buzz” if the number is divisible by 5, or “FizzBuzz” if the number is divisible by both.</p>
+
+<p>The next thing I need to do is check the Ruby documentation for using a “<a href="https://docs.ruby-lang.org/en/2.4.0/syntax/control_expressions_rdoc.html#label-until+Loop">loop</a>”:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a = 0
+
+until a &gt; 100 do
+  a += 1
+end
+</code></pre>
+</div>
+
+<p>Now that I have an <code class="highlighter-rouge">until</code> loop, I need to check how to do modular arithmetic in Ruby by once again, checking the <a href="http://ruby-doc.org/core-1.9.3/Numeric.html#method-i-modulo">documentation</a>, as well as checking <a href="https://ruby-doc.org/core-2.3.0/doc/syntax/control_expressions_rdoc.html">how to call <code class="highlighter-rouge">if</code> statements</a>, then applying what I’ve found, modifying my code as such:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a = 0
+
+until a &gt; 100 do
+
+  if a % 3 == 0
+    print fizz
+  end
+
+  if a % 5 == 0
+    print buzz
+  end
+
+  a += 1
+end
+</code></pre>
+</div>
+
+<p>Lastly, you’ll notice I just wrote “print fizz” and “print buzz” in my if statements. Now I need to check <a href="https://docs.ruby-lang.org/en/2.6.0/IRB/OutputMethod.html">how to write my results</a> via the documentation, and modify my code as such:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a = 1
+
+until a &gt; 100 do
+
+  if a % 3 == 0
+    print "fizz"
+  end
+
+  if a % 5 == 0
+    print "buzz"
+  end
+
+  a += 1
+  puts ""
+end
+</code></pre>
+</div>
+
+<p>There we go - my first ruby program has been written. You saw my thought process as well as my methods on finding out <em>how</em> to get the program done. Now I can think of a more difficult or complex program, and use the same methods to write it in ruby. In time, just by <strong>using</strong> ruby, I will have learned it.</p>
+
+<p>Also keep in mind that this program is likely not the best way of handling things - there are improvements to be made. That is okay. Nobody will expect you to write perfect code while learning.</p>
+
+<p>So how do you learn Python or JavaScript or C++ or literally <strong>any other language</strong>? Replace every instance of the word “Ruby” in this answer, and replace it with whichever programming language you want to learn. By the end, you’ll have a FizzBuzz program. Then, all you have to do is think of another more complex problem and <strong>just do it.</strong></p>
+
 
   </article>
 </div>
@@ -186,19 +244,19 @@
   <h6>Share on: </h6>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2018-09/honeymoon-video" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2019-05/learning-a-new-programming-language" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2018-09/honeymoon-video" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2019-05/learning-a-new-programming-language" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2018-09/honeymoon-video" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2019-05/learning-a-new-programming-language" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
     <li>
-      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2018-09/honeymoon-video" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2019-05/learning-a-new-programming-language" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
     </li>
     <li>
-      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2018-09/honeymoon-video" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2019-05/learning-a-new-programming-language" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
     </li>
   </ul>
 </div><!-- end share-buttons -->
