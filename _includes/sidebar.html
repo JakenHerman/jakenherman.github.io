@@ -2,8 +2,8 @@
 
 <div class="cover-card table-cell table-middle">
   {% if author.avatar %}
-  <a href="{{ site.url }}/">
-    <img src="{{ site.url }}/img/{{ author.avatar }}" alt="" class="avatar">
+  <a aria-label="Jaken Herman Website Link" href="{{ site.url }}/">
+    <img src="{{ site.url }}/img/{{ author.avatar }}" alt="An Image of Jaken Herman" class="avatar">
   </a>
   {% endif %}
   <a href="{{ site.url }}/" class="author_name">{{ author.name }}</a>
@@ -12,11 +12,11 @@
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="{{ site.url }}/">home</a>
+        <a aria-label="Jaken Herman Website Link" href="{{ site.url }}/">home</a>
       </li>
       {% for page in site.pages %} {% if page.title %}
       <li class="nav-item">
-        <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
+        <a aria-label="Navigate to Article - {{page.title}}" href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
       </li>
       {% endif %} {% endfor %}
     </ul>
