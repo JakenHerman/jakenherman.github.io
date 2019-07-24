@@ -37,13 +37,15 @@ owner:
   avatar: avatar.jpg
   job: "🚀 Software Engineer at NASA 🛰️"
   bio: "I'm a full-stack software engineer specializing in the ASP.NET framework in both Visual Basic and C# ‎‍💻. 
-        I also work on Mobile Application development using both the Xamarin.Forms framework and Apache Cordova framework depending on the project 📱.
-        I'm well-versed in JavaScript and many of it's popular libraries and frameworks. In my free time, I like to play golf ⛳ brew beer 🍺, and go sailing ⛵.
+        I also work on Mobile Application development using multiple different frameworks, including Xamarin.Forms, Apache Cordova, and Ionic - depending on the project 📱.
+        I'm well-versed in JavaScript and many of it's popular libraries and frameworks including React and Angular. In my free time, I like to play golf ⛳ & brew beer 🍺.
+        I am an author in the Game Development 🎮 space with a book published by Apress Media titled 'Beginning Game Development with Amazon Lumberyard'. 
         I am married to an amazing woman who also works at NASA in Mission Control as a flight controller. We have 2 dogs 🐶, 3 cats 🐱, and lots of great
         friends."
   email: jakenherman7@gmail.com
   disqus-shortname: jakenherman-com
   twitter: 0x6a6368h
+  amazon-author: amazon.com/author/jakenherman
   facebook: #username
   google:
     plus: #username
