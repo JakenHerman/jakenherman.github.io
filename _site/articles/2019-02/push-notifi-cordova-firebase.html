@@ -33,8 +33,10 @@
   <title>Implementing Apache Cordova Push Notifications in Android using Firebase | Jaken Herman</title>
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+  
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/12caf75e50.js"></script>
 
   <link rel="canonical" href="http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase">
   <link rel="alternate" type="application/rss+xml" title="Jaken Herman" href="http://localhost:4000/feed.xml" />
@@ -55,37 +57,37 @@
 
 <div class="cover-card table-cell table-middle">
   
-  <a href="http://localhost:4000/">
-    <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  <a aria-label="Jaken Herman Website Link" href="http://localhost:4000/">
+    <img src="http://localhost:4000/img/avatar.jpg" alt="An Image of Jaken Herman" class="avatar">
   </a>
   
   <a href="http://localhost:4000/" class="author_name">jaken herman</a>
-  <span class="author_job">🚀 Software Engineer at NASA 🛰️</span>
-  <span class="author_bio mbm">I'm a full-stack software engineer specializing in the ASP.NET framework in both Visual Basic and C# ‎‍💻. I also work on Mobile Application development using both the Xamarin.Forms framework and Apache Cordova framework depending on the project 📱. I'm well-versed in JavaScript and many of it's popular libraries and frameworks. In my free time, I like to play golf ⛳ brew beer 🍺, and go sailing ⛵. I am married to an amazing woman who also works at NASA in Mission Control as a flight controller. We have 2 dogs 🐶, 3 cats 🐱, and lots of great friends.</span>
+  <span class="author_job">⚾ Front-End Developer for the Houston Astros ⚾</span>
+  <span class="author_bio mbm">Husband | Baseball Fan | Author</span>
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://localhost:4000/">home</a>
+        <a aria-label="Jaken Herman Website Link" href="http://localhost:4000/">home</a>
       </li>
        
       <li class="nav-item">
-        <a href="http://localhost:4000/archive/">Archive</a>
+        <a aria-label="Navigate to Article - Archive" href="http://localhost:4000/archive/">Archive</a>
       </li>
         
       <li class="nav-item">
-        <a href="http://localhost:4000/contact/">Contact</a>
+        <a aria-label="Navigate to Article - Contact" href="http://localhost:4000/contact/">Contact</a>
       </li>
             
       <li class="nav-item">
-        <a href="http://localhost:4000/categories/">Categories</a>
+        <a aria-label="Navigate to Article - Categories" href="http://localhost:4000/categories/">Categories</a>
       </li>
           
       <li class="nav-item">
-        <a href="http://localhost:4000/resume/">Resume</a>
+        <a aria-label="Navigate to Article - Resume" href="http://localhost:4000/resume/">Resume</a>
       </li>
         
       <li class="nav-item">
-        <a href="http://localhost:4000/stream/">Stream</a>
+        <a aria-label="Navigate to Article - Stream" href="http://localhost:4000/stream/">Stream</a>
       </li>
          
     </ul>
@@ -97,7 +99,7 @@
     var p = hs.split('@');
     lhs = p[0];
     rhs = p[1];
-    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write("<a aria-label=\"Email Jaken Herman\" class=\"social-link-item\" target=\"_blank\" href=\"mailto");
     document.write(":" + lhs + "@");
     document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
   }
@@ -109,33 +111,36 @@
       <script>gen_mail_to_link('jakenherman7@gmail.com', 'Hello from website');</script>
       </li>
     
-    <li><a href="http://twitter.com/0x6a6368h" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
-    <li><a href="https://www.tripadvisor.com/Profile/jakenherman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-tripadvisor"></i></a></li>
+    <li><a aria-label="Go to Jaken Herman's Twitter Page" rel="noreferrer" href="http://twitter.com/0x6a6368h" class="social-link-item" target="_blank"><i class="fab fa-twitter"></i></a></li>
+    <li><a aria-label="Go to Jaken Herman's TripAdvisor Page" rel="noreferrer" href="https://www.tripadvisor.com/Profile/jakenherman" class="social-link-item" target="_blank"><i class="fab fa-tripadvisor"></i></a></li>
    <!--  -->
     
     
-    <li><a href="http://linkedin.com/in/jakenherman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
-    <li><a href="https://www.yelp.com/user_details?userid=Wu6Cbv_59QNDmNlw02cqMA" class="social-link-item" target="_blank"><i class="fa fa-fw fa-yelp"></i></a></li>
-    <li><a href="skype:jaken2711" class="social-link-item" target="_blank"><i class="fa fa-fw fa-skype"></i></a></li>
+    <li><a aria-label="Go to Jaken Herman's LinkedIn Page" rel="noreferrer" href="http://linkedin.com/in/jakenherman" class="social-link-item" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+    <li><a aria-label="Go to Jaken Herman's Yelp Page" rel="noreferrer" href="https://www.yelp.com/user_details?userid=Wu6Cbv_59QNDmNlw02cqMA" class="social-link-item" target="_blank"><i class="fab fa-yelp"></i></a></li>
+    <li><a aria-label="Skype with Jaken Herman" rel="noreferrer" href="skype:jaken2711" class="social-link-item" target="_blank"><i class="fab fa-skype"></i></a></li>
     
-    <li><a href="http://instagram.com/jaken.herman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+    <li><a aria-label="Go to Jaken Herman's Instagram Page" rel="noreferrer" href="http://instagram.com/jaken.herman" class="social-link-item" target="_blank"><i class="fab fa-instagram"></i></a></li>
     
-    <li><a href="http://github.com/JakenHerman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a aria-label="Go to Jaken Herman's GitHub Page" rel="noreferrer" href="http://github.com/JakenHerman" class="social-link-item" target="_blank"><i class="fab fa-github"></i></a></li>
     
-    <li><a href="http://stackoverflow.com/users/2752265/jaken-herman?tab=profile" class="social-link-item" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a></li>
+    <li><a aria-label="Go to Jaken Herman's StackOverflow Page" rel="noreferrer" href="http://stackoverflow.com/users/2752265/jaken-herman?tab=profile" class="social-link-item" target="_blank"><i class="fab fa-stack-overflow"></i></a></li>
     
-    
-    
-    
-    
-    <li><a href="https://youtube.com/user/jakencherman" class="social-link-item" target="_blank"><i class="fa fa-fw fa-youtube"></i></a></li>
+    <li><a rel="noreferrer" href="http://dribbble.com/jakenherman" class="social-link-item" target="_blank"><i class="fab fa-dribbble"></i></a></li>
     
     
+    
+    <li><a aria-label="Go to Jaken Herman's YouTube Channel" rel="noreferrer" href="https://youtube.com/user/jakencherman" class="social-link-item" target="_blank"><i class="fab fa-youtube"></i></a></li>
     
     
     
     
+    <li><a rel="noreferrer" href="http://codepen.io/JakenHerman" class="social-link-item" target="_blank"><i class="fab fa-codepen"></i></a></li>
     
+    
+    <li><a aria-label="Go to Jaken Herman's Amazon Author Page" rel="noreferrer" href="https://amazon.com/author/jakenherman" class="social-link-item" target="_blank"><i class="fab fa-amazon"></i></a></li>
+    <li><a aria-label="Go to Jaken Herman's Dev Page" rel="noreferrer" href="https://dev.to/jakenherman" class="social-link-item" target="_blank"><i class="fab fa-dev"></i></a></li>
+    <li><a aria-label="Go to Jaken Herman's Untappd Page" rel="noreferrer" href="https://untappd.com/user/JakenH" class="social-link-item" target="_blank"><i class="fab fa-untappd"></i></a></li>
   </ul>
 </div>
 

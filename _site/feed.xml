@@ -5,77 +5,39 @@
     <description>Software Engineer, Brewer of Beer, Husband</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2019-06-28</pubDate>
-    <lastBuildDate>Fri, 28 Jun 2019 04:03:01 +0100</lastBuildDate>
+    <pubDate>2019-09-16</pubDate>
+    <lastBuildDate>Mon, 16 Sep 2019 03:04:16 +0100</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
-        <title>Aquarium Log - June 4th, 2019</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://www.jakenherman.com/img/WaterTests/060419State.jpg&quot; alt=&quot;June 4 2019 Aquarium View&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;
+        <title>DailyUI Challenge 002</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://media.licdn.com/dms/image/C5622AQF24cV88T9mVw/feedshare-shrink_8192/0?e=1568851200&amp;amp;v=beta&amp;amp;t=tjqFnhHhl793SCviu7nDJMeGZUqt7SJenAo8bnuCWK4&quot; style=&quot;width: auto&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Well, I think it’s just best to admit this outright - my aquarium sucks, and my fish are unhappy. My filter broke so my poor aquarium went a while without filtration. As of last night, I officially have replaced the filter, I put on an Aqueon QuietFlow 30 which should work, as my tank is only 36 gallons.&lt;/p&gt;
+&lt;p&gt;DailyUI challenge 002 - Design a credit card checkout form or page. Did this one without a wire-framing tool - instead opted to just use HTML, CSS, and JavaScript. I only worked on it for about an hour, so I’m not too upset with the results. The card type icon (Visa, MasterCard, AMEX, etc. does change depending on the start of the card number).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://www.jakenherman.com/img/WaterTests/060419Results.jpg&quot; alt=&quot;June 4 2019 Water Test Results&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Things I could improve on:
+ - The fonts are pretty ugly, I’d like to spend more time browsing available fonts.
+ - Responsiveness. Because this was just part of a challenge and not production code, I did not consider mobile viewing in the design.&lt;/p&gt;
 
-&lt;p&gt;My pH level was expectedly very high. Ammonia seems to be creeping upwards at 0.25ppm, but my nitrite and nitrate levels are ok at 0ppm. My low-range pH value was reading in at about 7.6+ and my high-range pH value was reading in at around 8.2-. My heater seems to be working ok, temperature was reading around 74F.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://www.jakenherman.com/img/WaterTests/060419Temp.jpg&quot; alt=&quot;Temperature Gauge June 4 2019&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;For the past month or two, we have been battling extreme algae presence. Our pleco and snails are not much help as of right now. This could all be due to the busted filter, though. So last night I added 4mL of API AlgaeFix and 20 mL of Seachem Pristine to clear some of the sludge (hopefully). I also added 35mL of Tetra Easy Balance Plus to try to level out the pH in the tank.&lt;/p&gt;
-
-&lt;p&gt;We put a new automatic feeder on the back of the tank, which will hopefully help us out as far as not over- or under-feeding the fish. The current state of the tank looks terrible, but I’m hopeful that we can get it cleaned up nicely.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://www.jakenherman.com/img/Automatic-Feeder.jpg&quot; alt=&quot;Auto Feeder&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I’ve started working on an aquarium and fishkeeping logging application in Python/Django called AquaMate. It’s open sourced, link to GitHub &lt;a href=&quot;https://github.com/JakenHerman/AquaMate&quot;&gt;here&lt;/a&gt;. As of right now, I only have very simple models created, and I know these will change drastically but this is a start:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.db&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Aquarium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;created_date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DateTimeField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'date published'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;aquarium&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ForeignKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Aquarium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on_delete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CASCADE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;created_date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DateTimeField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'date published'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;high_range_ph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ammonia&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;nitrite&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;nitrate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;notes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ph: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'high_range_ph: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;high_range_ph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ammonia: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ammonia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'nitrite: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nitrite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'nitrate: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nitrate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Fish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;aquarium&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ForeignKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Aquarium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on_delete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CASCADE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;species&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;quantity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IntegerField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'species: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;species&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'; name: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
+&lt;p&gt;CodePen Link : https://codepen.io/JakenHerman/pen/MWgKNvm
+Dribble Link : https://dribbble.com/shots/6990265-Credit-Card-Checkout-DailyUI-002&lt;/p&gt;
 </description>
-        <pubDate>2019-06-28</pubDate>
-        <link>http://localhost:4000/articles/2019-06/aqualog-jun-4</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2019-06/aqualog-jun-4</guid>
+        <pubDate>2019-09-16</pubDate>
+        <link>http://localhost:4000/articles/2019-06/dailyui-002</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-06/dailyui-002</guid>
         
         
-        <category>Fishkeeping</category>
+        <category>UX</category>
         
-        <category>Blog</category>
+        <category>UI</category>
+        
+        <category>Wireframe</category>
+        
+        <category>CSS</category>
+        
+        <category>JavaScript</category>
+        
+        <category>CodePen</category>
         
       </item>
     
@@ -91,7 +53,7 @@
 
 &lt;p&gt;To turn developer options back off, just flip the switch at the top of the developer options screen to “off”. Once you navigate away from this screen, it will be gone from your phone until you repeat the above steps to enable developer mode.&lt;/p&gt;
 </description>
-        <pubDate>2019-06-28</pubDate>
+        <pubDate>2019-09-16</pubDate>
         <link>http://localhost:4000/articles/2019-05/android-device-developer-mode</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-05/android-device-developer-mode</guid>
         
@@ -172,7 +134,7 @@ end
 &lt;p&gt;So how do you learn Python or JavaScript or C++ or literally &lt;strong&gt;any other language&lt;/strong&gt;? Replace every instance of the word “Ruby” in this answer, and replace it with whichever programming language you want to learn. By the end, you’ll have a FizzBuzz program. Then, all you have to do is think of another more complex problem and &lt;strong&gt;just do it.&lt;/strong&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>2019-06-28</pubDate>
+        <pubDate>2019-09-16</pubDate>
         <link>http://localhost:4000/articles/2019-05/learning-a-new-programming-language</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-05/learning-a-new-programming-language</guid>
         
@@ -233,7 +195,7 @@ end
 
 &lt;p&gt;Now, let’s send these up to the firebase app. Open up your terminal and type &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase deploy&lt;/code&gt;. Once they’re deployed, you can see them in the “Cloud Functions” section of your Firebase console. Then you can call them from your browswer or ping them however you prefer. Cloud functions are super flexible and I would highly recommend trying them out.&lt;/p&gt;
 </description>
-        <pubDate>2019-06-28</pubDate>
+        <pubDate>2019-09-16</pubDate>
         <link>http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</guid>
         
@@ -248,7 +210,7 @@ end
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6a2dL06OsLw&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>2019-06-28</pubDate>
+        <pubDate>2019-09-16</pubDate>
         <link>http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</guid>
         
@@ -322,7 +284,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;This is a very basic example, but I always find it fun to look into how things were done before new improvements in development came around.&lt;/p&gt;
 </description>
-        <pubDate>2019-06-28</pubDate>
+        <pubDate>2019-09-16</pubDate>
         <link>http://localhost:4000/articles/2019-02/objects-javascript-prototyping</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/objects-javascript-prototyping</guid>
         
@@ -368,7 +330,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;In this case, &lt;code class=&quot;highlighter-rouge&quot;&gt;self.colorVar&lt;/code&gt; will be automatically set to whichever radio button is selected.&lt;/p&gt;
 </description>
-        <pubDate>2019-06-28</pubDate>
+        <pubDate>2019-09-16</pubDate>
         <link>http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</guid>
         
@@ -406,7 +368,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/tx09AElYnzE&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>2019-06-28</pubDate>
+        <pubDate>2019-09-16</pubDate>
         <link>http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</guid>
         
@@ -448,7 +410,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;That’s all there is to it, folks. A thread-safe implementation of the singleton pattern in C#. Thanks for reading.&lt;/p&gt;
 </description>
-        <pubDate>2019-06-28</pubDate>
+        <pubDate>2019-09-16</pubDate>
         <link>http://localhost:4000/articles/2019-02/singletons-in-c-sharp</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/singletons-in-c-sharp</guid>
         
@@ -503,7 +465,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;Once our factorial function finds the factorial of a number &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt;,our subfactorial function will take that number, divide it by e, and return the result, leaving us with the subfactorial.&lt;/p&gt;
 </description>
-        <pubDate>2019-06-28</pubDate>
+        <pubDate>2019-09-16</pubDate>
         <link>http://localhost:4000/articles/2019-02/subfactorial-challenge</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/subfactorial-challenge</guid>
         
