@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Dynamic HTML Titles in React with NFL's Helmet"
-excerpt: ""
+excerpt: "Update HTML document head on the fly with react-helmet"
 comments : true
 date:   2019-09-26 20:39:39 -0600
 categories: [React, JavaScript]
