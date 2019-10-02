@@ -4,7 +4,7 @@ title:  "Setting up Automatic React Application Deploys on Heroku Dynos"
 excerpt: "Building a Community Market listing React App for MLB The Show 19 [Part 1]"
 comments : true
 date:   2019-09-24 20:39:39 -0600
-categories: [React, JavaScript, API]
+categories: [React, JavaScript, API, Heroku]
 ---
 
 Per the sub-title, this is "Part 1". In this series, we're going to build out a community market listing react application for MLB The Show 19 and set up an automatic pipeline to build and deploy our React application from a GitHub repository to a Heroku Dyno. In this post we will scaffold out the react app and get the automatic deployment set up for Heroku, which will prepare ourselves to create the components necessary to list out all listings for MLB The Show 19's Community Market. Why MLB The Show 19? Because... it's *baseball*. If you're not familiar with MLB The Show 19 - it's a baseball video game for PlayStation 4 and it has a community market that allows players to list baseball cards, stadiums, and equipment that other players can buy to use for their team. In this project, we will only build out listings for baseball cards (i.e. players), not stadiums or equipment or anything else. If that is something that interests you, I would highly recommend you extend the application to meet your needs.
