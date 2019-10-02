@@ -136,7 +136,43 @@ And your new `render()` should look like this:
   }
 {% endhighlight %}
 
-Start up your project by running `yarn start`, and behold - you now have live data pulling from MLB The Show 19's community market API. 
+Start up your project by running `yarn start`, and behold - you now have live data pulling from MLB The Show 19's community market API. Now, I'd like to center this table and perhaps stick it in a semantic ui segment. To do this, in your imports, add the following:
+
+{% highlight react %}
+import { Grid, Segment, Header } from 'semantic-ui-react'
+{% endhighlight%}
+
+Then, change your `render()` to include each of the imported components (keep in mind, this is a horrible way of centering AG Grids, but it works for the purposes of this blog):
+
+{% highlight react %}
+  render() {
+    return (
+        <Grid columns={3}>
+          <Grid.Row>
+            <Grid.Column width={3}></Grid.Column>
+            <Grid.Column width={10}>
+              <br />
+              <Header>MLB The Show 19 Community Market Listings</Header>
+              <Segment>
+                <div 
+                  className="ag-theme-balham"
+                  style={{ 
+                  height: '500px', 
+                  width: '920px' }} 
+                >
+                  <AgGridReact
+                    columnDefs={this.state.columnDefs}
+                    rowData={this.state.rowData.listings}>
+                  </AgGridReact>
+                </div>
+              </Segment>
+            </Grid.Column>
+            <Grid.Column width={3}></Grid.Column>
+          </Grid.Row>
+        </Grid>
+    );
+  }
+{% endhighlight %}
 
 
 
