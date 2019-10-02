@@ -11,7 +11,7 @@ Per the sub-title, this is "Part 2". If you didn't read Part 1, I would suggest 
 
 {% highlight shell %}
 npm i --save semantic-ui-react semantic-ui-css axios ag-grid-community ag-grid-react
-{% endhighligh %}
+{% endhighlight %}
 
 Once these packages have all been added, open the project in your favorite code editor. Delete all pre-generated code files within the `src` folder except for `index.js` and `App.js`. In these two files, clear almost everything until your `index.js` file looks like this:
 
@@ -21,7 +21,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
-{% endhighligh %}
+{% endhighlight %}
  
 And your `App.js` looks like this:
 
@@ -37,12 +37,12 @@ function App() {
 }
 
 export default App;
-{% endhighligh %}
+{% endhighlight %}
 
 The next thing we want to do is make sure all of our Semantic UI stylesheets get imported to our project. To do this, add the following line to `index.js`, just below the `import App from './App';` line:
 {% highlight react %}
 import 'semantic-ui-css/semantic.min.css'
-{% endhighligh %}
+{% endhighlight %}
 
 Now, the API we will be using to pull community market listings for MLB The Show 19 has a few different filterable options, but for the purposes of this blog, we're going to use the default parameters and just call `https://mlb19.theshownation.com/apis/listings.json`. To see additional capabilities, go to https://mlb19.theshownation.com/api_docs. Before we set up our axios call, we first want to define a state property called `rowData` that will hold our results. To do this, modify `App.js` to look like this:
 
