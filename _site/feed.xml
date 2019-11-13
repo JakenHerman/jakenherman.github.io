@@ -5,12 +5,314 @@
     <description>Software Engineer, Brewer of Beer, Husband</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2019-09-25</pubDate>
-    <lastBuildDate>Wed, 25 Sep 2019 05:00:41 +0100</lastBuildDate>
+    <pubDate>2019-11-13</pubDate>
+    <lastBuildDate>Wed, 13 Nov 2019 16:00:00 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
-        <title>Creating a React Application hosted on Heroku Dynos</title>
+        <title>Fetching and Displaying API Data for MLB The Show 19</title>
+        <description>&lt;p&gt;Per the sub-title, this is “Part 2”. If you didn’t read Part 1, I would suggest going back and reading that now. Now that we have a &lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt; that automatically deploys to a Heroku Dyno when we push a change to our GitHub repository, it’s time to make the app actually do something. Before starting, though, we are going to need to add a few public npm packages, like AG Grid, Semantic UI, and Axios. AG Grid is going to help us display our data retrieved from the API in a nice table format without having to do too much legwork on our own, Semantic UI will help us create a beautiful app with pre-made UI components, and Axios will allow us to make API calls. To add these packages to our application, first &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; into your project directory, then run the following command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;npm i --save semantic-ui-react semantic-ui-css axios ag-grid-community ag-grid-react&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Once these packages have all been added, open the project in your favorite code editor. Delete all pre-generated code files within the &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; folder except for &lt;code class=&quot;highlighter-rouge&quot;&gt;index.js&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;App.js&lt;/code&gt;. In these two files, clear almost everything until your &lt;code class=&quot;highlighter-rouge&quot;&gt;index.js&lt;/code&gt; file looks like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(&amp;lt;App /&amp;gt;, document.getElementById('root'));&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And your &lt;code class=&quot;highlighter-rouge&quot;&gt;App.js&lt;/code&gt; looks like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;import React from 'react';
+
+function App() {
+  return (
+    &amp;lt;div className=&quot;App&quot;&amp;gt;
+
+    &amp;lt;/div&amp;gt;
+  );
+}
+
+export default App;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The next thing we want to do is make sure all of our Semantic UI stylesheets get imported to our project. To do this, add the following line to &lt;code class=&quot;highlighter-rouge&quot;&gt;index.js&lt;/code&gt;, just below the &lt;code class=&quot;highlighter-rouge&quot;&gt;import App from './App';&lt;/code&gt; line:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;import 'semantic-ui-css/semantic.min.css'&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now, the API we will be using to pull community market listings for MLB The Show 19 has a few different filterable options, but for the purposes of this blog, we’re going to use the default parameters and just call &lt;code class=&quot;highlighter-rouge&quot;&gt;https://mlb19.theshownation.com/apis/listings.json&lt;/code&gt;. To see additional capabilities, go to https://mlb19.theshownation.com/api_docs. Before we set up our axios call, we first want to define a state property called &lt;code class=&quot;highlighter-rouge&quot;&gt;rowData&lt;/code&gt; that will hold our results. To do this, modify &lt;code class=&quot;highlighter-rouge&quot;&gt;App.js&lt;/code&gt; to look like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;import React from 'react';
+
+class App extends React.Component {
+
+  constructor (props) {
+    super(props);
+    this.state = {
+      rowData: []
+    }
+  }
+
+  render() {
+    return (
+      &amp;lt;div className=&quot;App&quot;&amp;gt;
+  
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+
+export default App;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now that our state is set up and ready to be modified once we get data, we can set up an axios call to obtain the data. After the &lt;code class=&quot;highlighter-rouge&quot;&gt;constructor()&lt;/code&gt; function, but just before the &lt;code class=&quot;highlighter-rouge&quot;&gt;render()&lt;/code&gt;, add a new function called &lt;code class=&quot;highlighter-rouge&quot;&gt;getListings()&lt;/code&gt;, and set up an axios inside and set the state’s &lt;code class=&quot;highlighter-rouge&quot;&gt;rowData&lt;/code&gt; to the response of the axios call. Once your component is mounted, make a call to &lt;code class=&quot;highlighter-rouge&quot;&gt;getListings()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt; // import * as axios from 'axios' &amp;lt;-- put this in your imports section
+  getListings() {
+    axios.get('https://cors-anywhere.herokuapp.com/https://mlb19.theshownation.com/apis/listings.json')
+    .then((response) =&amp;gt; {
+      this.setState({
+        rowData: response.data
+      })
+    })
+    .catch((err) =&amp;gt; {
+      console.log(err);
+    })
+  }
+
+  componentDidMount () {
+    this.getListings();
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now our state will hold the listings data, we just need to display it. To do this, we are going to add a &lt;code class=&quot;highlighter-rouge&quot;&gt;columnDefs&lt;/code&gt; property to our component’s state, then in the &lt;code class=&quot;highlighter-rouge&quot;&gt;render()&lt;/code&gt; function, we’re going to set up AG Grid. So, the new state should look like this in your &lt;code class=&quot;highlighter-rouge&quot;&gt;constructor()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;  constructor (props) {
+    super(props);
+    this.state = {
+      columnDefs: [{
+        headerName: &quot;Name&quot;, field: &quot;name&quot;
+      }, {
+        headerName: &quot;Best Sell Price&quot;, field: &quot;best_sell_price&quot;
+      }, {
+        headerName: &quot;Best Buy Price&quot;, field: &quot;best_buy_price&quot;
+      }],
+      rowData: []
+    }
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Before moving onto our &lt;code class=&quot;highlighter-rouge&quot;&gt;render()&lt;/code&gt;, let’s import necessary AG Grid components and stylesheets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;import { AgGridReact } from 'ag-grid-react';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-balham.css';&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And your new &lt;code class=&quot;highlighter-rouge&quot;&gt;render()&lt;/code&gt; should look like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;  render() {
+    return (
+      &amp;lt;div 
+        className=&quot;ag-theme-balham&quot;
+        style= 
+      &amp;gt;
+        &amp;lt;AgGridReact
+          columnDefs={this.state.columnDefs}
+          rowData={this.state.rowData.listings}&amp;gt;
+        &amp;lt;/AgGridReact&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Start up your project by running &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn start&lt;/code&gt;, and behold - you now have live data pulling from MLB The Show 19’s community market API. Now, I’d like to center this table and perhaps stick it in a semantic ui segment. To do this, in your imports, add the following:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;import { Grid, Segment, Header } from 'semantic-ui-react'&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then, change your &lt;code class=&quot;highlighter-rouge&quot;&gt;render()&lt;/code&gt; to include each of the imported components (keep in mind, this is a horrible way of centering AG Grids, but it works for the purposes of this blog):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;  render() {
+    return (
+        &amp;lt;Grid columns={3}&amp;gt;
+          &amp;lt;Grid.Row&amp;gt;
+            &amp;lt;Grid.Column width={3}&amp;gt;&amp;lt;/Grid.Column&amp;gt;
+            &amp;lt;Grid.Column width={10}&amp;gt;
+              &amp;lt;br /&amp;gt;
+              &amp;lt;Header&amp;gt;MLB The Show 19 Community Market Listings&amp;lt;/Header&amp;gt;
+              &amp;lt;Segment&amp;gt;
+                &amp;lt;div 
+                  className=&quot;ag-theme-balham&quot;
+                  style= 
+                &amp;gt;
+                  &amp;lt;AgGridReact
+                    columnDefs={this.state.columnDefs}
+                    rowData={this.state.rowData.listings}&amp;gt;
+                  &amp;lt;/AgGridReact&amp;gt;
+                &amp;lt;/div&amp;gt;
+              &amp;lt;/Segment&amp;gt;
+            &amp;lt;/Grid.Column&amp;gt;
+            &amp;lt;Grid.Column width={3}&amp;gt;&amp;lt;/Grid.Column&amp;gt;
+          &amp;lt;/Grid.Row&amp;gt;
+        &amp;lt;/Grid&amp;gt;
+    );
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>2019-11-13</pubDate>
+        <link>http://localhost:4000/articles/2019-10/mlb-19-community-listings</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-10/mlb-19-community-listings</guid>
+        
+        
+        <category>React</category>
+        
+        <category>JavaScript</category>
+        
+        <category>API</category>
+        
+      </item>
+    
+      <item>
+        <title>Dynamic HTML Titles in React with NFL's Helmet</title>
+        <description>&lt;p&gt;Using React through &lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt; is great, but when we consider that it will create a single-page application, 
+we begin to realize that changing properties in the document head of our html file is seemingly not so easy to do - but that
+could not be further from the truth.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;react-helmet&lt;/code&gt; is a reusable React component created by the NFL that can manage all of your changes to the document head, and it could
+not be any simpler to use. It supports server-side rendering, and while this blog post is focused solely on changing HTML &lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt; tags,
+&lt;code class=&quot;highlighter-rouge&quot;&gt;react-helmet&lt;/code&gt; supports all valid head tags: &lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;base&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;meta&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;link&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;script&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;noscript&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;style&lt;/code&gt; tags.&lt;/p&gt;
+
+&lt;p&gt;Let’s quit talking about it and let’s get into the code. First, create a new &lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt; application (named whatever you want) and open it up in your favorite
+text editor (if you don’t know how to do this, see the official &lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt; &lt;a href=&quot;https://create-react-app.dev/docs/getting-started&quot;&gt;documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that you’re in your project, delete the content from the pre-generated  &lt;code class=&quot;highlighter-rouge&quot;&gt;App.js&lt;/code&gt; file and replace the file with this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;import React from 'react';
+import './App.css';
+
+function App() {
+  return (
+    &amp;lt;div className=&quot;App&quot;&amp;gt;
+      &amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt;
+    &amp;lt;/div&amp;gt;
+  );
+}
+
+export default App;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Because we haven’t made any modifications to the document title yet, the title within the tab should be “React App” by default. For this simple example, we’re going to change the title based on a certain &lt;code class=&quot;highlighter-rouge&quot;&gt;state&lt;/code&gt; within our &lt;code class=&quot;highlighter-rouge&quot;&gt;App&lt;/code&gt; component. So, let’s modify our functional component &lt;code class=&quot;highlighter-rouge&quot;&gt;App&lt;/code&gt; to be a class component, and give it a state object that will hold the value we’d like our title to be:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;import React from 'react';
+import './App.css';
+
+class App extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      titleName: ''
+    };
+  }
+
+  render () {
+    return (
+      &amp;lt;div className=&quot;App&quot;&amp;gt;
+        &amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+
+export default App;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now this will, of course, make no change to the title at this point (after all, we haven’t even installed &lt;code class=&quot;highlighter-rouge&quot;&gt;react-helmet&lt;/code&gt; yet!), but we’re just setting up our project so when we get to the &lt;code class=&quot;highlighter-rouge&quot;&gt;react-helmet&lt;/code&gt; part, it’s much more satisfying. What I’d like to do is add an input field that allows the user to type in what they would like the title of the tab to be. So we’re going to create an input and in the &lt;code class=&quot;highlighter-rouge&quot;&gt;onChange&lt;/code&gt; of that input, we’re going to update our &lt;code class=&quot;highlighter-rouge&quot;&gt;state&lt;/code&gt;’s &lt;code class=&quot;highlighter-rouge&quot;&gt;titleName&lt;/code&gt; key’s value to the value within the input, like so:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      titleName: ''
+    };
+  }
+
+  changeTitle(ev) {
+    this.setState({
+      titleName: ev.target.value
+    });
+  }
+
+  render () {
+    return (
+      &amp;lt;div className=&quot;App&quot;&amp;gt;
+        &amp;lt;h1&amp;gt;{this.state.titleName}&amp;lt;/h1&amp;gt;
+        &amp;lt;input onChange={this.changeTitle.bind(this)}&amp;gt;&amp;lt;/input&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;As you can see, I threw the &lt;code class=&quot;highlighter-rouge&quot;&gt;this.state.titleName&lt;/code&gt; in an &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; so we would have quick-and-easy proof that our state is being updated when the input’s &lt;code class=&quot;highlighter-rouge&quot;&gt;onChange&lt;/code&gt; event is fired.&lt;/p&gt;
+
+&lt;p&gt;Now, for the fun part. Open up your CLI and run the command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm i react-helmet
+
+  &lt;span class=&quot;c&quot;&gt;# or, using Yarn:&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;yarn add react-helmet&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now that &lt;code class=&quot;highlighter-rouge&quot;&gt;react-helmet&lt;/code&gt; has been added to our project, we can add it to our &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;App /&amp;gt;&lt;/code&gt; component. To do this, we’re first going to simply import the component, then just like we would in a typical HTML file, we’re going to put the title information at the very top of our &lt;code class=&quot;highlighter-rouge&quot;&gt;render()&lt;/code&gt; return, only instead of wrapping it in a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag, we’re going to wrap it in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Helmet&amp;gt;&lt;/code&gt; tags. And of course, for the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;title&amp;gt;&lt;/code&gt;’s value, we’re going to set it to &lt;code class=&quot;highlighter-rouge&quot;&gt;this.state.titleName&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-react&quot; data-lang=&quot;react&quot;&gt;import React from 'react';
+import { Helmet } from 'react-helmet';
+
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      titleName: ''
+    };
+  }
+
+  changeTitle(ev) {
+    this.setState({
+      titleName: ev.target.value
+    });
+  }
+
+  render () {
+    return (
+      &amp;lt;div className=&quot;App&quot;&amp;gt;
+        &amp;lt;Helmet&amp;gt;
+          &amp;lt;title&amp;gt;{this.state.titleName}&amp;lt;/title&amp;gt;
+        &amp;lt;/Helmet&amp;gt;
+        &amp;lt;input onChange={this.changeTitle.bind(this)}&amp;gt;&amp;lt;/input&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+
+export default App;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now when changes are made to the input field, you can see the html title changes in the browser tab:
+&lt;img src=&quot;http://localhost:4000/img/dynamic_title.gif&quot; alt=&quot;Dynamic Titles in React&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Helmet&amp;gt;&lt;/code&gt; can be used on any components, just keep in mind that child components will always override and helmet data passed through their parent components.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Thanks for reading, folks. Hope this taught you something.&lt;/p&gt;
+</description>
+        <pubDate>2019-11-13</pubDate>
+        <link>http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</guid>
+        
+        
+        <category>React</category>
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+      <item>
+        <title>Setting up Automatic React Application Deploys on Heroku Dynos</title>
         <description>&lt;p&gt;Per the sub-title, this is “Part 1”. In this series, we’re going to build out a community market listing react application for MLB The Show 19 and set up an automatic pipeline to build and deploy our React application from a GitHub repository to a Heroku Dyno. In this post we will scaffold out the react app and get the automatic deployment set up for Heroku, which will prepare ourselves to create the components necessary to list out all listings for MLB The Show 19’s Community Market. Why MLB The Show 19? Because… it’s &lt;em&gt;baseball&lt;/em&gt;. If you’re not familiar with MLB The Show 19 - it’s a baseball video game for PlayStation 4 and it has a community market that allows players to list baseball cards, stadiums, and equipment that other players can buy to use for their team. In this project, we will only build out listings for baseball cards (i.e. players), not stadiums or equipment or anything else. If that is something that interests you, I would highly recommend you extend the application to meet your needs.&lt;/p&gt;
 
 &lt;p&gt;The first thing we need to do to get started is to create a GitHub repository to have source control over our application and to have a place to store our code. To do this, go to GitHub.com and create a GitHub repository. Then, to get that repository on your local machine, use either a git GUI program or just use the command line interface and run the following:&lt;/p&gt;
@@ -91,7 +393,7 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Fantastic - now we’ve got a react app automatically deploying to a Heroku dyno, now we just need that react app to do something cool! In the next post, we’ll begin creating the React components necessary to view the Community Market listings.&lt;/p&gt;
 </description>
-        <pubDate>2019-09-25</pubDate>
+        <pubDate>2019-11-13</pubDate>
         <link>http://localhost:4000/articles/2019-09/mlb-19-community-listings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-09/mlb-19-community-listings</guid>
         
@@ -101,6 +403,8 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         <category>JavaScript</category>
         
         <category>API</category>
+        
+        <category>Heroku</category>
         
       </item>
     
@@ -117,7 +421,7 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;CodePen Link : https://codepen.io/JakenHerman/pen/MWgKNvm
 Dribble Link : https://dribbble.com/shots/6990265-Credit-Card-Checkout-DailyUI-002&lt;/p&gt;
 </description>
-        <pubDate>2019-09-25</pubDate>
+        <pubDate>2019-11-13</pubDate>
         <link>http://localhost:4000/articles/2019-06/dailyui-002</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-06/dailyui-002</guid>
         
@@ -148,7 +452,7 @@ Dribble Link : https://dribbble.com/shots/6990265-Credit-Card-Checkout-DailyUI-0
 
 &lt;p&gt;To turn developer options back off, just flip the switch at the top of the developer options screen to “off”. Once you navigate away from this screen, it will be gone from your phone until you repeat the above steps to enable developer mode.&lt;/p&gt;
 </description>
-        <pubDate>2019-09-25</pubDate>
+        <pubDate>2019-11-13</pubDate>
         <link>http://localhost:4000/articles/2019-05/android-device-developer-mode</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-05/android-device-developer-mode</guid>
         
@@ -229,7 +533,7 @@ end
 &lt;p&gt;So how do you learn Python or JavaScript or C++ or literally &lt;strong&gt;any other language&lt;/strong&gt;? Replace every instance of the word “Ruby” in this answer, and replace it with whichever programming language you want to learn. By the end, you’ll have a FizzBuzz program. Then, all you have to do is think of another more complex problem and &lt;strong&gt;just do it.&lt;/strong&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>2019-09-25</pubDate>
+        <pubDate>2019-11-13</pubDate>
         <link>http://localhost:4000/articles/2019-05/learning-a-new-programming-language</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-05/learning-a-new-programming-language</guid>
         
@@ -290,7 +594,7 @@ end
 
 &lt;p&gt;Now, let’s send these up to the firebase app. Open up your terminal and type &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase deploy&lt;/code&gt;. Once they’re deployed, you can see them in the “Cloud Functions” section of your Firebase console. Then you can call them from your browswer or ping them however you prefer. Cloud functions are super flexible and I would highly recommend trying them out.&lt;/p&gt;
 </description>
-        <pubDate>2019-09-25</pubDate>
+        <pubDate>2019-11-13</pubDate>
         <link>http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</guid>
         
@@ -305,7 +609,7 @@ end
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6a2dL06OsLw&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>2019-09-25</pubDate>
+        <pubDate>2019-11-13</pubDate>
         <link>http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</guid>
         
@@ -379,7 +683,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;This is a very basic example, but I always find it fun to look into how things were done before new improvements in development came around.&lt;/p&gt;
 </description>
-        <pubDate>2019-09-25</pubDate>
+        <pubDate>2019-11-13</pubDate>
         <link>http://localhost:4000/articles/2019-02/objects-javascript-prototyping</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/objects-javascript-prototyping</guid>
         
@@ -425,98 +729,12 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;In this case, &lt;code class=&quot;highlighter-rouge&quot;&gt;self.colorVar&lt;/code&gt; will be automatically set to whichever radio button is selected.&lt;/p&gt;
 </description>
-        <pubDate>2019-09-25</pubDate>
+        <pubDate>2019-11-13</pubDate>
         <link>http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</guid>
         
         
         <category>Python</category>
-        
-      </item>
-    
-      <item>
-        <title>Implementing Apache Cordova Push Notifications in Android using Firebase</title>
-        <description>&lt;p&gt;Firebase Cloud Messaging (or FCM) is a great cross platform messaging solution that is completely 100% free. Today, I’ll walk you through the process of creating push notifications in your Android Apache Cordova application using Firebase.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Prerequisites :&lt;/p&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;Have a Firebase account (it’s free, just go sign up!)&lt;/li&gt;
-    &lt;li&gt;Have npm/cordova installed on your machine.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The first thing we’re going to do is set up a cordova project. If you already have your project set up, skip this step. I’m including it for completeness. We’re going to create this project in our desktop directory, so first you should open up your terminal or command line and type “cd desktop”. Next, type &lt;code class=&quot;highlighter-rouge&quot;&gt;cordova create notificationtest com.notificationtest.app&lt;/code&gt;. Be sure you get the &lt;code class=&quot;highlighter-rouge&quot;&gt;com.notificationtest.app&lt;/code&gt; part as that is our package name that Firebase will use. Type &lt;code class=&quot;highlighter-rouge&quot;&gt;cd notificationtest&lt;/code&gt; to change to your new project directory.&lt;/p&gt;
-
-&lt;p&gt;The next thing we’ll do is add the Android platform to our newly created Cordova project. Type &lt;code class=&quot;highlighter-rouge&quot;&gt;cordova platform add android&lt;/code&gt;, and this will set your project up to be able to run on the Android platform. The next thing we’ll need to do is install a plugin for Firebase to interface with our project. GitHub user arnesson has created a great plugin for this, and we can install it by running the command &lt;code class=&quot;highlighter-rouge&quot;&gt;cordova plugin add cordova-plugin-firebase --save&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now we can go into Firebase and select “Add project”. Type “Notification Test” (or your project’s name) into the Project Name area, and select Create Project. Now that your project has been created, go to the Project Overview page for your Firebase project and select Add app, and select the Android logo.&lt;/p&gt;
-
-&lt;p&gt;Now you’ll be able to register your app. In the Android package name section, type com.notificationtest.app, and press Register app. This will generate a JSON file called &lt;code class=&quot;highlighter-rouge&quot;&gt;google-services.json&lt;/code&gt;. Download this file, and continue through the App registration page, just selecting the things that are selected by default.&lt;/p&gt;
-
-&lt;p&gt;Navigate to the directory where the &lt;code class=&quot;highlighter-rouge&quot;&gt;google-services.json&lt;/code&gt; file was downloaded, and move the file into your &lt;code class=&quot;highlighter-rouge&quot;&gt;desktop/notificationtest&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;Open your terminal back up and type &lt;code class=&quot;highlighter-rouge&quot;&gt;cd desktop/notificaitontest&lt;/code&gt;. Then type &lt;code class=&quot;highlighter-rouge&quot;&gt;cordova run android&lt;/code&gt;. This will start up the Android emulator running your application. The next thing we need to do is set up a cloud message in Firebase. On your Firebase project page, scroll down to the “Grow” section, and select “Cloud Messaging”. If you’ve never created a notification before, the button text will be Create your first message, and if you have created a notification before, the button text will be New notification. Press the button, and under Notification text, type “Hello World!”, and press “Next”. In the Target section, select NotificationTest for your app, and press Review. A modal will appear of the notification you’re preparing to send. Select the blue Publish button to fire your notification away!&lt;/p&gt;
-
-&lt;p&gt;And that’s it. You’ve just sent your first push notification. Congratulations. If any of this was difficult to follow, feel free to watch the YouTube video I made of it below. Thanks for reading.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/tx09AElYnzE&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>2019-09-25</pubDate>
-        <link>http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/push-notifi-cordova-firebase</guid>
-        
-        
-        <category>JavaScript</category>
-        
-        <category>Mobile Development</category>
-        
-        <category>Firebase</category>
-        
-      </item>
-    
-      <item>
-        <title>Introduction to the Singleton pattern in C#</title>
-        <description>&lt;p&gt;One of the most known, popular patterns in software engineering is the singleton pattern. What is a singleton? A singleton is a class that is written in such a way that it only allows a single instance of itself to be created, and usually has an access method to obtain the instance. You may choose to use a singleton, for example, if your program has some kind of shared resource like an in-memory cache.&lt;/p&gt;
-
-&lt;p&gt;So, again, let’s quickly go over the intent of a singleton before we attempt to implement it. We need to insure that only one instance of the class is instantiated, and we need to provide a global point of access to the object.&lt;/p&gt;
-
-&lt;p&gt;Ready? Let’s go. I’ll put the implementation below, and describe why it works and what it is doing after that.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Singleton&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;readonly&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//do constructor stuff here.
-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;So as you can tell, our Singleton class has a class property instance of type… Singleton. That’s right, the singleton class definition includes a property of itself. This variable is the only place in your entire program that will have the text “new Singleton();” unless, of course, it’s in a comment. (Can’t get me on a technicality now, folks.😎).&lt;/p&gt;
-
-&lt;p&gt;The Singleton class will also contain a private constructor. Not many class definitions contain a private constructor, however, because we only want to ensure that one instance of our Singleton class is instantiated, we hide our constructor to outside classes.&lt;/p&gt;
-
-&lt;p&gt;The final element to the Singleton class is the “getInstance()” method. This method simply returns the instance variable on the Singleton class that instantiated it.&lt;/p&gt;
-
-&lt;p&gt;That’s all there is to it, folks. A thread-safe implementation of the singleton pattern in C#. Thanks for reading.&lt;/p&gt;
-</description>
-        <pubDate>2019-09-25</pubDate>
-        <link>http://localhost:4000/articles/2019-02/singletons-in-c-sharp</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/singletons-in-c-sharp</guid>
-        
-        
-        <category>C#</category>
-        
-        <category>Computer Science</category>
-        
-        <category>Software Engineering</category>
-        
-        <category>Design Patterns</category>
         
       </item>
     
