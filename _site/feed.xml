@@ -5,8 +5,8 @@
     <description>Software Engineer, Brewer of Beer, Husband</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2019-11-13</pubDate>
-    <lastBuildDate>Wed, 13 Nov 2019 19:31:41 +0000</lastBuildDate>
+    <pubDate>2019-11-14</pubDate>
+    <lastBuildDate>Thu, 14 Nov 2019 02:59:38 +0100</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -155,7 +155,7 @@ import 'ag-grid-community/dist/styles/ag-theme-balham.css';&lt;/code&gt;&lt;/pre
   }&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-        <pubDate>2019-11-13</pubDate>
+        <pubDate>2019-11-14</pubDate>
         <link>http://localhost:4000/articles/2019-10/mlb-19-community-listings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-10/mlb-19-community-listings</guid>
         
@@ -300,7 +300,7 @@ export default App;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Thanks for reading, folks. Hope this taught you something.&lt;/p&gt;
 </description>
-        <pubDate>2019-11-13</pubDate>
+        <pubDate>2019-11-14</pubDate>
         <link>http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</guid>
         
@@ -393,7 +393,7 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Fantastic - now we’ve got a react app automatically deploying to a Heroku dyno, now we just need that react app to do something cool! In the next post, we’ll begin creating the React components necessary to view the Community Market listings.&lt;/p&gt;
 </description>
-        <pubDate>2019-11-13</pubDate>
+        <pubDate>2019-11-14</pubDate>
         <link>http://localhost:4000/articles/2019-09/mlb-19-community-listings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-09/mlb-19-community-listings</guid>
         
@@ -421,7 +421,7 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;CodePen Link : https://codepen.io/JakenHerman/pen/MWgKNvm
 Dribble Link : https://dribbble.com/shots/6990265-Credit-Card-Checkout-DailyUI-002&lt;/p&gt;
 </description>
-        <pubDate>2019-11-13</pubDate>
+        <pubDate>2019-11-14</pubDate>
         <link>http://localhost:4000/articles/2019-06/dailyui-002</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-06/dailyui-002</guid>
         
@@ -452,7 +452,7 @@ Dribble Link : https://dribbble.com/shots/6990265-Credit-Card-Checkout-DailyUI-0
 
 &lt;p&gt;To turn developer options back off, just flip the switch at the top of the developer options screen to “off”. Once you navigate away from this screen, it will be gone from your phone until you repeat the above steps to enable developer mode.&lt;/p&gt;
 </description>
-        <pubDate>2019-11-13</pubDate>
+        <pubDate>2019-11-14</pubDate>
         <link>http://localhost:4000/articles/2019-05/android-device-developer-mode</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-05/android-device-developer-mode</guid>
         
@@ -533,7 +533,7 @@ end
 &lt;p&gt;So how do you learn Python or JavaScript or C++ or literally &lt;strong&gt;any other language&lt;/strong&gt;? Replace every instance of the word “Ruby” in this answer, and replace it with whichever programming language you want to learn. By the end, you’ll have a FizzBuzz program. Then, all you have to do is think of another more complex problem and &lt;strong&gt;just do it.&lt;/strong&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>2019-11-13</pubDate>
+        <pubDate>2019-11-14</pubDate>
         <link>http://localhost:4000/articles/2019-05/learning-a-new-programming-language</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-05/learning-a-new-programming-language</guid>
         
@@ -594,7 +594,7 @@ end
 
 &lt;p&gt;Now, let’s send these up to the firebase app. Open up your terminal and type &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase deploy&lt;/code&gt;. Once they’re deployed, you can see them in the “Cloud Functions” section of your Firebase console. Then you can call them from your browswer or ping them however you prefer. Cloud functions are super flexible and I would highly recommend trying them out.&lt;/p&gt;
 </description>
-        <pubDate>2019-11-13</pubDate>
+        <pubDate>2019-11-14</pubDate>
         <link>http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</guid>
         
@@ -609,7 +609,7 @@ end
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6a2dL06OsLw&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>2019-11-13</pubDate>
+        <pubDate>2019-11-14</pubDate>
         <link>http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</guid>
         
@@ -683,7 +683,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;This is a very basic example, but I always find it fun to look into how things were done before new improvements in development came around.&lt;/p&gt;
 </description>
-        <pubDate>2019-11-13</pubDate>
+        <pubDate>2019-11-14</pubDate>
         <link>http://localhost:4000/articles/2019-02/objects-javascript-prototyping</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/objects-javascript-prototyping</guid>
         
@@ -729,7 +729,7 @@ After all is said and done, we can then use the console to see our reptile varia
 
 &lt;p&gt;In this case, &lt;code class=&quot;highlighter-rouge&quot;&gt;self.colorVar&lt;/code&gt; will be automatically set to whichever radio button is selected.&lt;/p&gt;
 </description>
-        <pubDate>2019-11-13</pubDate>
+        <pubDate>2019-11-14</pubDate>
         <link>http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/python-tkinter-radiobuttons</guid>
         
