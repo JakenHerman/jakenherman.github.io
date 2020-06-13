@@ -34,7 +34,7 @@ Next, let's look at draft picks by position. This includes every single pick - a
   sandbox="allow-autoplay allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-So who <strong>didn't</strong> take any pitchers? Only <em>three</em> teams! The Detroit Tigers, Tampba Bay Rays, and Milwaukee Brewers.
+So who <strong>didn't</strong> take any pitchers? Only <em>three</em> teams! The Detroit Tigers, Tampa Bay Rays, and Milwaukee Brewers.
 
 <div style="display: flex; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 45px; margin-bottom: 45px;">
   <img src="{{ site.url }}/img/MLBLogos/tigers.png" alt="Detroit Tigers Logo" height="100" />
