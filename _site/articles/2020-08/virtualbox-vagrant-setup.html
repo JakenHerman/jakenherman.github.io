@@ -8,29 +8,29 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Software Engineer, Brewer of Beer, Husband">
+  <meta name="description" content="Setting up the VirtualBox + Vagrant Environment">
   <meta name="keywords" content="blog, jaken, herman, software, and engineer">
-  <meta name="author" content="Archive | Jaken Herman">
+  <meta name="author" content="Setting up VirtualBox+Vagrant | Jaken Herman">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f5f5f5">
 
   <!-- Twitter Tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Archive | Jaken Herman">
-  <meta name="twitter:description" content="Software Engineer, Brewer of Beer, Husband">
+  <meta name="twitter:title" content="Setting up VirtualBox+Vagrant | Jaken Herman">
+  <meta name="twitter:description" content="Setting up the VirtualBox + Vagrant Environment">
   
     <meta property="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
   
 
   <!-- Open Graph Tags -->
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="http://localhost:4000/archive/">
-  <meta property="og:title" content="Archive | Jaken Herman">
-  <meta property="og:description" content="Software Engineer, Brewer of Beer, Husband">
+  <meta property="og:url" content="http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup">
+  <meta property="og:title" content="Setting up VirtualBox+Vagrant | Jaken Herman">
+  <meta property="og:description" content="Setting up the VirtualBox + Vagrant Environment">
   
     <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
   
-  <title>Archive | Jaken Herman</title>
+  <title>Setting up VirtualBox+Vagrant | Jaken Herman</title>
 
   <!-- CSS files -->
   <link rel="stylesheet" href="http://localhost:4000/css/main.css">
@@ -38,7 +38,7 @@
   <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/12caf75e50.js"></script>
 
-  <link rel="canonical" href="http://localhost:4000/archive/">
+  <link rel="canonical" href="http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup">
   <link rel="alternate" type="application/rss+xml" title="Jaken Herman" href="http://localhost:4000/feed.xml" />
 
   <!-- Icons -->
@@ -172,270 +172,143 @@
     </div>
     <div class="col s12 m9">
       <div class="post-listing">
-          <div id="page">
-    <header class="page-header">
-      <h2>Archive</h2>
-    </header>
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
 
-    <article class="page-content">
-      <div class="archive">
-  <div class="timeline" id="timeline">
-    
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
 
-      <ul>
-      
-      </ul>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<div id="post">
+  <header class="post-header">
+    <h1 title="Setting up VirtualBox+Vagrant">Setting up VirtualBox+Vagrant</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        21 AUG 2020
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    2 mins read
+  
+</span>
 
-      <ul>
-      
-      </ul>
+    </span>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+  </header>
 
-      <ul>
-      
-      </ul>
+  <article class="post-content">
+    <p>Setting up VirtualBox and Vagrant is not only a breeze, but it’s also free. This combo is great for simple projects, much like the project we’re working on in this series (should you choose to finish this full series) - parsing Retrosheet baseball data using Chadwick in order to create useful R data frames for visualization.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<hr />
+<p>Keep in mind throughout this post that your download+setup process may vary slightly, but the main process will remain similar enough to follow.</p>
 
-      <ul>
-      
-      </ul>
+<h1 id="step-1-download-and-install-virtualbox">Step 1: Download and Install VirtualBox</h1>
+<p>Navigate to the VirtualBox download page here: https://www.virtualbox.org/wiki/Downloads, and select the download that is appropriate for your current operating system.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p><img src="http://localhost:4000/img/VirtualBoxDownload.png" alt="VirtualBox Download Page" /></p>
 
-      <ul>
-      
-      </ul>
+<p>Run your installer and complete the standard installation process you follow for any other software.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<blockquote>
+  <p>MacOS Users: An issue may occur where your installation is being blocked by your Security &amp; Privacy settings. If this occurs, do the following:</p>
+</blockquote>
 
-      <ul>
-      
-      </ul>
+<ul>
+  <li>Open <code class="highlighter-rouge">System Preferences</code></li>
+  <li>Go to <code class="highlighter-rouge">Security &amp; Privacy</code></li>
+  <li>There will be a message that says <code class="highlighter-rouge">System software from developer "Oracle America, Inc." was blocked from loading.</code></li>
+  <li>Click the lock icon in the bottom left of the window &amp; enter your password</li>
+  <li>Click the <code class="highlighter-rouge">Allow</code> button</li>
+</ul>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<hr />
 
-      <ul>
-      
-      </ul>
+<h1 id="step-2-download--installvagrant">Step 2: Download &amp; Install Vagrant</h1>
+<p>Navigate to the Vagrant download page here: https://www.vagrantup.com/downloads, and select the download that is appropriate for your current operating system.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p><img src="http://localhost:4000/img/VagrantDownload.png" alt="Vagrant Download Page" /></p>
 
-      <ul>
-      
-      </ul>
+<p>Run your installer and complete the standard installation process you follow for any other software.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<hr />
 
-      <ul>
-      
-      </ul>
+<h1 id="step-3-set-up-directory-and-initialize-vagrantbox">Step 3: Set up Directory and Initialize Vagrant Box</h1>
+<p>Now that we have VirtualBox and Vagrant installed, we need to set up a directory to use the two together. Keep in mind, we’ll never explicitly open the VirtualBox application, we only downloaded and installed it so Vagrant would be able to use it in the background.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p>Open up your terminal, make a new directory (in this example I named mine baseball), then initialize a Vagrant box of your choice (boxes listed here: https://app.vagrantup.com/boxes/search). In this example, I’m using ubuntu/trusty64:</p>
 
-      <ul>
-      
-      </ul>
+<p><img src="http://localhost:4000/img/VagrantInit.png" alt="Initialize Vagrant Box" /></p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p>The <code class="highlighter-rouge">vagrant init ...</code> command could take up to an hour to run, so grab a cup of joe ☕, it may be a while!
+When your initialization is complete, you’ll notice a file called <code class="highlighter-rouge">Vagrantfile</code> in your baseball directory. As described by the Vagrant website:</p>
 
-      <ul>
-      
-      </ul>
+<blockquote>
+  <p>The primary function of the Vagrantfile is to describe the type of machine required for a project, and how to configure and provision these machines.</p>
+</blockquote>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<hr />
 
-      <ul>
-      
-      </ul>
+<h1 id="step-4-run-vagrant--sshin">Step 4: Run Vagrant + SSH In</h1>
+<p>Once your Vagrant box has been initialized, the next step is easy - just run vagrant up to spool up your VirtualBox background process and SSH in:</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p><img src="http://localhost:4000/img/VagrantUp.png" alt="SSH Into Vagrant Box" /></p>
 
-      <ul>
-      
-      </ul>
+<p>You’ll now be in your virtual machine! Keep in mind when using this that if you create a file in the directory <code class="highlighter-rouge">/vagrant</code>, the files will be added to your non-virtual <code class="highlighter-rouge">baseball</code> directory.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p>Thanks for reading. Check back in the next post and we’ll get Chadwick downloaded and configured so we can begin playing around with Retrosheet data!</p>
 
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-  </div>
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Horizontal Display Unit Personal Site -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9580564349953922"
+     data-ad-slot="1624547715"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </article>
 </div>
 
-    </article>
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
 
 
-  </div><!-- end page content -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jakenherman-com';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
-  
 
         <footer>
   &copy; 2020 jaken herman. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
