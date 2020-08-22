@@ -21,6 +21,8 @@ Run your installer and complete the standard installation process you follow for
 
 > MacOS Users: An issue may occur where your installation is being blocked by your Security & Privacy settings. If this occurs, do the following:
 
+![Security Privacy Window Error]({{ site.url }}/img/Security-Privacy-Window.png)
+
  - Open `System Preferences`
  - Go to `Security & Privacy`
  - There will be a message that says `System software from developer "Oracle America, Inc." was blocked from loading.`
