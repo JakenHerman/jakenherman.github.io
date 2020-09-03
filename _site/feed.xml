@@ -5,9 +5,54 @@
     <description>Software Engineer, Brewer of Beer, Husband</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2020-08-22</pubDate>
-    <lastBuildDate>Sat, 22 Aug 2020 12:05:17 +0200</lastBuildDate>
+    <pubDate>2020-09-03</pubDate>
+    <lastBuildDate>Thu, 03 Sep 2020 09:17:56 +0200</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Configuring + Installing Chadwick for Parsing Retrosheet Data</title>
+        <description>&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/chadwick.jpg&quot; alt=&quot;Henry Chadwick&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This post assumes you’ve set up VirtualBox &amp;amp; Vagrant. If you have not completed this step, follow the steps outlined in my previous blog post: https://www.jakenherman.com/articles/2020-08/virtualbox-vagrant-setup.&lt;/p&gt;
+
+&lt;p&gt;The first thing we’re going to do is open up our terminal and run &lt;code class=&quot;highlighter-rouge&quot;&gt;cd baseball&lt;/code&gt;, which is the directory we created in the previous post.&lt;/p&gt;
+
+&lt;p&gt;After than, we need to get the &lt;code class=&quot;highlighter-rouge&quot;&gt;.tar.gz&lt;/code&gt; that contains the Chadwick software installer and configuration files. To download this, go to the chadwickbureau GitHub page, the Chadwick repository, and navigate to the “Releases” page. Here’s a quick link to take you there directly: https://github.com/chadwickbureau/chadwick/releases&lt;/p&gt;
+
+&lt;p&gt;Take the latest release in the &lt;code class=&quot;highlighter-rouge&quot;&gt;.tar.gz&lt;/code&gt; format, and move that file into your baseball directory. Once the tar file is in your baseball directory, in your terminal run the command &lt;code class=&quot;highlighter-rouge&quot;&gt;vagrant up&lt;/code&gt;, followed by &lt;code class=&quot;highlighter-rouge&quot;&gt;vagrant ssh&lt;/code&gt; . &lt;/p&gt;
+
+&lt;p&gt;Your terminal instance will now be running on your VirtualBox virtual machine. What we need to do now is move the tar file we downloaded earlier into the &lt;code class=&quot;highlighter-rouge&quot;&gt;usr/local/src directory&lt;/code&gt; (this file will currently be sitting in &lt;code class=&quot;highlighter-rouge&quot;&gt;~/vagrant&lt;/code&gt;). We’ll first navigate to the directory we’re moving the file into by running the command &lt;code class=&quot;highlighter-rouge&quot;&gt;cd /usr/local/src&lt;/code&gt;, then run the command below to copy the Chadwick tar file into the current directory (keep in mind, my file’s version number is 0.8.1, but yours may be different - update your command accordingly):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/copy_chadwick_to_src.png&quot; alt=&quot;Copy and Unpack the Chadwick Tar File&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that Chadwick has been copied and unpacked, we need to configure the software and complete the installation. To do this, run the &lt;code class=&quot;highlighter-rouge&quot;&gt;configure&lt;/code&gt; file that you can see in the &lt;code class=&quot;highlighter-rouge&quot;&gt;chadwick-0.8.1&lt;/code&gt; directory when you run &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;, then &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt; to compile, &lt;code class=&quot;highlighter-rouge&quot;&gt;make install&lt;/code&gt; to install the software to our virtual machine, and &lt;code class=&quot;highlighter-rouge&quot;&gt;ldconfig&lt;/code&gt; to make sure the program can link to the libraries it needs:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/configure_chadwick.png&quot; alt=&quot;Configure, Make, Install, and Link the new Chadwick Files&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To test that Chadwick was properly installed, run the &lt;code class=&quot;highlighter-rouge&quot;&gt;cwevent&lt;/code&gt; command, and you should get the following output:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/cwevent_test.png&quot; alt=&quot;cwevent should succesfully fail (what a strange sentance)&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While this is technically an error, it means the installation was a success. &lt;code class=&quot;highlighter-rouge&quot;&gt;cwevent&lt;/code&gt; is a command that Chadwick uses to parse Retrosheet event files, and since we’ve not yet provided one - we get this warning.&lt;/p&gt;
+
+&lt;p&gt;I hope this was helpful to you in your quest to begin working with Chadwick and Retrosheet. In the next post, we’ll download our first few Retrosheet files and begin exploring.&lt;/p&gt;
+</description>
+        <pubDate>2020-09-03</pubDate>
+        <link>http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant</guid>
+        
+        
+        <category>MLB</category>
+        
+        <category>Data Science</category>
+        
+        <category>Chadwick</category>
+        
+        <category>Retrosheet</category>
+        
+      </item>
     
       <item>
         <title>Setting up VirtualBox+Vagrant</title>
@@ -73,7 +118,7 @@ When your initialization is complete, you’ll notice a file called &lt;code cla
 
 &lt;p&gt;Thanks for reading. Check back in the next post and we’ll get Chadwick downloaded and configured so we can begin playing around with Retrosheet data!&lt;/p&gt;
 </description>
-        <pubDate>2020-08-22</pubDate>
+        <pubDate>2020-09-03</pubDate>
         <link>http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup</guid>
         
@@ -117,7 +162,7 @@ When your initialization is complete, you’ll notice a file called &lt;code cla
 
 &lt;p&gt;I’d love to do many more draft visualizations and maybe even dip into some KBO numbers, but for now I’m going to call it a night! Thanks for stopping by.&lt;/p&gt;
 </description>
-        <pubDate>2020-08-22</pubDate>
+        <pubDate>2020-09-03</pubDate>
         <link>http://localhost:4000/articles/2020-06/simple-mlb-draft-20-visuals</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-06/simple-mlb-draft-20-visuals</guid>
         
@@ -276,7 +321,7 @@ import 'ag-grid-community/dist/styles/ag-theme-balham.css';&lt;/code&gt;&lt;/pre
   }&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-        <pubDate>2020-08-22</pubDate>
+        <pubDate>2020-09-03</pubDate>
         <link>http://localhost:4000/articles/2019-10/mlb-19-community-listings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-10/mlb-19-community-listings</guid>
         
@@ -421,7 +466,7 @@ export default App;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Thanks for reading, folks. Hope this taught you something.&lt;/p&gt;
 </description>
-        <pubDate>2020-08-22</pubDate>
+        <pubDate>2020-09-03</pubDate>
         <link>http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</guid>
         
@@ -514,7 +559,7 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Fantastic - now we’ve got a react app automatically deploying to a Heroku dyno, now we just need that react app to do something cool! In the next post, we’ll begin creating the React components necessary to view the Community Market listings.&lt;/p&gt;
 </description>
-        <pubDate>2020-08-22</pubDate>
+        <pubDate>2020-09-03</pubDate>
         <link>http://localhost:4000/articles/2019-09/mlb-19-community-listings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-09/mlb-19-community-listings</guid>
         
@@ -542,7 +587,7 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;CodePen Link : https://codepen.io/JakenHerman/pen/MWgKNvm
 Dribble Link : https://dribbble.com/shots/6990265-Credit-Card-Checkout-DailyUI-002&lt;/p&gt;
 </description>
-        <pubDate>2020-08-22</pubDate>
+        <pubDate>2020-09-03</pubDate>
         <link>http://localhost:4000/articles/2019-06/dailyui-002</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-06/dailyui-002</guid>
         
@@ -573,7 +618,7 @@ Dribble Link : https://dribbble.com/shots/6990265-Credit-Card-Checkout-DailyUI-0
 
 &lt;p&gt;To turn developer options back off, just flip the switch at the top of the developer options screen to “off”. Once you navigate away from this screen, it will be gone from your phone until you repeat the above steps to enable developer mode.&lt;/p&gt;
 </description>
-        <pubDate>2020-08-22</pubDate>
+        <pubDate>2020-09-03</pubDate>
         <link>http://localhost:4000/articles/2019-05/android-device-developer-mode</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-05/android-device-developer-mode</guid>
         
@@ -654,7 +699,7 @@ end
 &lt;p&gt;So how do you learn Python or JavaScript or C++ or literally &lt;strong&gt;any other language&lt;/strong&gt;? Replace every instance of the word “Ruby” in this answer, and replace it with whichever programming language you want to learn. By the end, you’ll have a FizzBuzz program. Then, all you have to do is think of another more complex problem and &lt;strong&gt;just do it.&lt;/strong&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>2020-08-22</pubDate>
+        <pubDate>2020-09-03</pubDate>
         <link>http://localhost:4000/articles/2019-05/learning-a-new-programming-language</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-05/learning-a-new-programming-language</guid>
         
@@ -715,27 +760,12 @@ end
 
 &lt;p&gt;Now, let’s send these up to the firebase app. Open up your terminal and type &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase deploy&lt;/code&gt;. Once they’re deployed, you can see them in the “Cloud Functions” section of your Firebase console. Then you can call them from your browswer or ping them however you prefer. Cloud functions are super flexible and I would highly recommend trying them out.&lt;/p&gt;
 </description>
-        <pubDate>2020-08-22</pubDate>
+        <pubDate>2020-09-03</pubDate>
         <link>http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-02/firebase-cloud-func-typescript</guid>
         
         
         <category>TypeScript</category>
-        
-      </item>
-    
-      <item>
-        <title>Golf, Shaving, and Huey Lewis</title>
-        <description>&lt;p&gt;Well, it’s official. I no longer have a beard 🧔. I do, however, still have a mustache 👨. This was a pretty fun weekend. Got to play some golf, went out to eat at Perry’s, paid off 3 credit cards (in full!!), and had a good day in the yard with my pups.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6a2dL06OsLw&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>2020-08-22</pubDate>
-        <link>http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2019-02/huey-lewis-shaving-golf</guid>
-        
-        
-        <category>Blog</category>
         
       </item>
     

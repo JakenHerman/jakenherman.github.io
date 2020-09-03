@@ -8,29 +8,29 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Software Engineer, Brewer of Beer, Husband">
+  <meta name="description" content="With VirtualBox + Vagrant Installed, the last thing we need before parsing Retrosheet data is to have Chadwick configured and installed.">
   <meta name="keywords" content="blog, jaken, herman, software, and engineer">
-  <meta name="author" content="Archive | Jaken Herman">
+  <meta name="author" content="Configuring + Installing Chadwick for Parsing Retrosheet Data | Jaken Herman">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f5f5f5">
 
   <!-- Twitter Tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Archive | Jaken Herman">
-  <meta name="twitter:description" content="Software Engineer, Brewer of Beer, Husband">
+  <meta name="twitter:title" content="Configuring + Installing Chadwick for Parsing Retrosheet Data | Jaken Herman">
+  <meta name="twitter:description" content="With VirtualBox + Vagrant Installed, the last thing we need before parsing Retrosheet data is to have Chadwick configured and installed.">
   
     <meta property="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
   
 
   <!-- Open Graph Tags -->
   <meta property="og:type" content="blog">
-  <meta property="og:url" content="http://localhost:4000/archive/">
-  <meta property="og:title" content="Archive | Jaken Herman">
-  <meta property="og:description" content="Software Engineer, Brewer of Beer, Husband">
+  <meta property="og:url" content="http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant">
+  <meta property="og:title" content="Configuring + Installing Chadwick for Parsing Retrosheet Data | Jaken Herman">
+  <meta property="og:description" content="With VirtualBox + Vagrant Installed, the last thing we need before parsing Retrosheet data is to have Chadwick configured and installed.">
   
     <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
   
-  <title>Archive | Jaken Herman</title>
+  <title>Configuring + Installing Chadwick for Parsing Retrosheet Data | Jaken Herman</title>
 
   <!-- CSS files -->
   <link rel="stylesheet" href="http://localhost:4000/css/main.css">
@@ -38,7 +38,7 @@
   <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/12caf75e50.js"></script>
 
-  <link rel="canonical" href="http://localhost:4000/archive/">
+  <link rel="canonical" href="http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant">
   <link rel="alternate" type="application/rss+xml" title="Jaken Herman" href="http://localhost:4000/feed.xml" />
 
   <!-- Icons -->
@@ -172,279 +172,111 @@
     </div>
     <div class="col s12 m9">
       <div class="post-listing">
-          <div id="page">
-    <header class="page-header">
-      <h2>Archive</h2>
-    </header>
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
 
-    <article class="page-content">
-      <div class="archive">
-  <div class="timeline" id="timeline">
-    
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
 
-      <ul>
-      
-      </ul>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<div id="post">
+  <header class="post-header">
+    <h1 title="Configuring + Installing Chadwick for Parsing Retrosheet Data">Configuring + Installing Chadwick for Parsing Retrosheet Data</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        2 SEP 2020
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    2 mins read
+  
+</span>
 
-      <ul>
-      
-      </ul>
+    </span>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+  </header>
 
-      <ul>
-      
-      </ul>
+  <article class="post-content">
+    <p><img src="http://localhost:4000/img/chadwick.jpg" alt="Henry Chadwick" /></p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<hr />
 
-      <ul>
-      
-      </ul>
+<p>This post assumes you’ve set up VirtualBox &amp; Vagrant. If you have not completed this step, follow the steps outlined in my previous blog post: https://www.jakenherman.com/articles/2020-08/virtualbox-vagrant-setup.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p>The first thing we’re going to do is open up our terminal and run <code class="highlighter-rouge">cd baseball</code>, which is the directory we created in the previous post.</p>
 
-      <ul>
-      
-      </ul>
+<p>After than, we need to get the <code class="highlighter-rouge">.tar.gz</code> that contains the Chadwick software installer and configuration files. To download this, go to the chadwickbureau GitHub page, the Chadwick repository, and navigate to the “Releases” page. Here’s a quick link to take you there directly: https://github.com/chadwickbureau/chadwick/releases</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p>Take the latest release in the <code class="highlighter-rouge">.tar.gz</code> format, and move that file into your baseball directory. Once the tar file is in your baseball directory, in your terminal run the command <code class="highlighter-rouge">vagrant up</code>, followed by <code class="highlighter-rouge">vagrant ssh</code> . </p>
 
-      <ul>
-      
-      </ul>
+<p>Your terminal instance will now be running on your VirtualBox virtual machine. What we need to do now is move the tar file we downloaded earlier into the <code class="highlighter-rouge">usr/local/src directory</code> (this file will currently be sitting in <code class="highlighter-rouge">~/vagrant</code>). We’ll first navigate to the directory we’re moving the file into by running the command <code class="highlighter-rouge">cd /usr/local/src</code>, then run the command below to copy the Chadwick tar file into the current directory (keep in mind, my file’s version number is 0.8.1, but yours may be different - update your command accordingly):</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p><img src="http://localhost:4000/img/copy_chadwick_to_src.png" alt="Copy and Unpack the Chadwick Tar File" /></p>
 
-      <ul>
-      
-      </ul>
+<p>Now that Chadwick has been copied and unpacked, we need to configure the software and complete the installation. To do this, run the <code class="highlighter-rouge">configure</code> file that you can see in the <code class="highlighter-rouge">chadwick-0.8.1</code> directory when you run <code class="highlighter-rouge">ls</code>, then <code class="highlighter-rouge">make</code> to compile, <code class="highlighter-rouge">make install</code> to install the software to our virtual machine, and <code class="highlighter-rouge">ldconfig</code> to make sure the program can link to the libraries it needs:</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p><img src="http://localhost:4000/img/configure_chadwick.png" alt="Configure, Make, Install, and Link the new Chadwick Files" /></p>
 
-      <ul>
-      
-      </ul>
+<p>To test that Chadwick was properly installed, run the <code class="highlighter-rouge">cwevent</code> command, and you should get the following output:</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p><img src="http://localhost:4000/img/cwevent_test.png" alt="cwevent should succesfully fail (what a strange sentance)" /></p>
 
-      <ul>
-      
-      </ul>
+<p>While this is technically an error, it means the installation was a success. <code class="highlighter-rouge">cwevent</code> is a command that Chadwick uses to parse Retrosheet event files, and since we’ve not yet provided one - we get this warning.</p>
 
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
+<p>I hope this was helpful to you in your quest to begin working with Chadwick and Retrosheet. In the next post, we’ll download our first few Retrosheet files and begin exploring.</p>
 
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-      <div class="archive-title">
-        <h4 class="archive-year"></h4>
-      </div>
-
-      <ul>
-      
-      </ul>
-
-    
-  </div>
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Horizontal Display Unit Personal Site -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9580564349953922"
+     data-ad-slot="1624547715"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </article>
 </div>
 
-    </article>
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
 
 
-  </div><!-- end page content -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jakenherman-com';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
-  
 
         <footer>
   &copy; 2020 jaken herman. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
