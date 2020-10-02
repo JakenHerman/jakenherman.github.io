@@ -2,5 +2,5 @@
 
 label: Ability
 id : cs
-aspects: C#, JavaScript, TypeScript, Mobile App Development
-percentage: 100, 100, 90, 70
+aspects: C#, JavaScript, Mobile App Development, R, Python
+percentage: 100, 100, 70, 20, 20
