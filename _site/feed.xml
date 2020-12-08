@@ -5,9 +5,52 @@
     <description>Software Engineer, Data Scientist, Baseball Nut, Husband</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2020-10-02</pubDate>
-    <lastBuildDate>Fri, 02 Oct 2020 06:47:26 +0100</lastBuildDate>
+    <pubDate>2020-12-08</pubDate>
+    <lastBuildDate>Tue, 08 Dec 2020 04:10:33 +0100</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>What is a 'Slash Line'?</title>
+        <description>&lt;p&gt;The “Slash Line” is a term that is often used in discussion about the offensive value of a player, and is sometimes displayed on broadcasts when a player is coming up to bat, but what is it? The slash line is a collection of three statistics:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A player’s batting average (AVG)&lt;/li&gt;
+  &lt;li&gt;A player’s on-base percentage (OBP)&lt;/li&gt;
+  &lt;li&gt;A player’s slugging percentage (SLG)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The combination of these three player statistics combined with a forward slash is where the name “slash line” comes from. Sometimes, the slash line is referred to as the triple-slash line.&lt;/p&gt;
+
+&lt;p&gt;It’s not uncommon to hear someone say “[Some player] slashed .215/.300/.367 in the 2020 season”. This just means that player &lt;em&gt;produced&lt;/em&gt; a slash line with a .215 batting average, a .300 OBP, and a .367 SLG.&lt;/p&gt;
+
+&lt;p&gt;Why is the slash line so popular? Because summing up a player’s offensive contributions to a team in a single statistic is generally a difficult thing to do, the slash line provides a quick way to see not only how often a player gets a hit but how often that player gets a hit, draws a walk, or gets hit by a pitch in his at-bats. To take it even one step further, because SLG is part of the slash line, it also tells us how often the player gets a hit that results in extra bases. It’s not a perfect summary of a player, but it’s easily digestible even for non-baseball fans, which is likely why it’s so popular. If broadcasts started showing more complex stats, it may be off-putting to the casual fan.&lt;/p&gt;
+
+&lt;p&gt;So how are the three stats calculated?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;AVG&lt;/strong&gt;: This one’s the easiest. You just take the total number of hits a player achieved (H) and divide it by the number of at-bats (AB) that player has had. It’s literally just the rate of hits per at bat. You can deduce pretty quickly why this statistic alone is horrible for valuing a player’s offensive output. It does not take walks or HBP into account, and it doesn’t put any extra weight on more difficult hit outcomes like home runs, triples, or doubles.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/avg_calculation.png&quot; alt=&quot;AVG Formula&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;OBP&lt;/strong&gt;: This one gets a bit more complicated, but not much. This time, we get to incorporate walks (BB, which just means Base on Balls), the batter being hit by pitch (HBP), and sacrifice flies (SF). To calculate a player’s on-base percentage, add the total number of hits (H), walks (BB), and hit-by-pitches (HBP) as the numerator. For the denominator, add the total number of at-bats (AB), walks (BB), hit-by-pitches (HBP), and sacrifice fly balls (SF):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/obp_calculation.png&quot; alt=&quot;OBP Formula&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SLG&lt;/strong&gt;: Now we get to incorporate some power. SLG is a player’s slugging percentage: how often do they hit the ball hard (draw more than just a single)? This stat actually puts weights on different hit outcomes depending on the number of bases earned by that hit. To calculate SLG, you simply take the Total Bases earned per At Bat (TB) and divide it by the total number of at-bats (AB). To get the Total Bases earned per At Bat, weight each outcome by the number of bases it earned. So for a player’s singles (1B), you would take 1 * 1B, where 1B is the total number of singles he drew. Take that number and add 2 * 2B where 2B is the total number of doubles he achieved. Do the same thing for triples with 3 * 3B, and home runs with 4 * HR. In summary, calculate a player’s SLG with:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/slg_calculation.png&quot; alt=&quot;SLG Formula&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Again, the slash line (or triple-slash line) is &lt;em&gt;not&lt;/em&gt; a great indicator of offensive value, but it is commonly used in broadcasts and amongst casual baseball fans, so it’s worth looking at what it means and how the values are calculated.&lt;/p&gt;
+</description>
+        <pubDate>2020-12-08</pubDate>
+        <link>http://localhost:4000/articles/2020-12/slash-line-explained</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2020-12/slash-line-explained</guid>
+        
+        
+        <category>MLB</category>
+        
+        <category>Baseball</category>
+        
+      </item>
     
       <item>
         <title>R for Data Science Ch1</title>
@@ -1783,7 +1826,7 @@ $(document).ready(function () {
 
 &lt;/body&gt;
 </description>
-        <pubDate>2020-10-02</pubDate>
+        <pubDate>2020-12-08</pubDate>
         <link>http://localhost:4000/articles/2020-09/r-for-data-science-ch-1</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-09/r-for-data-science-ch-1</guid>
         
@@ -1824,7 +1867,7 @@ $(document).ready(function () {
 
 &lt;p&gt;I hope this was helpful to you in your quest to begin working with Chadwick and Retrosheet. In the next post, we’ll download our first few Retrosheet files and begin exploring.&lt;/p&gt;
 </description>
-        <pubDate>2020-10-02</pubDate>
+        <pubDate>2020-12-08</pubDate>
         <link>http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant</guid>
         
@@ -1903,7 +1946,7 @@ When your initialization is complete, you’ll notice a file called &lt;code cla
 
 &lt;p&gt;Thanks for reading. Check back in the next post and we’ll get Chadwick downloaded and configured so we can begin playing around with Retrosheet data!&lt;/p&gt;
 </description>
-        <pubDate>2020-10-02</pubDate>
+        <pubDate>2020-12-08</pubDate>
         <link>http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup</guid>
         
@@ -1947,7 +1990,7 @@ When your initialization is complete, you’ll notice a file called &lt;code cla
 
 &lt;p&gt;I’d love to do many more draft visualizations and maybe even dip into some KBO numbers, but for now I’m going to call it a night! Thanks for stopping by.&lt;/p&gt;
 </description>
-        <pubDate>2020-10-02</pubDate>
+        <pubDate>2020-12-08</pubDate>
         <link>http://localhost:4000/articles/2020-06/simple-mlb-draft-20-visuals</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-06/simple-mlb-draft-20-visuals</guid>
         
@@ -2106,7 +2149,7 @@ import 'ag-grid-community/dist/styles/ag-theme-balham.css';&lt;/code&gt;&lt;/pre
   }&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-        <pubDate>2020-10-02</pubDate>
+        <pubDate>2020-12-08</pubDate>
         <link>http://localhost:4000/articles/2019-10/mlb-19-community-listings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-10/mlb-19-community-listings</guid>
         
@@ -2251,7 +2294,7 @@ export default App;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Thanks for reading, folks. Hope this taught you something.&lt;/p&gt;
 </description>
-        <pubDate>2020-10-02</pubDate>
+        <pubDate>2020-12-08</pubDate>
         <link>http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</guid>
         
@@ -2344,7 +2387,7 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Fantastic - now we’ve got a react app automatically deploying to a Heroku dyno, now we just need that react app to do something cool! In the next post, we’ll begin creating the React components necessary to view the Community Market listings.&lt;/p&gt;
 </description>
-        <pubDate>2020-10-02</pubDate>
+        <pubDate>2020-12-08</pubDate>
         <link>http://localhost:4000/articles/2019-09/mlb-19-community-listings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-09/mlb-19-community-listings</guid>
         
@@ -2372,7 +2415,7 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;CodePen Link : https://codepen.io/JakenHerman/pen/MWgKNvm
 Dribble Link : https://dribbble.com/shots/6990265-Credit-Card-Checkout-DailyUI-002&lt;/p&gt;
 </description>
-        <pubDate>2020-10-02</pubDate>
+        <pubDate>2020-12-08</pubDate>
         <link>http://localhost:4000/articles/2019-06/dailyui-002</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-06/dailyui-002</guid>
         
@@ -2403,93 +2446,12 @@ Dribble Link : https://dribbble.com/shots/6990265-Credit-Card-Checkout-DailyUI-0
 
 &lt;p&gt;To turn developer options back off, just flip the switch at the top of the developer options screen to “off”. Once you navigate away from this screen, it will be gone from your phone until you repeat the above steps to enable developer mode.&lt;/p&gt;
 </description>
-        <pubDate>2020-10-02</pubDate>
+        <pubDate>2020-12-08</pubDate>
         <link>http://localhost:4000/articles/2019-05/android-device-developer-mode</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-05/android-device-developer-mode</guid>
         
         
         <category>Android</category>
-        
-        <category>Learning</category>
-        
-        <category>Tips and Tricks</category>
-        
-      </item>
-    
-      <item>
-        <title>How to Learn a New Programming Language</title>
-        <description>&lt;p&gt;The best way to learn &lt;strong&gt;any&lt;/strong&gt; language is to simply &lt;em&gt;just use it&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;With that being said, I often find that new developers just want to learn the newest, flashiest, most “cool” language like Python or some new JavaScript library. This endeavor may be fruitless if you are not first familiar with the underlying concepts and techniques associated with programming in general.&lt;/p&gt;
-
-&lt;p&gt;The best advice that I can offer would be to learn algorithms, design patterns, and programming fundamentals. Once you have learned these things, you can write virtually any program in virtually any language.&lt;/p&gt;
-
-&lt;p&gt;For example - I do not know how to use the language Ruby. However, I am about to walk you through the popular FizzBuzz program in Ruby by using my knowledge of programming fundamentals (loops, conditionals, operators, io, etc.):&lt;/p&gt;
-
-&lt;p&gt;The first thing I need to do is define the problem. This is the first step to writing &lt;strong&gt;any&lt;/strong&gt; program. If you don’t first know what the problem is, you cannot find a solution to it. The problem is as such: For each number from 1 to 100 I would like to print “Fizz” if the number is divisible by 3, “Buzz” if the number is divisible by 5, or “FizzBuzz” if the number is divisible by both.&lt;/p&gt;
-
-&lt;p&gt;The next thing I need to do is check the Ruby documentation for using a “&lt;a href=&quot;https://docs.ruby-lang.org/en/2.4.0/syntax/control_expressions_rdoc.html#label-until+Loop&quot;&gt;loop&lt;/a&gt;”:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a = 0
-
-until a &amp;gt; 100 do
-  a += 1
-end
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now that I have an &lt;code class=&quot;highlighter-rouge&quot;&gt;until&lt;/code&gt; loop, I need to check how to do modular arithmetic in Ruby by once again, checking the &lt;a href=&quot;http://ruby-doc.org/core-1.9.3/Numeric.html#method-i-modulo&quot;&gt;documentation&lt;/a&gt;, as well as checking &lt;a href=&quot;https://ruby-doc.org/core-2.3.0/doc/syntax/control_expressions_rdoc.html&quot;&gt;how to call &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; statements&lt;/a&gt;, then applying what I’ve found, modifying my code as such:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a = 0
-
-until a &amp;gt; 100 do
-
-  if a % 3 == 0
-    print fizz
-  end
-
-  if a % 5 == 0
-    print buzz
-  end
-
-  a += 1
-end
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Lastly, you’ll notice I just wrote “print fizz” and “print buzz” in my if statements. Now I need to check &lt;a href=&quot;https://docs.ruby-lang.org/en/2.6.0/IRB/OutputMethod.html&quot;&gt;how to write my results&lt;/a&gt; via the documentation, and modify my code as such:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a = 1
-
-until a &amp;gt; 100 do
-
-  if a % 3 == 0
-    print &quot;fizz&quot;
-  end
-
-  if a % 5 == 0
-    print &quot;buzz&quot;
-  end
-
-  a += 1
-  puts &quot;&quot;
-end
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;There we go - my first ruby program has been written. You saw my thought process as well as my methods on finding out &lt;em&gt;how&lt;/em&gt; to get the program done. Now I can think of a more difficult or complex program, and use the same methods to write it in ruby. In time, just by &lt;strong&gt;using&lt;/strong&gt; ruby, I will have learned it.&lt;/p&gt;
-
-&lt;p&gt;Also keep in mind that this program is likely not the best way of handling things - there are improvements to be made. That is okay. Nobody will expect you to write perfect code while learning.&lt;/p&gt;
-
-&lt;p&gt;So how do you learn Python or JavaScript or C++ or literally &lt;strong&gt;any other language&lt;/strong&gt;? Replace every instance of the word “Ruby” in this answer, and replace it with whichever programming language you want to learn. By the end, you’ll have a FizzBuzz program. Then, all you have to do is think of another more complex problem and &lt;strong&gt;just do it.&lt;/strong&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>2020-10-02</pubDate>
-        <link>http://localhost:4000/articles/2019-05/learning-a-new-programming-language</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2019-05/learning-a-new-programming-language</guid>
-        
-        
-        <category>Programming</category>
         
         <category>Learning</category>
         
