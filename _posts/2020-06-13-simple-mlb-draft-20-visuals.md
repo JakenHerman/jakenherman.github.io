@@ -4,7 +4,7 @@ title:  "MLB Draft '20 By The Numbers"
 excerpt: "A few simple visuals breaking down the MLB Draft '20 Rounds 1-5"
 comments : true
 date:   2020-06-11 12:07:00 -0600
-categories: [MLB, JavaScript, Data Visualization]
+categories: [MLB, Baseball, JavaScript, Data Visualization]
 ---
 
 With no baseball being played so far in 2020, there hasn't been anything incredibly interesting to analyze or look at besides historical data (in the MLB at least). On June 10th and June 11th, however, we finally got our first bit of new MLB information to play around with - the draft. I've taken data from Rounds 1-5 and compiled them into some (hopefully) interesting visuals.

@@ -6,7 +6,7 @@
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>2020-12-08</pubDate>
-    <lastBuildDate>Tue, 08 Dec 2020 04:10:33 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 08 Dec 2020 05:53:43 +0100</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -1996,6 +1996,8 @@ When your initialization is complete, you’ll notice a file called &lt;code cla
         
         
         <category>MLB</category>
+        
+        <category>Baseball</category>
         
         <category>JavaScript</category>
         
