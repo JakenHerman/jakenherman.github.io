@@ -5,8 +5,8 @@
     <description>Software Engineer, Data Scientist, Baseball Nut, Husband</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2021-04-08</pubDate>
-    <lastBuildDate>Thu, 08 Apr 2021 03:27:51 +0200</lastBuildDate>
+    <pubDate>2021-05-05</pubDate>
+    <lastBuildDate>Wed, 05 May 2021 14:07:06 +0200</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -23,7 +23,7 @@
 
 &lt;p&gt;Enjoy!&lt;/p&gt;
 </description>
-        <pubDate>2021-04-08</pubDate>
+        <pubDate>2021-05-05</pubDate>
         <link>http://localhost:4000/articles/2021-04/scores-extension-release</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2021-04/scores-extension-release</guid>
         
@@ -181,7 +181,7 @@
 &lt;p&gt;Tada! The final product looks great, and it’s an easy way to visualize percentile data. I hope you’ve enjoyed this quick walkthrough. The full observable notebook is available here:
 &lt;a href=&quot;https://observablehq.com/@jakenherman/visualizing-percentile-data&quot;&gt;https://observablehq.com/@jakenherman/visualizing-percentile-data&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>2021-04-08</pubDate>
+        <pubDate>2021-05-05</pubDate>
         <link>http://localhost:4000/articles/2020-12/visualizing-percentile-data-with-d3</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-12/visualizing-percentile-data-with-d3</guid>
         
@@ -195,49 +195,6 @@
         <category>Data Visualization</category>
         
         <category>d3</category>
-        
-      </item>
-    
-      <item>
-        <title>What is a 'Slash Line'?</title>
-        <description>&lt;p&gt;The “Slash Line” is a term that is often used in discussion about the offensive value of a player, and is sometimes displayed on broadcasts when a player is coming up to bat, but what is it? The slash line is a collection of three statistics:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A player’s batting average (AVG)&lt;/li&gt;
-  &lt;li&gt;A player’s on-base percentage (OBP)&lt;/li&gt;
-  &lt;li&gt;A player’s slugging percentage (SLG)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The combination of these three player statistics combined with a forward slash is where the name “slash line” comes from. Sometimes, the slash line is referred to as the triple-slash line.&lt;/p&gt;
-
-&lt;p&gt;It’s not uncommon to hear someone say “[Some player] slashed .215/.300/.367 in the 2020 season”. This just means that player &lt;em&gt;produced&lt;/em&gt; a slash line with a .215 batting average, a .300 OBP, and a .367 SLG.&lt;/p&gt;
-
-&lt;p&gt;Why is the slash line so popular? Because summing up a player’s offensive contributions to a team in a single statistic is generally a difficult thing to do, the slash line provides a quick way to see not only how often a player gets a hit but how often that player gets a hit, draws a walk, or gets hit by a pitch in his at-bats. To take it even one step further, because SLG is part of the slash line, it also tells us how often the player gets a hit that results in extra bases. It’s not a perfect summary of a player, but it’s easily digestible even for non-baseball fans, which is likely why it’s so popular. If broadcasts started showing more complex stats, it may be off-putting to the casual fan.&lt;/p&gt;
-
-&lt;p&gt;So how are the three stats calculated?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;AVG&lt;/strong&gt;: This one’s the easiest. You just take the total number of hits a player achieved (H) and divide it by the number of at-bats (AB) that player has had. It’s literally just the rate of hits per at bat. You can deduce pretty quickly why this statistic alone is horrible for valuing a player’s offensive output. It does not take walks or HBP into account, and it doesn’t put any extra weight on more difficult hit outcomes like home runs, triples, or doubles.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/avg_calculation.png&quot; alt=&quot;AVG Formula&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;OBP&lt;/strong&gt;: This one gets a bit more complicated, but not much. This time, we get to incorporate walks (BB, which just means Base on Balls), the batter being hit by pitch (HBP), and sacrifice flies (SF). To calculate a player’s on-base percentage, add the total number of hits (H), walks (BB), and hit-by-pitches (HBP) as the numerator. For the denominator, add the total number of at-bats (AB), walks (BB), hit-by-pitches (HBP), and sacrifice fly balls (SF):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/obp_calculation.png&quot; alt=&quot;OBP Formula&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;SLG&lt;/strong&gt;: Now we get to incorporate some power. SLG is a player’s slugging percentage: how often do they hit the ball hard (draw more than just a single)? This stat actually puts weights on different hit outcomes depending on the number of bases earned by that hit. To calculate SLG, you simply take the Total Bases earned per At Bat (TB) and divide it by the total number of at-bats (AB). To get the Total Bases earned per At Bat, weight each outcome by the number of bases it earned. So for a player’s singles (1B), you would take 1 * 1B, where 1B is the total number of singles he drew. Take that number and add 2 * 2B where 2B is the total number of doubles he achieved. Do the same thing for triples with 3 * 3B, and home runs with 4 * HR. In summary, calculate a player’s SLG with:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/slg_calculation.png&quot; alt=&quot;SLG Formula&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Again, the slash line (or triple-slash line) is &lt;em&gt;not&lt;/em&gt; a great indicator of offensive value, but it is commonly used in broadcasts and amongst casual baseball fans, so it’s worth looking at what it means and how the values are calculated.&lt;/p&gt;
-</description>
-        <pubDate>2021-04-08</pubDate>
-        <link>http://localhost:4000/articles/2020-12/slash-line-explained</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2020-12/slash-line-explained</guid>
-        
-        
-        <category>MLB</category>
-        
-        <category>Baseball</category>
         
       </item>
     
@@ -2015,7 +1972,7 @@ $(document).ready(function () {
 
 &lt;/body&gt;
 </description>
-        <pubDate>2021-04-08</pubDate>
+        <pubDate>2021-05-05</pubDate>
         <link>http://localhost:4000/articles/2020-09/r-for-data-science-ch-1</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-09/r-for-data-science-ch-1</guid>
         
@@ -2056,7 +2013,7 @@ $(document).ready(function () {
 
 &lt;p&gt;I hope this was helpful to you in your quest to begin working with Chadwick and Retrosheet. In the next post, we’ll download our first few Retrosheet files and begin exploring.&lt;/p&gt;
 </description>
-        <pubDate>2021-04-08</pubDate>
+        <pubDate>2021-05-05</pubDate>
         <link>http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant</guid>
         
@@ -2135,7 +2092,7 @@ When your initialization is complete, you’ll notice a file called &lt;code cla
 
 &lt;p&gt;Thanks for reading. Check back in the next post and we’ll get Chadwick downloaded and configured so we can begin playing around with Retrosheet data!&lt;/p&gt;
 </description>
-        <pubDate>2021-04-08</pubDate>
+        <pubDate>2021-05-05</pubDate>
         <link>http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup</guid>
         
@@ -2179,7 +2136,7 @@ When your initialization is complete, you’ll notice a file called &lt;code cla
 
 &lt;p&gt;I’d love to do many more draft visualizations and maybe even dip into some KBO numbers, but for now I’m going to call it a night! Thanks for stopping by.&lt;/p&gt;
 </description>
-        <pubDate>2021-04-08</pubDate>
+        <pubDate>2021-05-05</pubDate>
         <link>http://localhost:4000/articles/2020-06/simple-mlb-draft-20-visuals</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-06/simple-mlb-draft-20-visuals</guid>
         
@@ -2340,7 +2297,7 @@ import 'ag-grid-community/dist/styles/ag-theme-balham.css';&lt;/code&gt;&lt;/pre
   }&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-        <pubDate>2021-04-08</pubDate>
+        <pubDate>2021-05-05</pubDate>
         <link>http://localhost:4000/articles/2019-10/mlb-19-community-listings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-10/mlb-19-community-listings</guid>
         
@@ -2485,7 +2442,7 @@ export default App;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Thanks for reading, folks. Hope this taught you something.&lt;/p&gt;
 </description>
-        <pubDate>2021-04-08</pubDate>
+        <pubDate>2021-05-05</pubDate>
         <link>http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</guid>
         
@@ -2578,7 +2535,7 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Fantastic - now we’ve got a react app automatically deploying to a Heroku dyno, now we just need that react app to do something cool! In the next post, we’ll begin creating the React components necessary to view the Community Market listings.&lt;/p&gt;
 </description>
-        <pubDate>2021-04-08</pubDate>
+        <pubDate>2021-05-05</pubDate>
         <link>http://localhost:4000/articles/2019-09/mlb-19-community-listings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-09/mlb-19-community-listings</guid>
         
@@ -2590,6 +2547,38 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         <category>API</category>
         
         <category>Heroku</category>
+        
+      </item>
+    
+      <item>
+        <title>DailyUI Challenge 002</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://media.licdn.com/dms/image/C5622AQF24cV88T9mVw/feedshare-shrink_8192/0?e=1568851200&amp;amp;v=beta&amp;amp;t=tjqFnhHhl793SCviu7nDJMeGZUqt7SJenAo8bnuCWK4&quot; style=&quot;width: auto&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;DailyUI challenge 002 - Design a credit card checkout form or page. Did this one without a wire-framing tool - instead opted to just use HTML, CSS, and JavaScript. I only worked on it for about an hour, so I’m not too upset with the results. The card type icon (Visa, MasterCard, AMEX, etc. does change depending on the start of the card number).&lt;/p&gt;
+
+&lt;p&gt;Things I could improve on:
+ - The fonts are pretty ugly, I’d like to spend more time browsing available fonts.
+ - Responsiveness. Because this was just part of a challenge and not production code, I did not consider mobile viewing in the design.&lt;/p&gt;
+
+&lt;p&gt;CodePen Link : https://codepen.io/JakenHerman/pen/MWgKNvm
+Dribble Link : https://dribbble.com/shots/6990265-Credit-Card-Checkout-DailyUI-002&lt;/p&gt;
+</description>
+        <pubDate>2021-05-05</pubDate>
+        <link>http://localhost:4000/articles/2019-06/dailyui-002</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-06/dailyui-002</guid>
+        
+        
+        <category>UX</category>
+        
+        <category>UI</category>
+        
+        <category>Wireframe</category>
+        
+        <category>CSS</category>
+        
+        <category>JavaScript</category>
+        
+        <category>CodePen</category>
         
       </item>
     
