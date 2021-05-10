@@ -5,9 +5,9 @@
 #
 title: Jaken Herman
 email: JakenHerman7@Gmail.com
-description: Software Engineer, Data Scientist, Baseball Nut, Husband
+description: Software Engineer, Husband, Tolkien Fan, Father-To-Be
 url:
-keywords: ["blog", "jaken", "herman", "software", "engineer", "data science"]
+keywords: ["blog", "jaken", "herman", "software", "engineer"]
 
 #
 ###################################
@@ -35,7 +35,7 @@ kramdown:
 owner:
   name: jaken herman
   avatar: avatar.jpg
-  job: "🧬S oftware Developer for Othram 🧬"
+  job: "🧬 Software Developer for Othram 🧬"
   bio: "husband | tolkien fan | traveler | brewer of beer | father-to-be"
   email: jakenherman7@gmail.com
   disqus-shortname: jakenherman-com

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jaken Herman</title>
-    <description>Software Engineer, Data Scientist, Baseball Nut, Husband</description>
+    <description>Software Engineer, Husband, Tolkien Fan, Father-To-Be</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2021-05-05</pubDate>
-    <lastBuildDate>Wed, 05 May 2021 14:07:06 +0200</lastBuildDate>
+    <pubDate>2021-05-10</pubDate>
+    <lastBuildDate>Mon, 10 May 2021 06:05:12 +0200</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -23,7 +23,7 @@
 
 &lt;p&gt;Enjoy!&lt;/p&gt;
 </description>
-        <pubDate>2021-05-05</pubDate>
+        <pubDate>2021-05-10</pubDate>
         <link>http://localhost:4000/articles/2021-04/scores-extension-release</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2021-04/scores-extension-release</guid>
         
@@ -181,7 +181,7 @@
 &lt;p&gt;Tada! The final product looks great, and it’s an easy way to visualize percentile data. I hope you’ve enjoyed this quick walkthrough. The full observable notebook is available here:
 &lt;a href=&quot;https://observablehq.com/@jakenherman/visualizing-percentile-data&quot;&gt;https://observablehq.com/@jakenherman/visualizing-percentile-data&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>2021-05-05</pubDate>
+        <pubDate>2021-05-10</pubDate>
         <link>http://localhost:4000/articles/2020-12/visualizing-percentile-data-with-d3</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-12/visualizing-percentile-data-with-d3</guid>
         
@@ -1972,7 +1972,7 @@ $(document).ready(function () {
 
 &lt;/body&gt;
 </description>
-        <pubDate>2021-05-05</pubDate>
+        <pubDate>2021-05-10</pubDate>
         <link>http://localhost:4000/articles/2020-09/r-for-data-science-ch-1</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-09/r-for-data-science-ch-1</guid>
         
@@ -2013,7 +2013,7 @@ $(document).ready(function () {
 
 &lt;p&gt;I hope this was helpful to you in your quest to begin working with Chadwick and Retrosheet. In the next post, we’ll download our first few Retrosheet files and begin exploring.&lt;/p&gt;
 </description>
-        <pubDate>2021-05-05</pubDate>
+        <pubDate>2021-05-10</pubDate>
         <link>http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-09/configuring-chadwick-on-vagrant</guid>
         
@@ -2092,7 +2092,7 @@ When your initialization is complete, you’ll notice a file called &lt;code cla
 
 &lt;p&gt;Thanks for reading. Check back in the next post and we’ll get Chadwick downloaded and configured so we can begin playing around with Retrosheet data!&lt;/p&gt;
 </description>
-        <pubDate>2021-05-05</pubDate>
+        <pubDate>2021-05-10</pubDate>
         <link>http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-08/virtualbox-vagrant-setup</guid>
         
@@ -2136,7 +2136,7 @@ When your initialization is complete, you’ll notice a file called &lt;code cla
 
 &lt;p&gt;I’d love to do many more draft visualizations and maybe even dip into some KBO numbers, but for now I’m going to call it a night! Thanks for stopping by.&lt;/p&gt;
 </description>
-        <pubDate>2021-05-05</pubDate>
+        <pubDate>2021-05-10</pubDate>
         <link>http://localhost:4000/articles/2020-06/simple-mlb-draft-20-visuals</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2020-06/simple-mlb-draft-20-visuals</guid>
         
@@ -2297,7 +2297,7 @@ import 'ag-grid-community/dist/styles/ag-theme-balham.css';&lt;/code&gt;&lt;/pre
   }&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-        <pubDate>2021-05-05</pubDate>
+        <pubDate>2021-05-10</pubDate>
         <link>http://localhost:4000/articles/2019-10/mlb-19-community-listings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-10/mlb-19-community-listings</guid>
         
@@ -2442,7 +2442,7 @@ export default App;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Thanks for reading, folks. Hope this taught you something.&lt;/p&gt;
 </description>
-        <pubDate>2021-05-05</pubDate>
+        <pubDate>2021-05-10</pubDate>
         <link>http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-09/react-helmet-dynamic-titles</guid>
         
@@ -2535,7 +2535,7 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Fantastic - now we’ve got a react app automatically deploying to a Heroku dyno, now we just need that react app to do something cool! In the next post, we’ll begin creating the React components necessary to view the Community Market listings.&lt;/p&gt;
 </description>
-        <pubDate>2021-05-05</pubDate>
+        <pubDate>2021-05-10</pubDate>
         <link>http://localhost:4000/articles/2019-09/mlb-19-community-listings</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-09/mlb-19-community-listings</guid>
         
@@ -2563,7 +2563,7 @@ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;CodePen Link : https://codepen.io/JakenHerman/pen/MWgKNvm
 Dribble Link : https://dribbble.com/shots/6990265-Credit-Card-Checkout-DailyUI-002&lt;/p&gt;
 </description>
-        <pubDate>2021-05-05</pubDate>
+        <pubDate>2021-05-10</pubDate>
         <link>http://localhost:4000/articles/2019-06/dailyui-002</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2019-06/dailyui-002</guid>
         
